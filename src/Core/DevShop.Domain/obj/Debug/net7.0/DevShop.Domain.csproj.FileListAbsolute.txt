@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\bin\Debug\net7.0\DevShop.Domain.deps.json
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\bin\Debug\net7.0\DevShop.Domain.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\bin\Debug\net7.0\DevShop.Domain.pdb
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.AssemblyInfo.cs
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\refint\DevShop.Domain.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\DevShop.Domain.pdb
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Domain\obj\Debug\net7.0\ref\DevShop.Domain.dll

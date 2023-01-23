@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Infrastructure.deps.json
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Infrastructure.dll
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Infrastructure.pdb
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Application.dll
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Domain.dll
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Application.pdb
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\bin\Debug\net7.0\DevShop.Domain.pdb
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.AssemblyInfo.cs
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.csproj.CopyComplete
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.dll
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\refint\DevShop.Infrastructure.dll
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\DevShop.Infrastructure.pdb
+C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Infrastructure\obj\Debug\net7.0\ref\DevShop.Infrastructure.dll

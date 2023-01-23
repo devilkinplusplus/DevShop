@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\bin\Debug\net7.0\DevShop.Application.deps.json
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\bin\Debug\net7.0\DevShop.Application.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\bin\Debug\net7.0\DevShop.Application.pdb
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\bin\Debug\net7.0\DevShop.Domain.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\bin\Debug\net7.0\DevShop.Domain.pdb
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.AssemblyInfo.cs
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.csproj.CopyComplete
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\refint\DevShop.Application.dll
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\DevShop.Application.pdb
+C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\obj\Debug\net7.0\ref\DevShop.Application.dll
