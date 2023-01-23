@@ -21,4 +21,8 @@
     <ProjectReference Include="..\..\Core\DevShop.Application\DevShop.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

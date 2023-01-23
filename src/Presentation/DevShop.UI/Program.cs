@@ -1,3 +1,4 @@
+using DevShop.Application;
 using DevShop.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceServices();
-
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 

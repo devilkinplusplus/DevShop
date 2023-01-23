@@ -28,6 +28,8 @@ namespace DevShop.Persistance
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<AppDbContext>();
+
+
         }
     }
 }
