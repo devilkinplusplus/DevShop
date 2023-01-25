@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using DevShop.Application.Abstractions.Services;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

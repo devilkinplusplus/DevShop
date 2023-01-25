@@ -1,5 +1,9 @@
-﻿using DevShop.Domain.Entities.Identity;
+﻿using DevShop.Application.Abstractions.Services;
+using DevShop.Application.Abstractions.Services.Authentications;
+using DevShop.Domain.Entities.Identity;
 using DevShop.Persistance.Context;
+using DevShop.Persistance.Services;
+using DevShop.Persistance.Services.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +33,8 @@ namespace DevShop.Persistance
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<AppDbContext>();
 
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthService, AuthService>();
 
         }
     }

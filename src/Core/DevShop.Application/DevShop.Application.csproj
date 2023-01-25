@@ -11,10 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\Services\" />
-    <Folder Include="Cqrs\Commands\" />
-    <Folder Include="Cqrs\Queries\" />
-    <Folder Include="DTOs\" />
+    <Folder Include="Cqrs\Queries\User\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
