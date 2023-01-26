@@ -19,7 +19,8 @@ namespace DevShop.Application.Cqrs.Commands.User.LoginUser
             var response = await _authService.LoginAsync(request.Email, request.Password);
             return new()
             {
-                Succeeded = response.Succeeded
+                Succeeded = response.Succeeded,
+                Message = response.Message,
             };
         }
     }

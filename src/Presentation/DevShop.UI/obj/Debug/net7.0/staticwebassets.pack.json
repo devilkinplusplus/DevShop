@@ -1,6 +1,366 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\css\\app.css",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\css\\app.css.map",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\css\\app.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\fonts\\.gitkeep",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\fonts\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\avatars\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\avatars\\avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\avatars\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\avatars\\avatar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\avatars\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\avatars\\avatar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\avatars\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\avatars\\avatar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\avatars\\avatar.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\avatars\\avatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\icons\\icon-48x48.png",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\icons\\icon-48x48.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\photos\\unsplash-1.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\photos\\unsplash-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\photos\\unsplash-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\photos\\unsplash-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\img\\photos\\unsplash-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\img\\photos\\unsplash-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\js\\app.js",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\js\\app.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\js\\app.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\dist\\js\\app.js.map",
+      "PackagePath": "staticwebassets\\adminKit\\dist\\js\\app.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\package-lock.json",
+      "PackagePath": "staticwebassets\\adminKit\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\package.json",
+      "PackagePath": "staticwebassets\\adminKit\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\postcss.config.js",
+      "PackagePath": "staticwebassets\\adminKit\\postcss.config.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\fonts\\.gitkeep",
+      "PackagePath": "staticwebassets\\adminKit\\src\\fonts\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\avatars\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\avatars\\avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\avatars\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\avatars\\avatar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\avatars\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\avatars\\avatar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\avatars\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\avatars\\avatar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\avatars\\avatar.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\avatars\\avatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\icons\\icon-48x48.png",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\icons\\icon-48x48.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\photos\\unsplash-1.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\photos\\unsplash-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\photos\\unsplash-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\photos\\unsplash-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\img\\photos\\unsplash-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\src\\img\\photos\\unsplash-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\app.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\bootstrap.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\chartjs.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\chartjs.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\feather.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\feather.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\flatpickr.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\flatpickr.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\sidebar.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\theme.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\theme.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\js\\modules\\vector-maps.js",
+      "PackagePath": "staticwebassets\\adminKit\\src\\js\\modules\\vector-maps.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\1-variables\\_app.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\1-variables\\_app.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\2-mixins\\_button.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\2-mixins\\_button.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_avatar.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_avatar.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_buttons.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_card.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_card.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_chart.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_chart.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_content.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_content.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_feather.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_feather.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_footer.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_hamburger.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_hamburger.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_list-group.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_main.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_main.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_navbar.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_reboot.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_sidebar.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_sizing.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_sizing.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_stat.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_stat.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_tables.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_type.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_type.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\3-components\\_wrapper.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\3-components\\_wrapper.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\4-utilities\\_cursors.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\4-utilities\\_cursors.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\5-vendor\\_flatpickr.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\5-vendor\\_flatpickr.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\5-vendor\\_simplebar.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\5-vendor\\_simplebar.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\src\\scss\\app.scss",
+      "PackagePath": "staticwebassets\\adminKit\\src\\scss\\app.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\charts-chartjs.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\charts-chartjs.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\css\\app.css",
+      "PackagePath": "staticwebassets\\adminKit\\static\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\css\\app.css.map",
+      "PackagePath": "staticwebassets\\adminKit\\static\\css\\app.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\fonts\\.gitkeep",
+      "PackagePath": "staticwebassets\\adminKit\\static\\fonts\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\icons-feather.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\icons-feather.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\avatars\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\avatars\\avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\avatars\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\avatars\\avatar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\avatars\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\avatars\\avatar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\avatars\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\avatars\\avatar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\avatars\\avatar.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\avatars\\avatar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\icons\\icon-48x48.png",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\icons\\icon-48x48.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\photos\\unsplash-1.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\photos\\unsplash-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\photos\\unsplash-2.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\photos\\unsplash-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\img\\photos\\unsplash-3.jpg",
+      "PackagePath": "staticwebassets\\adminKit\\static\\img\\photos\\unsplash-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\index.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\js\\app.js",
+      "PackagePath": "staticwebassets\\adminKit\\static\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\js\\app.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\adminKit\\static\\js\\app.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\js\\app.js.map",
+      "PackagePath": "staticwebassets\\adminKit\\static\\js\\app.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\maps-google.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\maps-google.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\pages-blank.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\pages-blank.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\pages-profile.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\pages-profile.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\pages-sign-in.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\pages-sign-in.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\pages-sign-up.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\pages-sign-up.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\ui-buttons.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\ui-buttons.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\ui-cards.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\ui-cards.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\ui-forms.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\ui-forms.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\ui-typography.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\ui-typography.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\static\\upgrade-to-pro.html",
+      "PackagePath": "staticwebassets\\adminKit\\static\\upgrade-to-pro.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\adminKit\\webpack.config.js",
+      "PackagePath": "staticwebassets\\adminKit\\webpack.config.js"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

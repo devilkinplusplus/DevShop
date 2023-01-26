@@ -1,4 +1,5 @@
-﻿using DevShop.Application.DTOs.User;
+﻿using DevShop.Application.Cqrs.Commands.User.CreateUser;
+using DevShop.Application.DTOs.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace DevShop.Application.Abstractions.Services
 {
     public interface IUserService
     {
-        Task<CreateUserResponse> CreateAsync(CreateUser model);
+        Task<CreateUserCommandResponse> CreateAsync(CreateUser model);
     }
 }

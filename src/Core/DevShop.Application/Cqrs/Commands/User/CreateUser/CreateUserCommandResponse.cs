@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace DevShop.Application.Cqrs.Commands.User.CreateUser
     {
         public bool Succeeded { get; set; }
         public string Message { get; set; }
+        public List<ValidationFailure> Errors { get; set; }
+
     }
 }
