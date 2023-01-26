@@ -1,0 +1,23 @@
+﻿@model IEnumerable<IdentityRole>
+@{
+    int count = 1;
+}
+<table class="table table-hover">
+    <thead class="table-dark">
+        <th>#</th>
+        <th>Name</th>
+    </thead>
+    <tbody class="table-light">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@item.Name</td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>
+<div class="container">
+    <a class="btn btn-success btn-large" href="/admin/role/create">Create New</a>
+</div>

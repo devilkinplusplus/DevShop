@@ -35,7 +35,7 @@ namespace DevShop.Persistance
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
-
+            services.AddScoped<IRoleService, RoleService>();
         }
     }
 }
