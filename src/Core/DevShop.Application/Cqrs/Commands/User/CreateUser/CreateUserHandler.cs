@@ -23,10 +23,9 @@ namespace DevShop.Application.Cqrs.Commands.User.CreateUser
                 Email = request.Email,
                 Username = request.Username,
                 Password = request.Password,
-                PasswordConfirm = request.PasswordConfirm,
             });
 
-            return new() { Message = response.Message,Succeeded = response.Succeeded };
+            return new() { Message = response.Message,Succeeded = response.Succeeded ,Errors = response.Errors};
         }
     }
 }

@@ -82,3 +82,13 @@ C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\DevShop.UI.pdb
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\DevShop.UI.genruntimeconfig.cache
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\ref\DevShop.UI.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\MediatR.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\MediatR.Contracts.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\DevShop.UI.RazorAssemblyInfo.cache
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\DevShop.UI.RazorAssemblyInfo.cs
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\obj\Debug\net7.0\DevShop.UI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\AutoMapper.dll

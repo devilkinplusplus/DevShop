@@ -1,7 +1,10 @@
 ﻿using DevShop.Application.Abstractions.Services;
 using DevShop.Application.Abstractions.Services.Authentications;
+using DevShop.Application.Cqrs.Commands.User.LoginUser;
 using DevShop.Application.DTOs.Authentication;
+using DevShop.Application.Validations;
 using DevShop.Domain.Entities.Identity;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -23,7 +26,7 @@ namespace DevShop.Persistance.Services
             _signInManager = signInManager;
         }
 
-        public async Task<LoginResponse> LoginAsync(string email, string password)
+        public async Task<LoginUserCommandResponse> LoginAsync(string email, string password)
         {
             AppUser user = await _userManager.FindByEmailAsync(email);
             if (user is null)
@@ -35,7 +38,7 @@ namespace DevShop.Persistance.Services
             {
                 return new() { Succeeded = result.Succeeded , Message = "Signed in successfully"};
             }
-            return new() { Succeeded = result.Succeeded, Message = "An error occured" };
+            return new() { Succeeded = result.Succeeded, Message = "Email or password is incorrect" };
         }
 
     }

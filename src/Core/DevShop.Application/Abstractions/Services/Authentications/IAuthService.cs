@@ -1,4 +1,5 @@
-﻿using DevShop.Application.DTOs.Authentication;
+﻿using DevShop.Application.Cqrs.Commands.User.LoginUser;
+using DevShop.Application.DTOs.Authentication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace DevShop.Application.Abstractions.Services.Authentications
 {
     public interface IAuthService
     {
-        Task<LoginResponse> LoginAsync(string email, string password);
+        Task<LoginUserCommandResponse> LoginAsync(string email, string password);
     }
 }
