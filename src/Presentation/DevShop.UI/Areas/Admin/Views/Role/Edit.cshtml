@@ -1,0 +1,18 @@
+﻿@model IdentityRole
+<div class="container">
+    <h1 class="lead">Edit Role</h1>
+    <form method="post">
+        <div class="mb-3">
+            <input class="form-control form-control-lg"
+                   type="text" name="Name" value="@Model.Name"
+                   placeholder="Role name" />
+        </div>
+        <div class="text-left mt-3">
+            <button type="submit" class="btn btn-lg btn-primary">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+<br />
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>

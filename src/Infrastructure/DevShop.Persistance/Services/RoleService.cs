@@ -20,6 +20,21 @@ namespace DevShop.Persistance.Services
             return result.Succeeded;
         }
 
+        public async Task<bool> DeleteAsync(string id)
+        {
+            IdentityRole data = await _roleManager.FindByIdAsync(id);
+            IdentityResult result = await _roleManager.DeleteAsync(data);
+            return result.Succeeded;
+        }
+
+        public async Task<bool> EditAsync(string id, string name)
+        {
+            IdentityRole data = await _roleManager.FindByIdAsync(id);
+            data.Name = name;
+            IdentityResult result = await _roleManager.UpdateAsync(data);
+            return result.Succeeded;
+        }
+
         public async Task<IEnumerable<IdentityRole>> GetRoles()
         {
             return await _roleManager.Roles.AsNoTracking().ToListAsync();

@@ -12,5 +12,7 @@ namespace DevShop.Application.Abstractions.Services.Authentications
     {
         Task<bool> CreateAsync(string name);
         Task<IEnumerable<IdentityRole>> GetRoles();
+        Task<bool> EditAsync(string id,string name);
+        Task<bool> DeleteAsync(string id);
     }
 }
