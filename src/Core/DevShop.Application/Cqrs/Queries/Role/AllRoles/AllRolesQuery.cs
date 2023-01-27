@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
 {
-    public class AllRolesQuery:IRequest<IEnumerable<IdentityRole>>
+    public class AllRolesQuery:IRequest<AllRolesQueryResponse>
     {
     }
 }

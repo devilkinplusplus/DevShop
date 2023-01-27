@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
 {
-    public class AllRolesHandler : IRequestHandler<AllRolesQuery, IEnumerable<IdentityRole>>
+    public class AllRolesHandler : IRequestHandler<AllRolesQuery, AllRolesQueryResponse>
     {
         private readonly IRoleService _roleService;
 
         public AllRolesHandler(IRoleService roleService) => _roleService = roleService;
 
-        public async Task<IEnumerable<IdentityRole>> Handle(AllRolesQuery request, CancellationToken cancellationToken)
+        public async Task<AllRolesQueryResponse> Handle(AllRolesQuery request, CancellationToken cancellationToken)
         {
             var roles = await _roleService.GetRoles();
-            return roles;
+            if (roles.Count() == 0)
+                return new() { Succeeded = false };
+            return new() { Succeeded = true, Roles = roles };
         }
     }
 }

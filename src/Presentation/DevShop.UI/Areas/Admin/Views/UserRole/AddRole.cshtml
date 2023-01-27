@@ -1,0 +1,27 @@
+﻿@model AddUserRoleVM
+<div class="forms">
+    <h2 class="title1">Set Role</h2>
+    <div class=" form-grids row form-grids-right">
+        <div class="widget-shadow " data-example-id="basic-forms">
+            <div class="form-title">
+                <h4>Set User Roles :</h4>
+            </div>
+            <div class="form-body">
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control" name="Role">
+                            @foreach (var role in Model.Roles)
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm text-left">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
