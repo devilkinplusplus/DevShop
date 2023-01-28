@@ -30,7 +30,7 @@ namespace DevShop.Persistance.Context
             builder.Entity<IdentityRole>().ToTable("Roles");
 
             //Many to many relationship between product and pictures
-            builder.Entity<ProductPicture>().HasKey(k => new { k.ProductId, k.PictureId ,k.Id});
+            builder.Entity<ProductPicture>().HasKey(k => new {k.Id});
 
             builder.Entity<ProductPicture>()
                 .HasOne(k => k.Product)
@@ -43,7 +43,7 @@ namespace DevShop.Persistance.Context
                 .HasForeignKey(k => k.PictureId);
 
             //many to many between catagory and subcatagory
-            builder.Entity<CatagorySub>().HasKey(k => new { k.CatagoryId, k.SubCatagoryId,k.Id });
+            builder.Entity<CatagorySub>().HasKey(k => new { k.Id });
 
             builder.Entity<CatagorySub>()
                 .HasOne(k => k.Catagory)

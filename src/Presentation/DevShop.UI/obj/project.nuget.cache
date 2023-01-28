@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OzCas3xD+I9GoW9ZOkDctT7TJ8PjadU5LSydofnllkxIrJHWjf0CXYbLW4o8mU7DTgsqOjWx/TdiG01ExYa94g==",
+  "dgSpecHash": "rayze1FLX/YMffSLxf4BaemxubgE1RuBLif7KPS4iwnDc4fLvysV0WjMSHZAUkfRcqAcs015GuAKJZYTmEtNrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\DevShop.UI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\autofac\\6.5.0\\autofac.6.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

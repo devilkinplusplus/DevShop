@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using DevShop.Application.DTOs.Products;
 using DevShop.Application.DTOs.User;
+using DevShop.Domain.Entities.Concrete;
 using DevShop.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ namespace DevShop.Application.AutoMapper
         {
             CreateMap<CreateUser, AppUser>().ReverseMap();
             CreateMap<UserLogin, AppUser>().ReverseMap();
+            CreateMap<CreateCatagoryDTO, Catagory>();
         }
     }
 }
