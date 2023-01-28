@@ -4,7 +4,7 @@
     <form method="post">
         <div class="mb-3">
             <input class="form-control form-control-lg"
-                   type="text" name="Name" value="@Model.Name"
+                   type="text" name="Name" value="@(Model?.Name ?? string.Empty)"
                    placeholder="Role name" />
         </div>
         <div class="text-left mt-3">
@@ -16,3 +16,4 @@
 </div>
 <br />
 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+

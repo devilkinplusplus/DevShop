@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevShop.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         private readonly IMediator _mediator;
@@ -46,7 +46,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            IdentityRole data = await _roleManager.FindByIdAsync(id);
+            IdentityRole? data = await _roleManager.FindByIdAsync(id);
             return View(data);
         }
 
@@ -56,8 +56,8 @@ namespace DevShop.UI.Areas.Admin.Controllers
             bool result = await _mediator.Send(new UpdateRoleCommand() { Id = id, Name = name });
             if (result)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "An error occured");
-            return RedirectToAction(nameof(Edit));
+            ModelState.AddModelError("", "Value cannot be null");
+            return View(null);
         }
 
         public async Task<IActionResult> Delete(string id)
