@@ -10,14 +10,16 @@
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <link rel="shortcut icon" href="~/adminKit/dist/img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+   
     <title>Admin View</title>
-
     <link href="~/adminKit/dist/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -41,14 +43,19 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-up.html">
+                    <li class="sidebar-item dropdown">
+                        <a class="sidebar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="align-middle" data-feather="user-plus"></i>
-                            <span class="align-middle">Users</span>
+                            Users
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/admin/userrole/">Users</a>
+                            <a class="dropdown-item" href="/admin/role/">Roles</a>
+                        </div>
                     </li>
 
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="pages-blank.html">
                             <i class="align-middle" data-feather="info"></i> <span class="align-middle">Roles</span>
                         </a>
@@ -60,11 +67,6 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/role/create">
-                            <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign out</span>
-                        </a>
-                    </li>
 
                 </ul>
 
@@ -80,7 +82,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown"
+                            data-bs-toggle="dropdown">
                                 <div class="position-relative">
                                     <i class="align-middle" data-feather="bell"></i>
                                     <span class="indicator">4</span>
@@ -145,7 +148,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" 
+                                    data-bs-toggle="dropdown">
                                 <div class="position-relative">
                                     <i class="align-middle" data-feather="message-square"></i>
                                 </div>
@@ -212,19 +216,28 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" 
+                                data-bs-toggle="dropdown">
                                 <i class="align-middle" data-feather="settings"></i>
                             </a>
 
-                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" 
+                            data-bs-toggle="dropdown">
+                                <img src="~/adminKit/dist/img/avatars/avatar.jpg" 
+                                    class="avatar img-fluid rounded me-1" alt="Charles Hall" /> 
+                                <span class="text-dark">Charles Hall</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                                <a class="dropdown-item" href="pages-profile.html">
+                                    <i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                                <a class="dropdown-item" href="index.html">
+                                    <i class="align-middle me-1" data-feather="settings"></i> 
+                                    Settings & Privacy</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="align-middle me-1" data-feather="help-circle"></i>
+                                    Help Center</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Log out</a>
                             </div>
@@ -275,6 +288,12 @@
     </div>
 
     <script src="~/adminKit/dist/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown()
+        });
+    </script>
+    @RenderSection("Scripts",false)
 
 </body>
 

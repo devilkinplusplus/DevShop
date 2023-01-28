@@ -22,6 +22,146 @@ namespace DevShop.Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Catagory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Catagory");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.CatagorySub", b =>
+                {
+                    b.Property<Guid>("CatagoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SubCatagoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("CatagoryId", "SubCatagoryId", "Id");
+
+                    b.HasIndex("SubCatagoryId");
+
+                    b.ToTable("CatagorySub");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Picture", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Picture");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Rating")
+                        .HasColumnType("real");
+
+                    b.Property<Guid>("SubCatagoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("View")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubCatagoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.ProductPicture", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PictureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ProductId", "PictureId", "Id");
+
+                    b.HasIndex("PictureId");
+
+                    b.ToTable("ProductPicture");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.SubCatagory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SubCatagory");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Identity.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -234,6 +374,61 @@ namespace DevShop.Persistance.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.CatagorySub", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Catagory", "Catagory")
+                        .WithMany("CatagorySubs")
+                        .HasForeignKey("CatagoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Concrete.SubCatagory", "SubCatagory")
+                        .WithMany("CatagorySubs")
+                        .HasForeignKey("SubCatagoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Catagory");
+
+                    b.Navigation("SubCatagory");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Product", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Concrete.SubCatagory", "SubCatagory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubCatagoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("SubCatagory");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.ProductPicture", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Picture", "Picture")
+                        .WithMany("ProductPictures")
+                        .HasForeignKey("PictureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Product", "Product")
+                        .WithMany("ProductPictures")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Picture");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -283,6 +478,28 @@ namespace DevShop.Persistance.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Catagory", b =>
+                {
+                    b.Navigation("CatagorySubs");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Picture", b =>
+                {
+                    b.Navigation("ProductPictures");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Product", b =>
+                {
+                    b.Navigation("ProductPictures");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.SubCatagory", b =>
+                {
+                    b.Navigation("CatagorySubs");
+
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

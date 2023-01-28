@@ -1,15 +1,16 @@
 ﻿@model AddUserRoleVM
 <div class="forms">
-    <h2 class="title1">Set Role</h2>
+    <div class="alert alert-secondary" role="alert">
+        <h2 class="lead text-center">Set Role</h2>
+    </div>
     <div class=" form-grids row form-grids-right">
         <div class="widget-shadow " data-example-id="basic-forms">
             <div class="form-title">
-                <h4>Set User Roles :</h4>
+                <h4 class="lead">Set User Roles :</h4>
             </div>
             <div class="form-body">
                 <form class="form-horizontal" method="post">
                     <div class="form-group">
-                        <label for="role">Role</label>
                         <select class="form-control" name="Role">
                             @foreach (var role in Model.Roles)
                             {
@@ -18,7 +19,7 @@
                         </select>
                     </div>
                     <div class="col-sm text-left">
-                        <button type="submit" class="btn btn-success">Add</button>
+                        <button type="submit" class="btn btn-success mt-2 btn-block">Add</button>
                     </div>
                 </form>
             </div>

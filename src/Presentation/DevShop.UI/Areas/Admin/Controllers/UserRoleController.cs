@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace DevShop.UI.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class UserRoleController : Controller
     {
@@ -42,7 +42,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
            { Id = id, Role = role });
             if(response.Succeeded)
                 return RedirectToAction(nameof(Index));
-            return RedirectToAction(nameof(AddRole));
+            return View();
         }
 
     }
