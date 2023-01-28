@@ -12,6 +12,6 @@ namespace DevShop.Application.Cqrs.Commands.Catagories.AddCatagory
 {
     public class AddCatagoryCommand:IRequest<bool>
     {
-        public CreateCatagoryDTO Catagory { get; set; }
+        public CatagoryDTO Catagory { get; set; }
     }
 }

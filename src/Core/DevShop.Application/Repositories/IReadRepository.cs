@@ -12,6 +12,6 @@ namespace DevShop.Application.Repositories
     {
         Task<IEnumerable<T>> GetAllAsync(Expression<Func<T,bool>> filter=null);
         Task<T> GetAsync(Expression<Func<T, bool>> filter);
-        Task<T> GetByIdAsync(string id);
+        Task<T> GetByIdAsync(Guid id);
     }
 }
