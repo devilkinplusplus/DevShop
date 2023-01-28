@@ -17,7 +17,7 @@ namespace DevShop.Application.AutoMapper
         {
             CreateMap<CreateUser, AppUser>().ReverseMap();
             CreateMap<UserLogin, AppUser>().ReverseMap();
-            CreateMap<CreateCatagoryDTO, Catagory>();
+            CreateMap<CatagoryDTO, Catagory>();
         }
     }
 }
