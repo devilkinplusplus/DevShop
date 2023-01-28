@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Catagory>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 m-auto">
+            <form method="post">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Manage
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="subCategoryName">Subcatagory name</label>
+                            <input type="text" name="Name" id="subCategoryName"
+                                   class="form-control" placeholder="Enter name.." />
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            @if (Model !=  null)
+                            {
+                                <select class="form-control" multiple name="categoryIds">
+                                    @foreach (var category in Model)
+                                    {
+                                        <option value="@category.Id">
+                                            @category.Name
+                                        </option>
+                                    }
+                                </select>
+                            }
+                            else
+                            {
+                                <div class="card">
+                                    <h2 class="lead text-center text-danger">
+                                        No item found!
+                                    </h2>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

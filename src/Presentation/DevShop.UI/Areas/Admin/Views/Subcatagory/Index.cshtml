@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SubCatagory>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card m-auto">
+                <div class="card-header">
+                    <h3 class="card-title">Manage Catagories</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>SubCategory Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int count = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <a class="btn btn-warning" href="/Admin/SubCatagory/Update/@item.Id">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger"
+                                           href="/Admin/SubCatagory/Delete/@item.Id"
+                                           onclick="return confirm('Are You Sure?')">Delete</a>
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/admin/subcatagory/create"
+                   class="btn btn-info mt-3 mb-3">
+                    Create
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
