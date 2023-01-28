@@ -42,19 +42,22 @@ namespace DevShop.Persistance.Migrations
 
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.CatagorySub", b =>
                 {
-                    b.Property<Guid>("CatagoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SubCatagoryId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CatagoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.HasKey("CatagoryId", "SubCatagoryId", "Id");
+                    b.Property<Guid>("SubCatagoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatagoryId");
 
                     b.HasIndex("SubCatagoryId");
 
@@ -125,21 +128,24 @@ namespace DevShop.Persistance.Migrations
 
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.ProductPicture", b =>
                 {
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("PictureId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.HasKey("ProductId", "PictureId", "Id");
+                    b.Property<Guid>("PictureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("PictureId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductPicture");
                 });

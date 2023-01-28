@@ -1,4 +1,6 @@
-﻿using DevShop.Application.Abstractions.Services;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DevShop.Application.Abstractions.Services;
 using DevShop.Application.Abstractions.Services.Authentications;
 using DevShop.Domain.Entities.Identity;
 using DevShop.Persistance.Context;
@@ -33,9 +35,6 @@ namespace DevShop.Persistance
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<AppDbContext>();
 
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IRoleService, RoleService>();
         }
     }
 }
