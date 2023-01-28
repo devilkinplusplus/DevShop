@@ -10,6 +10,10 @@ using DevShop.Persistance.Services;
 using DevShop.Application.Abstractions.Services.Authentications;
 using DevShop.Application.Repositories.Catagory;
 using DevShop.Persistance.Repositories.Catagory;
+using DevShop.Persistance.Repositories.Subcatagory;
+using DevShop.Application.Repositories.Subcatagory;
+using DevShop.Application.Repositories.Catagorysub;
+using DevShop.Persistance.Repositories.Catagorysub;
 
 namespace DevShop.Persistance.Autofac
 {
@@ -30,6 +34,10 @@ namespace DevShop.Persistance.Autofac
 
             builder.RegisterType<CatagoryReadRepository>().As<ICatagoryReadRepository>();
             builder.RegisterType<CatagoryWriteRepository>().As<ICatagoryWriteRepository>();
+            builder.RegisterType<SubcatagoryReadRepository>().As<ISubcatagoryReadRepository>();
+            builder.RegisterType<SubcatagoryWriteRepository>().As<ISubcatagoryWriteRepository>();
+            builder.RegisterType<CatagorysubReadRepository>().As<ICatagorysubReadRepository>();
+            builder.RegisterType<CatagorysubWriteRepository>().As<ICatagorysubWriteRepository>();
         }
     }
 }
