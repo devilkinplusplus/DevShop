@@ -26,6 +26,19 @@ namespace DevShop.Persistance.Repositories
                                 await _appDbContext.Set<T>().Where(filter).ToListAsync();
         }
 
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null, params string[] includeProperties)
+        {
+            var query = _appDbContext.Set<T>().AsQueryable();
+
+            if (includeProperties != null)
+            {
+                query = includeProperties.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            return filter == null ? await query.ToListAsync() :
+                        await query.Where(filter).ToListAsync();
+        }
+
         public async Task<T> GetAsync(Expression<Func<T, bool>> filter)
         {
             return await _appDbContext.Set<T>().Where(filter).FirstOrDefaultAsync();

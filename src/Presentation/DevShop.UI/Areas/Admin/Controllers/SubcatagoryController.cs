@@ -1,6 +1,9 @@
 ﻿using DevShop.Application.Cqrs.Commands.Subcatagories.Create;
+using DevShop.Application.Cqrs.Commands.Subcatagories.Delete;
+using DevShop.Application.Cqrs.Commands.Subcatagories.Update;
 using DevShop.Application.Cqrs.Queries.Catagories.CatagoryList;
 using DevShop.Application.Cqrs.Queries.Subcatagories.GetAll;
+using DevShop.Application.Cqrs.Queries.Subcatagories.GetById;
 using DevShop.Application.DTOs.Products;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -25,6 +28,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
             var response = await _mediator.Send(new AllSubcatagoriesQuery());
             if (response.Succeeded)
                 return View(response.SubCatagories);
+            ModelState.AddModelError("", "No item found!");
             return View(null);
         }
 
@@ -47,5 +51,29 @@ namespace DevShop.UI.Areas.Admin.Controllers
             ModelState.AddModelError("", "An error occured");
             return RedirectToAction(nameof(Create));
         }
+
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            GetSubcatagoryByIdQueryResponse res = await _mediator.Send(new GetSubcatagoryByIdQuery() { Id = id });
+            if (res.Succeeded)
+                return View(res.SubCatagory);
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(CatagoryDTO model, Guid id)
+        {
+            UpdateSubCatagoryCommandResponse res = await _mediator.Send(new UpdateSubCatagoryCommand() { Id = id, Subcatagory = model });
+            if (res.Succeeded)
+                return RedirectToAction(nameof(Index));
+            ModelState.AddModelError("", "An error occured");
+            return View();
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _mediator.Send(new DeleteSubcatagoryCommand() { Id = id });
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
