@@ -1,4 +1,5 @@
-﻿using DevShop.Domain.Entities.Concrete;
+﻿using DevShop.Application.Validations;
+using DevShop.Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

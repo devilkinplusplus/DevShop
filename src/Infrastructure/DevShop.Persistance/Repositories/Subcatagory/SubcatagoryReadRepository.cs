@@ -1,4 +1,5 @@
 ﻿using DevShop.Application.Repositories.Subcatagory;
+using DevShop.Application.Validations;
 using DevShop.Domain.Entities.Concrete;
 using DevShop.Persistance.Context;
 using System;
@@ -14,5 +15,7 @@ namespace DevShop.Persistance.Repositories.Subcatagory
         public SubcatagoryReadRepository(AppDbContext appDbContext) : base(appDbContext)
         {
         }
+
+       
     }
 }

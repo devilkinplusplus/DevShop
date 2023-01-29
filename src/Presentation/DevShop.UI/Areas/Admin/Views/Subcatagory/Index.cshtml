@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<SubCatagory>
+@inject AppDbContext context
 <div class="container">
-
     <div class="row">
-
         <div class="col-md-12">
             <div class="card m-auto">
                 <div class="card-header">
@@ -14,30 +13,52 @@
                         <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>SubCategory Name</th>
+                                <th>SubCategory</th>
+                                <th>Catagory</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @{
-                                int count = 1;
-                            }
-                            @foreach (var item in Model)
+                            @if (Model != null)
                             {
-                                <tr>
-                                    <td>@count</td>
-                                    <td>@item.Name</td>
-                                    <td>
-                                        <a class="btn btn-warning" href="/Admin/SubCatagory/Update/@item.Id">Edit</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger"
-                                           href="/Admin/SubCatagory/Delete/@item.Id"
-                                           onclick="return confirm('Are You Sure?')">Delete</a>
-                                    </td>
-                                </tr>
-                                count++;
+                                int count = 1;
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Name</td>
+                                        <td>
+                                            @{
+                                                var catagories = context.CatagorySub.Include(x => x.Catagory)
+                                                .Where(x => x.SubCatagoryId == item.Id).ToList();
+                                                foreach (var category in catagories)
+                                                {
+                                                    <span class="badge bg-success">
+                                                        @category.Catagory.Name
+                                                    </span>
+                                                }
+                                            }
+
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-warning" href="/Admin/SubCatagory/edit/@item.Id">
+                                                Edit
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-danger"
+                                               href="/Admin/SubCatagory/Delete/@item.Id"
+                                               onclick="return confirm('Are You Sure?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                    count++;
+                                }
+                            }
+                            else
+                            {
+                                <div asp-validation-summary="ModelOnly" class="alert alert-warning">
+                                </div>
                             }
                         </tbody>
                     </table>
