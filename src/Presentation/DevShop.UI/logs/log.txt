@@ -1,0 +1,1406 @@
+2023-01-30 16:23:40.926 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 16:23:41.233 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 16:23:41.236 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 16:23:41.240 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 16:23:41.241 +04:00 [INF] Hosting environment: Development
+2023-01-30 16:23:41.244 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 16:23:43.627 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 16:23:47.367 +04:00 [INF] Executed DbCommand (148ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 16:23:47.730 +04:00 [INF] Executed DbCommand (27ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-01-30 16:23:47.794 +04:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:23:47.815 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2023-01-30 16:23:47.853 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2023-01-30 16:23:47.904 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 4282.1318ms
+2023-01-30 16:23:50.857 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 16:23:50.886 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:23:50.932 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 16:23:50.968 +04:00 [INF] List of Roles
+2023-01-30 16:23:51.055 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 16:23:51.093 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:23:51.332 +04:00 [INF] Executed ViewResult - view Index executed in 244.4402ms.
+2023-01-30 16:23:51.340 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 402.0918ms
+2023-01-30 16:23:51.344 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:23:51.502 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 645.0849ms
+2023-01-30 16:23:51.557 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:23:51.568 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 10.1376ms
+2023-01-30 16:23:51.602 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 16:23:51.603 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 16:23:51.604 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 16:23:51.604 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 16:23:51.608 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:23:51.619 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 16.8015ms
+2023-01-30 16:23:51.619 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 15.6291ms
+2023-01-30 16:23:51.619 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 15.1692ms
+2023-01-30 16:23:51.621 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 17.3761ms
+2023-01-30 16:23:51.712 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 105.1059ms
+2023-01-30 16:31:09.074 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 16:31:09.470 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 16:31:09.477 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 16:31:09.481 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 16:31:09.484 +04:00 [INF] Hosting environment: Development
+2023-01-30 16:31:09.486 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 16:31:12.206 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 16:31:12.779 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 578.6661ms
+2023-01-30 16:31:17.251 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 16:31:17.290 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:31:17.341 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 16:31:17.398 +04:00 [INF] List of Roles
+2023-01-30 16:31:19.106 +04:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 16:31:19.175 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:31:19.325 +04:00 [INF] Executed ViewResult - view Index executed in 153.8586ms.
+2023-01-30 16:31:19.331 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 1985.6005ms
+2023-01-30 16:31:19.336 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:31:19.379 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 2128.1528ms
+2023-01-30 16:31:19.444 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:31:19.452 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.7363ms
+2023-01-30 16:31:19.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 16:31:19.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 16:31:19.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 16:31:19.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 16:31:19.484 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:31:19.494 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 10.5843ms
+2023-01-30 16:31:19.494 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 10.4150ms
+2023-01-30 16:31:19.494 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 10.4293ms
+2023-01-30 16:31:19.494 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 10.5624ms
+2023-01-30 16:31:19.515 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.2539ms
+2023-01-30 16:37:43.706 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 16:37:43.895 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 16:37:43.897 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 16:37:43.900 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 16:37:43.901 +04:00 [INF] Hosting environment: Development
+2023-01-30 16:37:43.902 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 16:37:45.462 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 16:37:45.842 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 383.2512ms
+2023-01-30 16:37:59.676 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 16:37:59.861 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 16:37:59.863 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 16:37:59.865 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 16:37:59.867 +04:00 [INF] Hosting environment: Development
+2023-01-30 16:37:59.868 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 16:38:01.158 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 16:38:01.511 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 356.4557ms
+2023-01-30 16:38:05.974 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 16:38:06.009 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:38:06.035 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 16:38:06.069 +04:00 [INF] List of Roles
+2023-01-30 16:38:07.668 +04:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 16:38:07.729 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:38:07.854 +04:00 [INF] Executed ViewResult - view Index executed in 129.0902ms.
+2023-01-30 16:38:07.862 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 1822.7772ms
+2023-01-30 16:38:07.866 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:38:07.946 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 1971.4501ms
+2023-01-30 16:38:07.970 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:38:07.978 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.2466ms
+2023-01-30 16:38:07.992 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 16:38:07.993 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 16:38:07.994 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 16:38:07.994 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 16:38:07.996 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:38:08.004 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 11.1826ms
+2023-01-30 16:38:08.005 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 12.5016ms
+2023-01-30 16:38:08.004 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 10.2746ms
+2023-01-30 16:38:08.011 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 17.5512ms
+2023-01-30 16:38:08.031 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.7685ms
+2023-01-30 16:52:06.232 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 16:52:06.726 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 16:52:06.760 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 16:52:06.774 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 16:52:06.779 +04:00 [INF] Hosting environment: Development
+2023-01-30 16:52:06.786 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 16:52:08.632 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 16:52:09.452 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 814.0029ms
+2023-01-30 16:53:46.023 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 16:53:46.054 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:53:46.089 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:53:46.129 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 16:53:46.382 +04:00 [INF] Executed ViewResult - view Register executed in 260.835ms.
+2023-01-30 16:53:46.394 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 299.1073ms
+2023-01-30 16:53:46.398 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:53:46.456 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 433.3075ms
+2023-01-30 16:53:46.508 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:53:46.520 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 11.4113ms
+2023-01-30 16:53:46.536 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:53:46.604 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 67.9409ms
+2023-01-30 16:53:50.007 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/adminKit/dist/js/app.js.map - -
+2023-01-30 16:53:50.033 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/adminKit/dist/css/app.css.map - -
+2023-01-30 16:53:50.140 +04:00 [INF] Sending file. Request path: '/adminKit/dist/css/app.css.map'. Physical path: 'C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\wwwroot\adminKit\dist\css\app.css.map'
+2023-01-30 16:53:50.145 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/adminKit/dist/css/app.css.map - - - 200 308055 text/plain 111.3427ms
+2023-01-30 16:53:50.464 +04:00 [INF] Sending file. Request path: '/adminKit/dist/js/app.js.map'. Physical path: 'C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\wwwroot\adminKit\dist\js\app.js.map'
+2023-01-30 16:53:50.467 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/adminKit/dist/js/app.js.map - - - 200 3025996 text/plain 460.4680ms
+2023-01-30 16:56:34.145 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 335
+2023-01-30 16:56:36.256 +04:00 [INF] Executed DbCommand (54ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 16:56:36.619 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-01-30 16:56:36.685 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:56:36.718 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2023-01-30 16:56:36.758 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2023-01-30 16:56:36.773 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:56:36.804 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:57:03.489 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 16:57:03.814 +04:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 16:57:34.413 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 16:57:35.263 +04:00 [INF] New user registered
+2023-01-30 16:57:42.173 +04:00 [INF] Executing RedirectResult, redirecting to /Auth/Login.
+2023-01-30 16:57:42.176 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 65368.3073ms
+2023-01-30 16:57:42.179 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:57:42.195 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 335 - 302 0 - 68053.2788ms
+2023-01-30 16:57:42.196 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Auth/Login - -
+2023-01-30 16:57:42.219 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:57:42.233 +04:00 [INF] Route matched with {action = "Login", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:57:42.239 +04:00 [INF] Executing ViewResult, running view Login.
+2023-01-30 16:57:42.261 +04:00 [INF] Executed ViewResult - view Login executed in 23.6013ms.
+2023-01-30 16:57:42.264 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Login (DevShop.UI) in 27.2967ms
+2023-01-30 16:57:42.267 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:57:42.272 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Auth/Login - - - 200 - text/html;+charset=utf-8 76.3412ms
+2023-01-30 16:57:42.303 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:57:42.305 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:57:42.311 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.6841ms
+2023-01-30 16:57:42.337 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.2832ms
+2023-01-30 16:59:23.970 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/Auth/Login application/x-www-form-urlencoded 281
+2023-01-30 16:59:23.983 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:59:23.992 +04:00 [INF] Route matched with {action = "Login", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DevShop.Application.DTOs.User.UserLogin) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:59:24.126 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 16:59:24.270 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-01-30 16:59:24.291 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:24.299 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2023-01-30 16:59:24.309 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2023-01-30 16:59:24.339 +04:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-01-30 16:59:24.348 +04:00 [INF] Executing RedirectResult, redirecting to /Auth/Register.
+2023-01-30 16:59:24.352 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Login (DevShop.UI) in 354.959ms
+2023-01-30 16:59:24.355 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:59:24.361 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/Auth/Login application/x-www-form-urlencoded 281 - 302 0 - 390.7210ms
+2023-01-30 16:59:24.369 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Auth/Register - -
+2023-01-30 16:59:24.373 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:59:24.376 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:59:24.380 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 16:59:24.392 +04:00 [INF] Executed ViewResult - view Register executed in 11.7681ms.
+2023-01-30 16:59:24.395 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 15.0966ms
+2023-01-30 16:59:24.397 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 16:59:24.404 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Auth/Register - - - 200 - text/html;+charset=utf-8 35.4396ms
+2023-01-30 16:59:24.441 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:24.442 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:59:24.447 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 5.4063ms
+2023-01-30 16:59:24.485 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.7780ms
+2023-01-30 16:59:29.074 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Auth/Login - -
+2023-01-30 16:59:29.083 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:59:29.086 +04:00 [INF] Route matched with {action = "Login", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 16:59:29.089 +04:00 [INF] Executing ViewResult, running view Login.
+2023-01-30 16:59:29.098 +04:00 [INF] Executed ViewResult - view Login executed in 9.3748ms.
+2023-01-30 16:59:29.101 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Login (DevShop.UI) in 12.1694ms
+2023-01-30 16:59:29.104 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 16:59:29.112 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Auth/Login - - - 200 - text/html;+charset=utf-8 38.1644ms
+2023-01-30 16:59:29.145 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:29.149 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 3.8172ms
+2023-01-30 16:59:33.391 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 16:59:33.409 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:59:33.417 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 16:59:33.464 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 16:59:33.475 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:59:33.516 +04:00 [INF] Executed ViewResult - view Index executed in 43.076ms.
+2023-01-30 16:59:33.519 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 97.6007ms
+2023-01-30 16:59:33.522 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 16:59:33.535 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 144.1748ms
+2023-01-30 16:59:33.569 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 16:59:33.569 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 16:59:33.579 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 10.0619ms
+2023-01-30 16:59:33.579 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 10.0792ms
+2023-01-30 16:59:33.584 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:33.587 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 3.4557ms
+2023-01-30 16:59:33.589 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 16:59:33.593 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 16:59:33.594 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:59:33.608 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 18.1387ms
+2023-01-30 16:59:33.610 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 16.3207ms
+2023-01-30 16:59:33.626 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.0523ms
+2023-01-30 16:59:36.076 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/pages-blank.html - -
+2023-01-30 16:59:36.080 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/pages-blank.html - - - 404 0 - 3.9665ms
+2023-01-30 16:59:37.467 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:37.472 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.0552ms
+2023-01-30 16:59:39.383 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/ - -
+2023-01-30 16:59:39.390 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 16:59:39.396 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 16:59:39.427 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 16:59:39.438 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:59:39.449 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:39.459 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:39.466 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:39.476 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:39.497 +04:00 [INF] Executed ViewResult - view Index executed in 60.5152ms.
+2023-01-30 16:59:39.500 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 99.0921ms
+2023-01-30 16:59:39.504 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 16:59:39.517 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/ - - - 200 - text/html;+charset=utf-8 133.2316ms
+2023-01-30 16:59:39.553 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - -
+2023-01-30 16:59:39.554 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - -
+2023-01-30 16:59:39.558 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - - - 404 0 - 4.7213ms
+2023-01-30 16:59:39.561 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - - - 404 0 - 6.1328ms
+2023-01-30 16:59:39.581 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:39.583 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - -
+2023-01-30 16:59:39.583 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:59:39.582 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - -
+2023-01-30 16:59:39.597 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 16.5392ms
+2023-01-30 16:59:39.601 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - - - 404 0 - 18.3785ms
+2023-01-30 16:59:39.620 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - - - 404 0 - 37.6312ms
+2023-01-30 16:59:39.632 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.5605ms
+2023-01-30 16:59:49.225 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/90da495a-0d9d-4c02-856b-936641a9713d - -
+2023-01-30 16:59:49.230 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 16:59:49.240 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 16:59:49.271 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 16:59:49.284 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:49.309 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2023-01-30 16:59:49.322 +04:00 [INF] Executing ViewResult, running view AddRole.
+2023-01-30 16:59:49.349 +04:00 [INF] Executed ViewResult - view AddRole executed in 28.4809ms.
+2023-01-30 16:59:49.352 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 107.8437ms
+2023-01-30 16:59:49.355 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 16:59:49.409 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/90da495a-0d9d-4c02-856b-936641a9713d - - - 200 - text/html;+charset=utf-8 184.6755ms
+2023-01-30 16:59:49.448 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - -
+2023-01-30 16:59:49.449 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - -
+2023-01-30 16:59:49.453 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - - - 404 0 - 5.2361ms
+2023-01-30 16:59:49.455 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - - - 404 0 - 6.7042ms
+2023-01-30 16:59:49.464 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:49.469 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - -
+2023-01-30 16:59:49.469 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - -
+2023-01-30 16:59:49.469 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:59:49.472 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.1090ms
+2023-01-30 16:59:49.476 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - - - 404 0 - 7.7218ms
+2023-01-30 16:59:49.481 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - - - 404 0 - 11.9185ms
+2023-01-30 16:59:49.504 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.4132ms
+2023-01-30 16:59:52.758 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/admin/userrole/addrole/90da495a-0d9d-4c02-856b-936641a9713d application/x-www-form-urlencoded 235
+2023-01-30 16:59:52.762 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 16:59:52.771 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String, System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 16:59:52.795 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 16:59:52.815 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 16:59:52.844 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2023-01-30 16:59:52.855 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 16:59:52.887 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 16:59:52.988 +04:00 [INF] Executed DbCommand (40ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Single), @p4='?' (Size = 4000), @p21='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Users] SET [AccessFailedCount] = @p2, [Budget] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProfilePhoto] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2023-01-30 16:59:53.018 +04:00 [INF] Executing RedirectResult, redirecting to /Admin/UserRole.
+2023-01-30 16:59:53.020 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 244.0985ms
+2023-01-30 16:59:53.023 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 16:59:53.026 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/admin/userrole/addrole/90da495a-0d9d-4c02-856b-936641a9713d application/x-www-form-urlencoded 235 - 302 0 - 268.1770ms
+2023-01-30 16:59:53.037 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/UserRole - -
+2023-01-30 16:59:53.041 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 16:59:53.043 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 16:59:53.058 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 16:59:53.064 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 16:59:53.071 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:53.079 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:53.086 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:53.094 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 16:59:53.105 +04:00 [INF] Executed ViewResult - view Index executed in 41.0991ms.
+2023-01-30 16:59:53.108 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 60.8974ms
+2023-01-30 16:59:53.110 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 16:59:53.121 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/UserRole - - - 200 - text/html;+charset=utf-8 83.6249ms
+2023-01-30 16:59:53.153 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - -
+2023-01-30 16:59:53.154 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - -
+2023-01-30 16:59:53.158 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - - - 404 0 - 4.9004ms
+2023-01-30 16:59:53.160 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - - - 404 0 - 5.8812ms
+2023-01-30 16:59:53.172 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 16:59:53.173 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - -
+2023-01-30 16:59:53.176 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 3.9738ms
+2023-01-30 16:59:53.176 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 16:59:53.175 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - -
+2023-01-30 16:59:53.191 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - - - 404 0 - 17.8029ms
+2023-01-30 16:59:53.199 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - - - 404 0 - 23.9092ms
+2023-01-30 16:59:53.210 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.2877ms
+2023-01-30 17:02:00.392 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:02:00.749 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:02:00.751 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:02:00.755 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:02:00.757 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:02:00.759 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:02:02.087 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:02:02.460 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 375.6130ms
+2023-01-30 17:02:06.990 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:02:07.051 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:02:07.081 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:02:07.109 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:02:07.332 +04:00 [INF] Executed ViewResult - view Register executed in 224.548ms.
+2023-01-30 17:02:07.348 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 260.3301ms
+2023-01-30 17:02:07.351 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:02:07.393 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 402.7790ms
+2023-01-30 17:02:07.442 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:02:07.457 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 14.5805ms
+2023-01-30 17:02:07.477 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:02:07.519 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.8307ms
+2023-01-30 17:02:42.310 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 330
+2023-01-30 17:02:42.320 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:02:42.347 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:02:54.883 +04:00 [INF] Executed DbCommand (87ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:02:55.207 +04:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 17:03:31.820 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:04:16.704 +04:00 [INF] New user registered
+2023-01-30 17:08:16.376 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:08:16.664 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:08:16.666 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:08:16.670 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:08:16.672 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:08:16.674 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:08:17.924 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:08:18.370 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 448.7044ms
+2023-01-30 17:08:26.267 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:08:26.300 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:08:26.333 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:08:26.363 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:08:26.571 +04:00 [INF] Executed ViewResult - view Register executed in 213.1662ms.
+2023-01-30 17:08:26.582 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 242.2864ms
+2023-01-30 17:08:26.585 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:08:26.631 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 363.4206ms
+2023-01-30 17:08:26.692 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:08:26.723 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:08:26.726 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 34.5265ms
+2023-01-30 17:08:26.777 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.9099ms
+2023-01-30 17:09:02.729 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 331
+2023-01-30 17:09:02.739 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:09:02.779 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:09:14.781 +04:00 [INF] Executed DbCommand (88ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:09:15.196 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 17:10:23.260 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:10:23.507 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:10:23.509 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:10:23.513 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:10:23.514 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:10:23.516 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:10:24.863 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:10:25.293 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 433.1137ms
+2023-01-30 17:10:33.414 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:10:33.447 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:10:33.480 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:10:33.521 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:10:33.770 +04:00 [INF] Executed ViewResult - view Register executed in 256.59ms.
+2023-01-30 17:10:33.784 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 297.6305ms
+2023-01-30 17:10:33.789 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:10:33.831 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 417.1728ms
+2023-01-30 17:10:33.885 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:10:33.899 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 13.7965ms
+2023-01-30 17:10:33.915 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:10:33.954 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.1984ms
+2023-01-30 17:10:58.343 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 331
+2023-01-30 17:10:58.352 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:10:58.391 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:11:13.900 +04:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:11:14.364 +04:00 [INF] Executed DbCommand (99ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 17:11:40.004 +04:00 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:12:21.149 +04:00 [INF] New user registered
+2023-01-30 17:27:25.964 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:27:26.269 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:27:26.271 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:27:26.274 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:27:26.275 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:27:26.277 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:27:28.064 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:27:28.824 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 742.9301ms
+2023-01-30 17:27:33.228 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:27:33.265 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:27:33.309 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:27:33.360 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:27:33.639 +04:00 [INF] Executed ViewResult - view Register executed in 292.6434ms.
+2023-01-30 17:27:33.656 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 340.4459ms
+2023-01-30 17:27:33.660 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:27:33.734 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 505.3270ms
+2023-01-30 17:27:33.795 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:27:33.813 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 17.8535ms
+2023-01-30 17:27:33.830 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:27:33.890 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.7596ms
+2023-01-30 17:28:12.475 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 336
+2023-01-30 17:28:12.481 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:28:12.516 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:29:19.881 +04:00 [INF] Executed DbCommand (75ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:29:20.314 +04:00 [INF] Executed DbCommand (53ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 17:30:16.918 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:31:38.293 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:31:38.753 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:31:38.756 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:31:38.763 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:31:38.766 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:31:38.768 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:31:40.898 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:31:44.452 +04:00 [INF] Executed DbCommand (75ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:31:44.801 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-01-30 17:31:44.890 +04:00 [INF] Executed DbCommand (37ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:31:44.926 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2023-01-30 17:31:44.984 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2023-01-30 17:31:45.089 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 4194.4047ms
+2023-01-30 17:32:10.953 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:32:10.968 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:32:10.991 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:32:11.020 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:32:11.172 +04:00 [INF] Executed ViewResult - view Register executed in 158.9268ms.
+2023-01-30 17:32:11.178 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 183.3864ms
+2023-01-30 17:32:11.181 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:32:11.210 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 257.0736ms
+2023-01-30 17:32:11.244 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:32:11.254 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 9.2768ms
+2023-01-30 17:32:11.266 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:32:11.293 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.9817ms
+2023-01-30 17:32:36.914 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 330
+2023-01-30 17:32:36.926 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:32:36.945 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:32:45.961 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:32:46.275 +04:00 [INF] Executed DbCommand (56ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [Budget], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePhoto], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2023-01-30 17:32:47.419 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:33:21.144 +04:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:33:21.217 +04:00 [INF] Executed DbCommand (62ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2023-01-30 17:33:21.228 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:33:21.248 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:33:21.495 +04:00 [INF] Executed DbCommand (214ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Single), @p4='?' (Size = 4000), @p21='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Users] SET [AccessFailedCount] = @p2, [Budget] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProfilePhoto] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2023-01-30 17:33:27.162 +04:00 [INF] New user registered
+2023-01-30 17:33:29.179 +04:00 [INF] Executing RedirectResult, redirecting to /Auth/Login.
+2023-01-30 17:33:29.182 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 52233.6153ms
+2023-01-30 17:33:29.184 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:33:29.186 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 330 - 302 0 - 52271.7197ms
+2023-01-30 17:33:29.218 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Auth/Login - -
+2023-01-30 17:33:29.247 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 17:33:29.268 +04:00 [INF] Route matched with {action = "Login", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:33:29.282 +04:00 [INF] Executing ViewResult, running view Login.
+2023-01-30 17:33:29.305 +04:00 [INF] Executed ViewResult - view Login executed in 24.2016ms.
+2023-01-30 17:33:29.307 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Login (DevShop.UI) in 36.5207ms
+2023-01-30 17:33:29.309 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Login (DevShop.UI)'
+2023-01-30 17:33:29.313 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Auth/Login - - - 200 - text/html;+charset=utf-8 94.9851ms
+2023-01-30 17:33:29.346 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:33:29.350 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.0022ms
+2023-01-30 17:33:29.360 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:33:29.382 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.1601ms
+2023-01-30 17:33:35.778 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 17:33:35.789 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:33:35.793 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 17:33:35.822 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 17:33:35.828 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:33:35.853 +04:00 [INF] Executed ViewResult - view Index executed in 25.7166ms.
+2023-01-30 17:33:35.854 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 59.1809ms
+2023-01-30 17:33:35.856 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:33:35.864 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 86.6199ms
+2023-01-30 17:33:35.882 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 17:33:35.882 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 17:33:35.889 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 6.4003ms
+2023-01-30 17:33:35.889 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 6.4003ms
+2023-01-30 17:33:35.900 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:33:35.903 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 17:33:35.903 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:33:35.903 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 17:33:35.904 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 3.4781ms
+2023-01-30 17:33:39.092 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 3188.8382ms
+2023-01-30 17:33:39.317 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 3413.5090ms
+2023-01-30 17:33:40.982 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 5078.6939ms
+2023-01-30 17:34:10.553 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/ - -
+2023-01-30 17:34:10.564 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:10.568 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:10.587 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 17:34:10.593 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:10.661 +04:00 [INF] Executed DbCommand (59ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.666 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.671 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.678 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.682 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.686 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.690 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.694 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:10.703 +04:00 [INF] Executed ViewResult - view Index executed in 111.0913ms.
+2023-01-30 17:34:10.705 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 133.8476ms
+2023-01-30 17:34:10.707 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:10.715 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/ - - - 200 - text/html;+charset=utf-8 161.3825ms
+2023-01-30 17:34:10.733 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:10.733 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:10.736 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - - - 404 0 - 2.7492ms
+2023-01-30 17:34:10.738 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - - - 404 0 - 4.5894ms
+2023-01-30 17:34:10.748 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:10.749 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:10.750 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:10.750 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:10.759 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - - - 404 0 - 10.0240ms
+2023-01-30 17:34:10.751 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 2.5588ms
+2023-01-30 17:34:10.769 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - - - 404 0 - 20.1330ms
+2023-01-30 17:34:10.777 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.8512ms
+2023-01-30 17:34:14.120 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/d2204ea0-6e41-44c3-8382-d470f75ee2e5 - -
+2023-01-30 17:34:14.123 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:14.128 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:14.233 +04:00 [INF] Executed DbCommand (94ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:14.250 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:14.262 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2023-01-30 17:34:14.268 +04:00 [INF] Executing ViewResult, running view AddRole.
+2023-01-30 17:34:14.284 +04:00 [INF] Executed ViewResult - view AddRole executed in 16.0649ms.
+2023-01-30 17:34:14.286 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 154.5873ms
+2023-01-30 17:34:14.287 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:14.295 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/d2204ea0-6e41-44c3-8382-d470f75ee2e5 - - - 200 - text/html;+charset=utf-8 175.3822ms
+2023-01-30 17:34:14.313 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:14.313 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:14.316 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - - - 404 0 - 2.8349ms
+2023-01-30 17:34:14.317 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - - - 404 0 - 3.8413ms
+2023-01-30 17:34:14.325 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:14.326 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:14.327 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:14.327 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:14.330 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - - - 404 0 - 3.9511ms
+2023-01-30 17:34:14.328 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 2.8076ms
+2023-01-30 17:34:14.334 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - - - 404 0 - 6.7814ms
+2023-01-30 17:34:14.341 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.3663ms
+2023-01-30 17:34:17.136 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/admin/userrole/addrole/d2204ea0-6e41-44c3-8382-d470f75ee2e5 application/x-www-form-urlencoded 235
+2023-01-30 17:34:17.139 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:17.145 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String, System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:21.808 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:22.866 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:22.912 +04:00 [INF] Executed DbCommand (42ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2023-01-30 17:34:22.918 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:22.991 +04:00 [INF] Executed DbCommand (68ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:34:23.178 +04:00 [INF] Executed DbCommand (172ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Single), @p4='?' (Size = 4000), @p21='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Users] SET [AccessFailedCount] = @p2, [Budget] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProfilePhoto] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2023-01-30 17:34:27.964 +04:00 [INF] Executing RedirectResult, redirecting to /Admin/UserRole.
+2023-01-30 17:34:27.965 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 10818.0706ms
+2023-01-30 17:34:27.967 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:27.969 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/admin/userrole/addrole/d2204ea0-6e41-44c3-8382-d470f75ee2e5 application/x-www-form-urlencoded 235 - 302 0 - 10833.6009ms
+2023-01-30 17:34:27.996 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/UserRole - -
+2023-01-30 17:34:28.018 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:28.021 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:28.059 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 17:34:36.573 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:34:36.696 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:34:36.697 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:34:36.699 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:34:36.701 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:34:36.702 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:34:37.546 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:34:37.943 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 400.5341ms
+2023-01-30 17:34:41.337 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 17:34:41.359 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:34:41.387 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 17:34:42.394 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 17:34:42.439 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:42.521 +04:00 [INF] Executed ViewResult - view Index executed in 84.2845ms.
+2023-01-30 17:34:42.525 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 1134.5356ms
+2023-01-30 17:34:42.527 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:34:42.558 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 1220.1797ms
+2023-01-30 17:34:42.590 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:42.595 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.9783ms
+2023-01-30 17:34:42.601 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:42.602 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:42.603 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:42.603 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:42.603 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:42.608 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 6.5037ms
+2023-01-30 17:34:42.608 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 5.4543ms
+2023-01-30 17:34:42.608 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 5.8508ms
+2023-01-30 17:34:42.608 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 6.9262ms
+2023-01-30 17:34:42.621 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.9829ms
+2023-01-30 17:34:44.999 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/ - -
+2023-01-30 17:34:45.006 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:34:45.008 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.RoleController (DevShop.UI).
+2023-01-30 17:34:45.067 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+2023-01-30 17:34:45.071 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:45.078 +04:00 [INF] Executed ViewResult - view Index executed in 7.3395ms.
+2023-01-30 17:34:45.080 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI) in 70.0721ms
+2023-01-30 17:34:45.082 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.RoleController.Index (DevShop.UI)'
+2023-01-30 17:34:45.087 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/ - - - 200 - text/html;+charset=utf-8 87.7855ms
+2023-01-30 17:34:45.107 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:45.108 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:45.111 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-2.jpg - - - 404 0 - 3.4957ms
+2023-01-30 17:34:45.111 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-5.jpg - - - 404 0 - 4.0573ms
+2023-01-30 17:34:45.125 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:45.126 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:45.127 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:45.128 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:45.128 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 2.4808ms
+2023-01-30 17:34:45.129 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-4.jpg - - - 404 0 - 2.9154ms
+2023-01-30 17:34:45.130 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/role/img/avatars/avatar-3.jpg - - - 404 0 - 2.9640ms
+2023-01-30 17:34:45.136 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.3115ms
+2023-01-30 17:34:47.293 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/ - -
+2023-01-30 17:34:47.296 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:47.302 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:47.329 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 17:34:47.396 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:47.501 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.512 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.519 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.525 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.531 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.537 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.544 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.551 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:47.559 +04:00 [INF] Executed ViewResult - view Index executed in 163.4044ms.
+2023-01-30 17:34:47.561 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 255.5139ms
+2023-01-30 17:34:47.563 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:47.569 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/ - - - 200 - text/html;+charset=utf-8 275.2616ms
+2023-01-30 17:34:47.594 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:47.594 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:47.599 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-5.jpg - - - 404 0 - 4.7906ms
+2023-01-30 17:34:47.602 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-2.jpg - - - 404 0 - 7.9921ms
+2023-01-30 17:34:47.608 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:47.609 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:47.610 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 1.9278ms
+2023-01-30 17:34:47.610 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:47.610 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:47.612 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-4.jpg - - - 404 0 - 2.6031ms
+2023-01-30 17:34:47.616 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/img/avatars/avatar-3.jpg - - - 404 0 - 5.7925ms
+2023-01-30 17:34:47.618 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.4362ms
+2023-01-30 17:34:50.012 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/91946a14-3010-4d45-ba90-2231e9340124 - -
+2023-01-30 17:34:50.015 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:50.023 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:50.059 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:50.068 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:50.080 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2023-01-30 17:34:50.086 +04:00 [INF] Executing ViewResult, running view AddRole.
+2023-01-30 17:34:50.103 +04:00 [INF] Executed ViewResult - view AddRole executed in 16.7206ms.
+2023-01-30 17:34:50.105 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 78.6533ms
+2023-01-30 17:34:50.107 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:50.112 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/91946a14-3010-4d45-ba90-2231e9340124 - - - 200 - text/html;+charset=utf-8 99.2519ms
+2023-01-30 17:34:50.131 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:50.131 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:50.134 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - - - 404 0 - 3.0953ms
+2023-01-30 17:34:50.135 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - - - 404 0 - 3.5514ms
+2023-01-30 17:34:50.145 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:50.146 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:50.147 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:50.147 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 2.4813ms
+2023-01-30 17:34:50.147 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:50.150 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - - - 404 0 - 3.4530ms
+2023-01-30 17:34:50.151 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - - - 404 0 - 4.0579ms
+2023-01-30 17:34:50.156 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.4751ms
+2023-01-30 17:34:52.168 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/admin/userrole/addrole/91946a14-3010-4d45-ba90-2231e9340124 application/x-www-form-urlencoded 235
+2023-01-30 17:34:52.171 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:52.178 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String, System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:52.209 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:52.235 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:52.278 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2023-01-30 17:34:52.286 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:52.342 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:34:52.456 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Single), @p4='?' (Size = 4000), @p21='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Users] SET [AccessFailedCount] = @p2, [Budget] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProfilePhoto] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2023-01-30 17:34:52.486 +04:00 [INF] Executing RedirectResult, redirecting to /Admin/UserRole.
+2023-01-30 17:34:52.488 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 307.7199ms
+2023-01-30 17:34:52.491 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:52.493 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/admin/userrole/addrole/91946a14-3010-4d45-ba90-2231e9340124 application/x-www-form-urlencoded 235 - 302 0 - 324.4879ms
+2023-01-30 17:34:52.499 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/UserRole - -
+2023-01-30 17:34:52.501 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:52.502 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:52.508 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 17:34:52.512 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:52.516 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.520 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.525 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.529 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.532 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.536 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.540 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.543 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:52.550 +04:00 [INF] Executed ViewResult - view Index executed in 37.692ms.
+2023-01-30 17:34:52.552 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 45.8299ms
+2023-01-30 17:34:52.553 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:52.558 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/UserRole - - - 200 - text/html;+charset=utf-8 58.8618ms
+2023-01-30 17:34:52.573 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:52.573 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:52.576 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - - - 404 0 - 2.2052ms
+2023-01-30 17:34:52.577 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - - - 404 0 - 3.0698ms
+2023-01-30 17:34:52.585 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:52.587 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 1.5240ms
+2023-01-30 17:34:52.587 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:52.587 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:52.588 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:52.590 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - - - 404 0 - 3.3328ms
+2023-01-30 17:34:52.591 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - - - 404 0 - 4.3165ms
+2023-01-30 17:34:52.595 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.1358ms
+2023-01-30 17:34:54.278 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/0c9eb94b-fa13-44aa-be9d-0d9bc7458b30 - -
+2023-01-30 17:34:54.281 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:54.283 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:54.289 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:54.294 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:54.299 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Roles] AS [r]
+2023-01-30 17:34:54.302 +04:00 [INF] Executing ViewResult, running view AddRole.
+2023-01-30 17:34:54.307 +04:00 [INF] Executed ViewResult - view AddRole executed in 5.1422ms.
+2023-01-30 17:34:54.309 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 23.6401ms
+2023-01-30 17:34:54.311 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:54.315 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/0c9eb94b-fa13-44aa-be9d-0d9bc7458b30 - - - 200 - text/html;+charset=utf-8 37.3877ms
+2023-01-30 17:34:54.331 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:54.332 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:54.334 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-5.jpg - - - 404 0 - 2.4964ms
+2023-01-30 17:34:54.334 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-2.jpg - - - 404 0 - 2.5534ms
+2023-01-30 17:34:54.341 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:54.341 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:54.342 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:54.342 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:54.342 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 1.2884ms
+2023-01-30 17:34:54.345 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-4.jpg - - - 404 0 - 3.7557ms
+2023-01-30 17:34:54.346 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/admin/userrole/addrole/img/avatars/avatar-3.jpg - - - 404 0 - 4.6414ms
+2023-01-30 17:34:54.349 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.2590ms
+2023-01-30 17:34:56.447 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/admin/userrole/addrole/0c9eb94b-fa13-44aa-be9d-0d9bc7458b30 application/x-www-form-urlencoded 235
+2023-01-30 17:34:56.450 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:56.452 +04:00 [INF] Route matched with {area = "Admin", action = "AddRole", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRole(System.String, System.String) on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:56.458 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2023-01-30 17:34:56.464 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:56.469 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2023-01-30 17:34:56.473 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2023-01-30 17:34:56.480 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:34:56.489 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Single), @p4='?' (Size = 4000), @p21='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Users] SET [AccessFailedCount] = @p2, [Budget] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [LastName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProfilePhoto] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2023-01-30 17:34:56.494 +04:00 [INF] Executing RedirectResult, redirecting to /Admin/UserRole.
+2023-01-30 17:34:56.496 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI) in 42.0469ms
+2023-01-30 17:34:56.498 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.AddRole (DevShop.UI)'
+2023-01-30 17:34:56.499 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/admin/userrole/addrole/0c9eb94b-fa13-44aa-be9d-0d9bc7458b30 application/x-www-form-urlencoded 235 - 302 0 - 52.5069ms
+2023-01-30 17:34:56.504 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/UserRole - -
+2023-01-30 17:34:56.506 +04:00 [INF] Executing endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:56.508 +04:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller DevShop.UI.Areas.Admin.Controllers.UserRoleController (DevShop.UI).
+2023-01-30 17:34:56.513 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+2023-01-30 17:34:56.517 +04:00 [INF] Executing ViewResult, running view Index.
+2023-01-30 17:34:56.520 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.524 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.529 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.533 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.536 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.540 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.544 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.548 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [Roles] AS [r] ON [a].[RoleId] = [r].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-01-30 17:34:56.554 +04:00 [INF] Executed ViewResult - view Index executed in 37.5321ms.
+2023-01-30 17:34:56.556 +04:00 [INF] Executed action DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI) in 45.0695ms
+2023-01-30 17:34:56.557 +04:00 [INF] Executed endpoint 'DevShop.UI.Areas.Admin.Controllers.UserRoleController.Index (DevShop.UI)'
+2023-01-30 17:34:56.563 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/UserRole - - - 200 - text/html;+charset=utf-8 59.5483ms
+2023-01-30 17:34:56.585 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - -
+2023-01-30 17:34:56.585 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - -
+2023-01-30 17:34:56.588 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-5.jpg - - - 404 0 - 2.6854ms
+2023-01-30 17:34:56.588 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-2.jpg - - - 404 0 - 2.9089ms
+2023-01-30 17:34:56.597 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:34:56.598 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - -
+2023-01-30 17:34:56.599 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 1.4805ms
+2023-01-30 17:34:56.599 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - -
+2023-01-30 17:34:56.600 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:34:56.601 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-4.jpg - - - 404 0 - 2.7077ms
+2023-01-30 17:34:56.603 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/Admin/img/avatars/avatar-3.jpg - - - 404 0 - 4.0503ms
+2023-01-30 17:34:56.612 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.0021ms
+2023-01-30 17:35:44.065 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:35:44.291 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:35:44.293 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:35:44.296 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:35:44.298 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:35:44.299 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:35:45.537 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:35:45.889 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 355.7954ms
+2023-01-30 17:35:49.915 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:35:49.935 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:35:49.952 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:35:49.974 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:35:50.118 +04:00 [INF] Executed ViewResult - view Register executed in 145.8805ms.
+2023-01-30 17:35:50.125 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 169.2465ms
+2023-01-30 17:35:50.128 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:35:50.157 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 241.3749ms
+2023-01-30 17:35:50.196 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:35:50.205 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 9.0525ms
+2023-01-30 17:35:50.214 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:35:50.250 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.5136ms
+2023-01-30 17:36:56.284 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 327
+2023-01-30 17:36:56.325 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:36:56.341 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:37:04.967 +04:00 [INF] Executed DbCommand (106ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:37:05.127 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:37:55.295 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:37:55.521 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:37:55.523 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:37:55.526 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:37:55.527 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:37:55.528 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:37:56.481 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:37:56.924 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 446.7385ms
+2023-01-30 17:38:01.936 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:38:01.960 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:38:01.979 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:38:02.005 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:38:02.146 +04:00 [INF] Executed ViewResult - view Register executed in 148.4265ms.
+2023-01-30 17:38:02.152 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 169.9551ms
+2023-01-30 17:38:02.155 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:38:02.182 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 245.7079ms
+2023-01-30 17:38:02.219 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:38:02.227 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.6548ms
+2023-01-30 17:38:02.237 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:38:02.266 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.4680ms
+2023-01-30 17:38:30.630 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 321
+2023-01-30 17:38:30.635 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:38:30.650 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:38:35.642 +04:00 [INF] Executed DbCommand (78ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:38:35.828 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:41:13.973 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:41:14.246 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:41:14.248 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:41:14.252 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:41:14.253 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:41:14.254 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:41:15.473 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:41:15.936 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 465.1483ms
+2023-01-30 17:41:19.497 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:41:19.515 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:41:19.532 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:41:19.556 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:41:19.702 +04:00 [INF] Executed ViewResult - view Register executed in 149.0075ms.
+2023-01-30 17:41:19.709 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 173.3609ms
+2023-01-30 17:41:19.711 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:41:19.739 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 242.7872ms
+2023-01-30 17:41:19.785 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:41:19.796 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 10.9526ms
+2023-01-30 17:41:19.807 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:41:19.846 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.5025ms
+2023-01-30 17:41:37.428 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 321
+2023-01-30 17:41:37.432 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:41:37.449 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:41:46.193 +04:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:41:52.625 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:42:03.645 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 26193.9621ms
+2023-01-30 17:42:03.648 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:42:03.652 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[Microsoft.AspNetCore.Identity.IdentityError]' to type 'System.Collections.Generic.List`1[FluentValidation.Results.ValidationFailure]'.
+   at DevShop.Persistance.Services.User.UserService.CreateAsync(CreateUser model) in C:\Users\user\source\repos\DevShop\src\Infrastructure\DevShop.Persistance\Services\User\UserService.cs:line 72
+   at DevShop.Application.Cqrs.Commands.User.CreateUser.CreateUserHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in C:\Users\user\source\repos\DevShop\src\Core\DevShop.Application\Cqrs\Commands\User\CreateUser\CreateUserHandler.cs:line 25
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at DevShop.UI.Controllers.AuthController.Register(CreateUser model) in C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-01-30 17:42:03.869 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 321 - 500 - text/html;+charset=utf-8 26441.1525ms
+2023-01-30 17:42:03.880 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:42:03.882 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:42:03.890 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.4363ms
+2023-01-30 17:42:03.906 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.6625ms
+2023-01-30 17:44:05.255 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:44:05.493 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:44:05.494 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:44:05.498 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:44:05.499 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:44:05.500 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:44:06.802 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:44:07.370 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 572.1430ms
+2023-01-30 17:44:10.546 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:44:10.566 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:44:10.586 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:44:10.608 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:44:10.743 +04:00 [INF] Executed ViewResult - view Register executed in 140.6287ms.
+2023-01-30 17:44:10.750 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 159.7267ms
+2023-01-30 17:44:10.752 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:44:10.784 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 238.5048ms
+2023-01-30 17:44:10.811 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:44:10.821 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 9.3015ms
+2023-01-30 17:44:10.837 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:44:10.867 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.9518ms
+2023-01-30 17:44:26.378 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 321
+2023-01-30 17:44:26.383 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:44:26.404 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:44:34.586 +04:00 [INF] Executed DbCommand (65ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:44:36.172 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:46:07.025 +04:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-30 17:46:07.141 +04:00 [INF] Now listening on: https://localhost:7104
+2023-01-30 17:46:07.143 +04:00 [INF] Now listening on: http://localhost:5287
+2023-01-30 17:46:07.145 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-30 17:46:07.146 +04:00 [INF] Hosting environment: Development
+2023-01-30 17:46:07.147 +04:00 [INF] Content root path: C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+2023-01-30 17:46:08.406 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/ - -
+2023-01-30 17:46:08.817 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/ - - - 404 0 - 412.3348ms
+2023-01-30 17:46:14.178 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/auth/register - -
+2023-01-30 17:46:14.198 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:46:14.213 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:46:14.232 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:46:14.344 +04:00 [INF] Executed ViewResult - view Register executed in 113.8243ms.
+2023-01-30 17:46:14.351 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 135.4682ms
+2023-01-30 17:46:14.354 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:46:14.378 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/auth/register - - - 200 - text/html;+charset=utf-8 199.9741ms
+2023-01-30 17:46:14.413 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:46:14.419 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 6.2066ms
+2023-01-30 17:46:14.429 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:46:14.442 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.2815ms
+2023-01-30 17:46:29.426 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 325
+2023-01-30 17:46:29.431 +04:00 [INF] Executing endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:46:29.453 +04:00 [INF] Route matched with {action = "Register", controller = "Auth", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(DevShop.Application.DTOs.User.CreateUser) on controller DevShop.UI.Controllers.AuthController (DevShop.UI).
+2023-01-30 17:46:30.535 +04:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2023-01-30 17:46:30.668 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[Budget], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePhoto], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2023-01-30 17:46:30.678 +04:00 [INF] Executing ViewResult, running view Register.
+2023-01-30 17:46:30.689 +04:00 [INF] Executed ViewResult - view Register executed in 11.128ms.
+2023-01-30 17:46:30.691 +04:00 [INF] Executed action DevShop.UI.Controllers.AuthController.Register (DevShop.UI) in 1235.4145ms
+2023-01-30 17:46:30.693 +04:00 [INF] Executed endpoint 'DevShop.UI.Controllers.AuthController.Register (DevShop.UI)'
+2023-01-30 17:46:30.703 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7104/auth/register application/x-www-form-urlencoded 325 - 200 - text/html;+charset=utf-8 1277.2499ms
+2023-01-30 17:46:30.717 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_vs/browserLink - -
+2023-01-30 17:46:30.717 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - -
+2023-01-30 17:46:30.721 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.0896ms
+2023-01-30 17:46:30.723 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7104/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.5288ms

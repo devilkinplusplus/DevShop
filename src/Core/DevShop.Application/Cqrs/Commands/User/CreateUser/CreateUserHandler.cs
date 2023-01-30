@@ -1,5 +1,9 @@
-﻿using DevShop.Application.Abstractions.Services;
+﻿using AutoMapper;
+using DevShop.Application.Abstractions.Services;
+using DevShop.Application.Cqrs.Commands.User.LoginUser;
+using DevShop.Domain.Entities.Identity;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +15,14 @@ namespace DevShop.Application.Cqrs.Commands.User.CreateUser
     public class CreateUserHandler : IRequestHandler<CreateUserCommand, CreateUserCommandResponse>
     {
         private readonly IUserService _userService;
-
-        public CreateUserHandler(IUserService userService) => _userService = userService;
+        public CreateUserHandler(IUserService userService)
+        {
+            _userService = userService;
+        }
 
         public async Task<CreateUserCommandResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-           var response =  await _userService.CreateAsync(new()
+            var response = await _userService.CreateAsync(new()
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
@@ -25,7 +31,8 @@ namespace DevShop.Application.Cqrs.Commands.User.CreateUser
                 Password = request.Password,
             });
 
-            return new() { Message = response.Message,Succeeded = response.Succeeded ,Errors = response.Errors};
+            return new() { Messages = response.Messages, Succeeded = response.Succeeded,
+                    Errors = response.Errors , User = response.User};
         }
     }
 }

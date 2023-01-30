@@ -41,7 +41,7 @@ namespace DevShop.Persistance.Services.User
             var userRoles = (await _userManager.GetRolesAsync(user)).ToList();
             var roles = _roleManager.Roles.Select(role => role.Name).ToList();
 
-            return new() { Succeeded = true,Roles = roles.Except(userRoles),User = user};
+            return new() { Succeeded = true, Roles = roles.Except(userRoles), User = user };
 
         }
 
@@ -62,12 +62,15 @@ namespace DevShop.Persistance.Services.User
                     UserName = model.Username,
                 }, model.Password);
 
-                CreateUserCommandResponse response = new() { Succeeded = result.Succeeded };
-                if (result.Succeeded)
-                    response.Message = "User created succesfully";
-                else
-                    foreach (var error in result.Errors)
-                        response.Message = $"{error.Code} - {error.Description}";
+                AppUser data = await _userManager.FindByEmailAsync(mapper.Email);
+                CreateUserCommandResponse response = new() { Succeeded = result.Succeeded, User = data };
+
+                if (!result.Succeeded)
+                {
+                    response.Messages= result.Errors;
+                    response.Succeeded = false;
+                }
+
                 return response;
             }
             return new() { Succeeded = false, Errors = results.Errors };
@@ -82,11 +85,11 @@ namespace DevShop.Persistance.Services.User
         {
             if (id is null) return false;
 
-            AppUser user = await _userManager.FindByIdAsync(id);
+            AppUser? user = await _userManager.FindByIdAsync(id);
             if (user is null) return false;
 
             var result = await _userManager.AddToRoleAsync(user, role);
-            
+
             return result.Succeeded;
         }
     }
