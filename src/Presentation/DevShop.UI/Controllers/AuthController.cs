@@ -1,4 +1,5 @@
-﻿using DevShop.Application.Cqrs.Commands.User.CreateUser;
+﻿using DevShop.Application.Cqrs.Commands.User.AssignRole;
+using DevShop.Application.Cqrs.Commands.User.CreateUser;
 using DevShop.Application.Cqrs.Commands.User.LoginUser;
 using DevShop.Application.DTOs.User;
 using MediatR;
@@ -10,10 +11,11 @@ namespace DevShop.UI.Controllers
     public class AuthController : Controller
     {
         private readonly IMediator _mediator;
-
-        public AuthController(IMediator mediator)
+        private readonly ILogger<AuthController> _logger;
+        public AuthController(IMediator mediator, ILogger<AuthController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
         public IActionResult Register()
         {
@@ -32,12 +34,16 @@ namespace DevShop.UI.Controllers
                 Password = model.Password
             });
             if (response.Succeeded)
+            {
+                await _mediator.Send(new AssignRoleCommand() { Id = response.User.Id, Role = "User" });
+                _logger.LogInformation("New user registered");
                 return RedirectToAction(nameof(Login));
+            }
             else
             {
-                foreach (var error in response.Errors)
+                foreach (var error in response.Messages)
                 {
-                    ModelState.AddModelError("", error.ErrorMessage);
+                    ModelState.AddModelError("", error.Description);
                 }
                 return View(model);
             }
@@ -50,7 +56,7 @@ namespace DevShop.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserLogin model)
         {
-            LoginUserCommandResponse response = await _mediator.Send(new LoginUserCommand() 
+            LoginUserCommandResponse response = await _mediator.Send(new LoginUserCommand()
             { Email = model.Email, Password = model.Password });
             if (response.Succeeded)
                 return RedirectToAction(nameof(Register));

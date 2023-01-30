@@ -294,3 +294,14 @@ C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Autofac.dll
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.AspNetCore.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.File.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll

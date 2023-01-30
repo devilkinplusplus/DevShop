@@ -1,5 +1,7 @@
-﻿using DevShop.Application.Abstractions.Services.Authentications;
+﻿using DevShop.Application.Abstractions.Services;
+using DevShop.Application.Abstractions.Services.Authentications;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +13,11 @@ namespace DevShop.Application.Cqrs.Commands.User.LoginUser
     public class LoginUserHandler : IRequestHandler<LoginUserCommand, LoginUserCommandResponse>
     {
         private readonly IAuthService _authService;
-
-        public LoginUserHandler(IAuthService authService) => _authService = authService;
+       
+        public LoginUserHandler(IAuthService authService)
+        {
+            _authService = authService;
+        }
 
         public async Task<LoginUserCommandResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
