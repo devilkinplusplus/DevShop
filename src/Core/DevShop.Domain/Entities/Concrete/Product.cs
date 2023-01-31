@@ -17,6 +17,7 @@ namespace DevShop.Domain.Entities.Concrete
         public SubCatagory SubCatagory { get; set; }
         public Guid SubCatagoryId { get; set; }
         public AppUser User { get; set; }
+        public string UserId { get; set; }
         public float Rating { get; set; } = 0;
         public int View { get; set; } = 0;
         public ICollection<ProductPicture> ProductPictures { get; set; }

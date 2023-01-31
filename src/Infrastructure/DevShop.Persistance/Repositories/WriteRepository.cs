@@ -1,5 +1,6 @@
 ﻿using DevShop.Application.Repositories;
 using DevShop.Domain.Entities.Common;
+using DevShop.Domain.Entities.Concrete;
 using DevShop.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,6 +24,13 @@ namespace DevShop.Persistance.Repositories
         {
             await _appDbContext.Set<T>().AddAsync(entity);
             await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task<T> AddEntityAsync(T entity)
+        {
+            await _appDbContext.Set<T>().AddAsync(entity);
+            await _appDbContext.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<bool> AddRangeAsync(List<T> entities)

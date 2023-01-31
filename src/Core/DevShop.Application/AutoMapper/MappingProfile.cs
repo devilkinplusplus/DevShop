@@ -11,14 +11,15 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.AutoMapper
 {
-    public class MappingProfile:Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
             CreateMap<CreateUser, AppUser>().ReverseMap();
             CreateMap<UserLogin, AppUser>().ReverseMap();
-            CreateMap<CatagoryDTO, Catagory>();
-            CreateMap<CatagoryDTO, SubCatagory>();
+            CreateMap<CatagoryDTO, Catagory>().ReverseMap();
+            CreateMap<CatagoryDTO, SubCatagory>().ReverseMap();
+            CreateMap<ProductDTO, Product>().ReverseMap();
         }
     }
 }

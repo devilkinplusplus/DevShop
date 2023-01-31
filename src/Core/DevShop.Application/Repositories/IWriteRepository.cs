@@ -1,4 +1,5 @@
 ﻿using DevShop.Domain.Entities.Common;
+using DevShop.Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace DevShop.Application.Repositories
     public interface IWriteRepository<T> : IRepository<T> where T: BaseEntity
     {
         Task AddAsync(T entity);
+        Task<T> AddEntityAsync(T entity);
         Task DeleteAsync(T entity);
         Task UpdateAsync(T entity);
         Task<bool> AddRangeAsync(List<T> entities);

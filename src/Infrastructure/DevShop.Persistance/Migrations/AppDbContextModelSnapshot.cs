@@ -112,6 +112,7 @@ namespace DevShop.Persistance.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("View")
@@ -409,7 +410,9 @@ namespace DevShop.Persistance.Migrations
 
                     b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("SubCatagory");
 

@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <select class="form-control" multiple name="categoryIds">
                                 @foreach (var category in Model ?? Enumerable.Empty<Catagory>())
-                                                    {
+                                {
                                     <option value="@category.Id">
                                         @category.Name
                                     </option>

@@ -1,0 +1,115 @@
+﻿@model IEnumerable<SubCatagory>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 m-auto">
+            <form id="ProductForm" method="post" enctype="multipart/form-data">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <h2 class="lead">Create New Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mt-3">
+                            <label for="productName" class="fw-bold">Product Title</label>
+                            <input class="form-control form-control-lg"
+                                   placeholder="Enter product name" type="text" name="Title" id="productName" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label class="fw-bold">Catagory</label>
+                            <select name="SubCatagoryId" class="form-control form-control-lg">
+                                @foreach (var subCategory in Model ?? Enumerable.Empty<SubCatagory>())
+                                {
+                                    <option value="@subCategory.Id">@subCategory.Name</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="price" class="fw-bold">Product price</label>
+                            <input class="form-control form-control-lg"
+                                   placeholder="Enter product price" type="number" step=".01" name="Price"
+                                   id="price" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="Quantity" class="fw-bold">Product quantity</label>
+                            <input class="form-control form-control-lg" placeholder="Enter product quantity" type="number" step=".01" name="Quantity" id="Quantity" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="Description" class="fw-bold">Product description</label>
+                            <textarea class="form-control form-control-lg" placeholder="Enter product description" type="text" name="Description" id="Description" rows="10"></textarea>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="ProductPicture" class="fw-bold">Upload Image</label>
+                            <input name="pictureIds" type="file" multiple id="ProductPicture" />
+                            <div id="ProductPictures" class="row mt-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <input id="btnSubmit" type="submit" class="btn btn-primary" value="Create" />
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+
+        $("#ProductPicture").change(function () {
+
+            let pictures = this.files;
+            let picsData = new FormData();
+
+            for (let i = 0; i < pictures.length; i++) {
+                picsData.append('pictures', pictures[i])
+            }
+
+            $.ajax({
+                url: "/Admin/Picture/Upload",
+                type: "POST",
+                data: picsData,
+                processData: false,
+                contentType: false
+            }).done(function (res) {
+                console.log(res)
+                for (let i = 0; i < res.length; i++) {
+                    AddCard(res[i].id, res[i].imageUrl)
+                }
+            })
+        })
+
+        function AddCard(pictureId, pictureUrl) {
+            var cardDesign = `
+                                    <div id="card_${pictureId}" class="col-lg-3">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-end">
+                                                        <i onclick="RemoveFromCard('${pictureId}')"
+                                                          class="btn btn-danger">X</i>
+                                            </div>
+                                            <img class="img-fluid" src="${pictureUrl}" />
+                                            <input type="hidden" value="${pictureId}" name="pictureIds" />
+                                        </div>
+                                    </div>
+                                     `
+            var productCard = document.getElementById("ProductPictures");
+
+            productCard.innerHTML += cardDesign;
+        }
+
+        function RemoveFromCard(cardId) {
+            let removingCard = document.getElementById(`card_${cardId}`);
+            removingCard.remove();
+        }
+
+
+    </script>
+}
