@@ -1,6 +1,7 @@
 ﻿using DevShop.Application.Repositories.Catagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,12 @@ namespace DevShop.Application.Cqrs.Commands.Catagories.DeleteCatagory
 
         public async Task<DeleteCatagoryCommandResponse> Handle(DeleteCatagoryCommand request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             if (request.Id == null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new IdentityError() { Code = "404", Description = "Id is null" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
 
             Catagory catagory = await _catagoryRead.GetByIdAsync(request.Id);
             catagory.IsDeleted = true;

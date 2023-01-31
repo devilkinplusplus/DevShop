@@ -1,6 +1,7 @@
 ﻿using DevShop.Application.Repositories.Catagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,13 @@ namespace DevShop.Application.Cqrs.Queries.Catagories.GetCatagoryById
 
         public async Task<GetCatagoryByIdQueryResponse> Handle(GetCatagoryByIdQuery request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             Catagory catagory = await _catagoryRead.GetByIdAsync(request.Id);
             if (catagory is null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new() {Code = "404", Description = "Catagory not found" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
             return new() { Succeeded = true, Catagory = catagory };
         }
     }

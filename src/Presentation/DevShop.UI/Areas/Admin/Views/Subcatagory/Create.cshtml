@@ -19,25 +19,14 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            @if (Model !=  null)
-                            {
-                                <select class="form-control" multiple name="categoryIds">
-                                    @foreach (var category in Model)
-                                    {
-                                        <option value="@category.Id">
-                                            @category.Name
-                                        </option>
-                                    }
-                                </select>
-                            }
-                            else
-                            {
-                                <div class="card">
-                                    <h2 class="lead text-center text-danger">
-                                        No item found!
-                                    </h2>
-                                </div>
-                            }
+                            <select class="form-control" multiple name="categoryIds">
+                                @foreach (var category in Model ?? Enumerable.Empty<Catagory>())
+                                                    {
+                                    <option value="@category.Id">
+                                        @category.Name
+                                    </option>
+                                }
+                            </select>
                         </div>
                     </div>
 

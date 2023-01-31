@@ -1,4 +1,5 @@
 ﻿using DevShop.Domain.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace DevShop.Application.Cqrs.Queries.User.UserList
     {
         public bool Succeeded { get; set; }
         public IEnumerable<AppUser> Users { get; set; }
+        public List<IdentityError> Errors { get; set; }
     }
 }

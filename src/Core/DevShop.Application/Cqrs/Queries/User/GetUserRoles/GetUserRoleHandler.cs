@@ -1,5 +1,6 @@
 ﻿using DevShop.Application.Abstractions.Services;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 
 namespace DevShop.Application.Cqrs.Queries.User.GetUserRoles
 {
@@ -10,8 +11,14 @@ namespace DevShop.Application.Cqrs.Queries.User.GetUserRoles
 
         public async Task<GetUserRolesQueryResponse> Handle(GetUserRolesQuery request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             var response = await _userService.GetUserRoles(request.Id);
-            return new() { UserRoleVM = response };
+            if(response is null)
+            {
+                errorList.Add(new() { Code = "404", Description = "No item found" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
+            return new() { UserRoleVM = response ,Succeeded = true};
         }
     }
 }

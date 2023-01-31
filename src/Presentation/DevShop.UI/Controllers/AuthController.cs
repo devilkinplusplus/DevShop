@@ -60,11 +60,11 @@ namespace DevShop.UI.Controllers
             { Email = model.Email, Password = model.Password });
             if (response.Succeeded)
                 return RedirectToAction(nameof(Register));
-            else
+            foreach (var item in response.Errors)
             {
-                ModelState.AddModelError("", response.Message);
-                return View(model);
+                ModelState.AddModelError("", item.Description);
             }
+            return View(model);
         }
     }
 }

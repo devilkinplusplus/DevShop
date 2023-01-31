@@ -14,16 +14,24 @@ namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
     public class AllRolesHandler : IRequestHandler<AllRolesQuery, AllRolesQueryResponse>
     {
         private readonly IRoleService _roleService;
-        public AllRolesHandler(IRoleService roleService)
+        private readonly ILogger<AllRolesHandler> _logger;
+        public AllRolesHandler(IRoleService roleService, ILogger<AllRolesHandler> logger)
         {
             _roleService = roleService;
+            _logger = logger;
         }
 
         public async Task<AllRolesQueryResponse> Handle(AllRolesQuery request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             var roles = await _roleService.GetRoles();
             if (roles.Count() == 0)
-                return new() { Succeeded = false };
+            {
+                _logger.LogInformation("Cannot found role");
+                errorList.Add(new() { Description = "Cannot found role", Code = "404" });
+                return new() { Succeeded = false  , Errors =   errorList };
+            }
+
             return new() { Succeeded = true, Roles = roles };
         }
     }

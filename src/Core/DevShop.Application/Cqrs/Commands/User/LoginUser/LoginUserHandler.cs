@@ -25,7 +25,7 @@ namespace DevShop.Application.Cqrs.Commands.User.LoginUser
             return new()
             {
                 Succeeded = response.Succeeded,
-                Message = response.Message,
+                Errors = response.Errors
             };
         }
     }

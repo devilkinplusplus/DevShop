@@ -2,6 +2,7 @@
 using DevShop.Application.Repositories.Subcatagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,15 @@ namespace DevShop.Application.Cqrs.Queries.Subcatagories.GetAll
 
         public async Task<AllSubcatagoriesResponse> Handle(AllSubcatagoriesQuery request, CancellationToken cancellationToken)
         {
-            IEnumerable<SubCatagory> subCatagories = await _subcatagoryRead.GetAllAsync(x=>x.IsDeleted == false);
+            List<IdentityError> errorList = new();
+            IEnumerable<SubCatagory> subCatagories = await _subcatagoryRead
+                                                    .GetAllAsync(x=>x.IsDeleted == false);
 
             if (subCatagories.Count() == 0)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new IdentityError() { Code = "404", Description = "No subcatagory found" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
             return new() { Succeeded = true , SubCatagories = subCatagories };
         }
     }
