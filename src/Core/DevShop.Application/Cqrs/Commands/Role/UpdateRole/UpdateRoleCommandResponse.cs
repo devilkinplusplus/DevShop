@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevShop.Application.Cqrs.Commands.Catagories.UpdateCatagory
+namespace DevShop.Application.Cqrs.Commands.Role.UpdateRole
 {
-    public class UpdateCatagoryCommandResponse
+    public class UpdateRoleCommandResponse
     {
         public bool Succeeded { get; set; }
         public List<IdentityError> Errors { get; set; }

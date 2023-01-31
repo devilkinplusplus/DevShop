@@ -1,5 +1,6 @@
 ﻿using DevShop.Application.Validations;
 using DevShop.Domain.Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace DevShop.Application.Cqrs.Queries.Subcatagories.GetAll
     {
         public bool Succeeded { get; set; }
         public IEnumerable<SubCatagory> SubCatagories { get; set; }
+        public List<IdentityError> Errors { get; set; }
 
     }
 

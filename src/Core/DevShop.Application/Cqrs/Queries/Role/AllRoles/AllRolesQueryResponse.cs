@@ -10,6 +10,7 @@ namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
     public class AllRolesQueryResponse
     {
         public IEnumerable<IdentityRole> Roles { get; set; }
+        public List<IdentityError> Errors { get; set; }
         public bool Succeeded { get; set; }
     }
 }

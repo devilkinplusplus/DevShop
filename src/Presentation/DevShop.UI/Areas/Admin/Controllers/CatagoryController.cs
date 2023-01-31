@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure;
 using DevShop.Application.Cqrs.Commands.Catagories.AddCatagory;
 using DevShop.Application.Cqrs.Commands.Catagories.DeleteCatagory;
 using DevShop.Application.Cqrs.Commands.Catagories.UpdateCatagory;
@@ -27,6 +28,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
             CatagoryListQueryResponse response = await _mediator.Send(new CatagoryListQuery());
             if (response.Succeeded)
                 return View(response.Catagories);
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 
@@ -38,18 +43,27 @@ namespace DevShop.UI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CatagoryDTO model)
         {
-            bool result = await _mediator.Send(new AddCatagoryCommand() { Catagory = model });
-            if (result)
+            AddCatagoryCommandResponse result = await _mediator.Send(new AddCatagoryCommand() { Catagory = model });
+            if (result.Succeeded)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "An error occured");
+            
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            GetCatagoryByIdQueryResponse response = await _mediator.Send(new GetCatagoryByIdQuery() { Id = id });
+            GetCatagoryByIdQueryResponse response = await _mediator.Send(new GetCatagoryByIdQuery() 
+            { Id = id });
             if (response.Succeeded)
                 return View(response.Catagory);
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 
@@ -60,7 +74,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
             { Catagory = model, Id = id });
             if (response.Succeeded)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "An error occured");
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 
@@ -68,7 +85,13 @@ namespace DevShop.UI.Areas.Admin.Controllers
         {
             DeleteCatagoryCommandResponse response = await _mediator.Send(new DeleteCatagoryCommand()
             { Id = id });
-            return RedirectToAction(nameof(Index));
+            if(response.Succeeded)
+                return RedirectToAction(nameof(Index));
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+            return View(Index);
         }
     }
 }

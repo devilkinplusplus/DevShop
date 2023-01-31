@@ -1,5 +1,6 @@
 ﻿using DevShop.Application.Abstractions.Services;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,12 @@ namespace DevShop.Application.Cqrs.Commands.User.AssignRole
 
         public async Task<AssignRoleCommandResponse> Handle(AssignRoleCommand request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             bool result = await _userService.AssignRole(request.Id, request.Role);
-            return new() { Succeeded  = result };
+            if (!result)
+                return new() { Succeeded = result };
+            errorList.Add(new() { Code = "401", Description = "An error occured while assigned role" });
+            return new() { Succeeded = result, Errors = errorList };
         }
     }
 }

@@ -3,6 +3,7 @@ using DevShop.Application.DTOs.User;
 using DevShop.Application.Repositories.Catagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,14 @@ namespace DevShop.Application.Cqrs.Commands.Catagories.UpdateCatagory
         }
 
         public async Task<UpdateCatagoryCommandResponse> Handle(UpdateCatagoryCommand request, CancellationToken cancellationToken)
+        
         {
+            List<IdentityError> errorList = new();
             if (request.Catagory.Name is null || request.Id == null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new() { Code = "404", Description = "Catagory name cannot be null" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
 
             Catagory data = _mapper.Map<Catagory>(request.Catagory);
             Catagory currentData = await _catagoryRead.GetByIdAsync(request.Id);

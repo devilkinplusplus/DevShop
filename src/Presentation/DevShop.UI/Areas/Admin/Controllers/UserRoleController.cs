@@ -25,6 +25,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
             var query = await _mediator.Send(new UserListQuery());
             if (query.Succeeded)
                 return View(query.Users);
+            foreach (var error in query.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 
@@ -32,7 +36,13 @@ namespace DevShop.UI.Areas.Admin.Controllers
         {
             GetUserRolesQueryResponse response = await _mediator.Send(new GetUserRolesQuery() 
             { Id = id });
-            return View(response.UserRoleVM);
+            if(response.Succeeded)
+                return View(response.UserRoleVM);
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+            return View();
         }
 
         [HttpPost]
@@ -42,6 +52,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
            { Id = id, Role = role });
             if(response.Succeeded)
                 return RedirectToAction(nameof(Index));
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
 

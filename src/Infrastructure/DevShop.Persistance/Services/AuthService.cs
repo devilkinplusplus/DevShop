@@ -29,6 +29,7 @@ namespace DevShop.Persistance.Services
         public async Task<LoginUserCommandResponse> LoginAsync(string email, string password)
         {
             AppUser user = await _userManager.FindByEmailAsync(email);
+            List<IdentityError> errorList = new();
             if (user is null)
                 throw new Exception("User not found");
 
@@ -36,9 +37,10 @@ namespace DevShop.Persistance.Services
 
             if (result.Succeeded)
             {
-                return new() { Succeeded = result.Succeeded , Message = "Signed in successfully"};
+                return new() { Succeeded = result.Succeeded};
             }
-            return new() { Succeeded = result.Succeeded, Message = "Email or password is incorrect" };
+            errorList.Add(new() { Code = "401", Description = "Can't login,check your email and password" });
+            return new() { Succeeded = result.Succeeded, Errors = errorList };
         }
 
     }

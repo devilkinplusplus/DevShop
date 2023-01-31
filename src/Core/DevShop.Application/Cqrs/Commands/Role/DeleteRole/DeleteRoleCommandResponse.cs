@@ -1,5 +1,6 @@
 ﻿using DevShop.Application.Abstractions.Services.Authentications;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +9,9 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.Cqrs.Commands.Role.DeleteRole
 {
-    public class DeleteRoleCommandResponse : IRequestHandler<DeleteRoleCommand, bool>
+    public class DeleteRoleCommandResponse
     {
-        private readonly IRoleService _roleService;
-
-        public DeleteRoleCommandResponse(IRoleService roleService) => _roleService = roleService;
-
-        public async Task<bool> Handle(DeleteRoleCommand request, CancellationToken cancellationToken)
-        {
-            if (request.Id is null)
-                return false;
-            return await _roleService.DeleteAsync(request.Id);
-        }
+        public bool Succeeded { get; set; }
+        public List<IdentityError> Errors { get; set; }
     }
 }

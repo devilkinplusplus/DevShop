@@ -2,6 +2,7 @@
 using DevShop.Application.Repositories.Subcatagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,12 @@ namespace DevShop.Application.Cqrs.Commands.Subcatagories.Update
 
         public async Task<UpdateSubCatagoryCommandResponse> Handle(UpdateSubCatagoryCommand request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
             if (request.Subcatagory.Name is null || request.Id == null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new() { Code = "404", Description = "Subcatagory name cannot be null" });
+                return new() { Succeeded = false, Errors = errorList };
+            }
             //new data
             SubCatagory newData = _mapper.Map<SubCatagory>(request.Subcatagory);
             SubCatagory currentData = await _subcatagoryRead.GetByIdAsync(request.Id);

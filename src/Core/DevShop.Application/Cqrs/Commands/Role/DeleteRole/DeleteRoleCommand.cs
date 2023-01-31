@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.Cqrs.Commands.Role.DeleteRole
 {
-    public class DeleteRoleCommand:IRequest<bool>
+    public class DeleteRoleCommand:IRequest<DeleteRoleCommandResponse>
     {
         public string Id { get; set; }
     }

@@ -3,6 +3,7 @@ using DevShop.Application.Repositories.Catagorysub;
 using DevShop.Application.Repositories.Subcatagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,13 @@ namespace DevShop.Application.Cqrs.Commands.Subcatagories.Delete
 
         public async Task<DeleteSubcatagoryCommandResponse> Handle(DeleteSubcatagoryCommand request, CancellationToken cancellationToken)
         {
+            List<IdentityError> errorList = new();
+
             if (request.Id == null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new IdentityError() { Code = "404",Description = "Id is null"});
+                return new() { Succeeded = false ,Errors = errorList};
+            }
             
             SubCatagory currentData = await _subcatagoryRead.GetByIdAsync(request.Id);
             currentData.IsDeleted = true;
@@ -39,7 +45,10 @@ namespace DevShop.Application.Cqrs.Commands.Subcatagories.Delete
             CatagorySub data = await _catagorysubRead.GetAsync(x=>x.SubCatagoryId == currentData.Id);
             
             if(data is null)
-                return new() { Succeeded = false };
+            {
+                errorList.Add(new() { Code = "404", Description = "An error occured while deleting" });
+                return new() { Succeeded = false ,Errors = errorList};
+            }
 
             data.IsDeleted = true;
             await _catagorysubWrite.UpdateAsync(data);

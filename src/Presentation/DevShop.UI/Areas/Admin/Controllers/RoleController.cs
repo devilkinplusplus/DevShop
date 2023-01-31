@@ -25,6 +25,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
             var result = await _mediator.Send(new AllRolesQuery());
             if (result.Succeeded)
                 return View(result.Roles);
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View(null);
         }
 
@@ -39,7 +43,10 @@ namespace DevShop.UI.Areas.Admin.Controllers
             CreateRoleCommandResponse response = await _mediator.Send(new CreateRoleCommand() { Name = name });
             if (response.Succeeded)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "An error occured");
+            foreach (var error in response.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View(name);
         }
 
@@ -53,18 +60,25 @@ namespace DevShop.UI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(string id, string name)
         {
-            bool result = await _mediator.Send(new UpdateRoleCommand() { Id = id, Name = name });
-            if (result)
+            UpdateRoleCommandResponse result = await _mediator.Send(new UpdateRoleCommand() { Id = id, Name = name });
+            if (result.Succeeded)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "Value cannot be null");
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
             return View(null);
         }
 
         public async Task<IActionResult> Delete(string id)
         {
-            bool result = await _mediator.Send(new DeleteRoleCommand() { Id = id });
-            if (result)
+            DeleteRoleCommandResponse result = await _mediator.Send(new DeleteRoleCommand() { Id = id });
+            if (result.Succeeded)
                 return RedirectToAction(nameof(Index));
+            foreach (var item in result.Errors)
+            {
+                ModelState.AddModelError("", item.Description);
+            }
             return View();
         }
     }

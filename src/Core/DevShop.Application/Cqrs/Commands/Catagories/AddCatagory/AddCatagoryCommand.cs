@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DevShop.Application.Cqrs.Commands.Catagories.AddCatagory
 {
-    public class AddCatagoryCommand:IRequest<bool>
+    public class AddCatagoryCommand:IRequest<AddCatagoryCommandResponse>
     {
         public CatagoryDTO Catagory { get; set; }
     }

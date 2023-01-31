@@ -3,6 +3,7 @@ using DevShop.Application.Repositories.Catagorysub;
 using DevShop.Application.Repositories.Subcatagory;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,17 @@ namespace DevShop.Application.Cqrs.Commands.Subcatagories.Create
 
         public async Task<CreateSubcatagoryCommandResponse> Handle(CreateSubcatagoryCommand request, CancellationToken cancellationToken)
         {
-            if (request.Subcatagory.Name is null || request.CatagoryIds.Count == 0)
-                return new() { Succeeded = false };
+            List<IdentityError> errorList = new();
+            if (request.Subcatagory.Name is null)
+            {
+                errorList.Add(new() { Code = "404", Description = "Subcatagory name cannot be null" });
+                return new() { Succeeded = false, Errors = errorList };
+            }
+            if(request.CatagoryIds.Count == 0)
+            {
+                errorList.Add(new() { Code = "404", Description = "Select any catagory" });
+                return new() { Succeeded = false, Errors = errorList };
+            }
 
             SubCatagory data = _mapper.Map<SubCatagory>(request.Subcatagory);
             await _subcatagoryWrite.AddAsync(data);

@@ -2,15 +2,17 @@
 @{
     int count = 1;
 }
+<div asp-validation-summary="ModelOnly" class="alert alert-danger">
+</div>
 <table class="table table-hover">
     <thead class="table-dark">
-    <th>#</th>
-    <th>Name</th>
-    <th>Edit</th>
-    <th>Delete</th>
+        <th>#</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </thead>
     <tbody class="table-light">
-        @if (Model.Count() != 0)
+        @if (Model != null)
         {
             @foreach (var item in Model)
             {
@@ -35,9 +37,10 @@
         }
         else
         {
-            <tr>
-                <td>404</td>
-                <td>No item found!</td>
+            <tr >
+                <td>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                </td>
             </tr>
         }
     </tbody>
