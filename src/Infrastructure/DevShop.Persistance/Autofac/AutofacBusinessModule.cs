@@ -14,6 +14,12 @@ using DevShop.Persistance.Repositories.Subcatagory;
 using DevShop.Application.Repositories.Subcatagory;
 using DevShop.Application.Repositories.Catagorysub;
 using DevShop.Persistance.Repositories.Catagorysub;
+using DevShop.Persistance.Repositories.Products;
+using DevShop.Application.Repositories.Products;
+using DevShop.Persistance.Repositories.Pictures;
+using DevShop.Application.Repositories.Pictures;
+using DevShop.Persistance.Repositories.ProductPictures;
+using DevShop.Application.Repositories.ProductPictures;
 
 namespace DevShop.Persistance.Autofac
 {
@@ -38,6 +44,12 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<SubcatagoryWriteRepository>().As<ISubcatagoryWriteRepository>();
             builder.RegisterType<CatagorysubReadRepository>().As<ICatagorysubReadRepository>();
             builder.RegisterType<CatagorysubWriteRepository>().As<ICatagorysubWriteRepository>();
+            builder.RegisterType<ProductReadRepository>().As<IProductReadRepository>();
+            builder.RegisterType<ProductWriteRepository>().As<IProductWriteRepository>();
+            builder.RegisterType<PictureReadRepository>().As<IPictureReadRepository>();
+            builder.RegisterType<PictureWriteRepository>().As<IPictureWriteRepository>();
+            builder.RegisterType<ProductPictureReadRepository>().As<IProductPictureReadRepository>();
+            builder.RegisterType<ProductPictureWriteRepository>().As<IProductPictureWriteRepository>();
         }
     }
 }

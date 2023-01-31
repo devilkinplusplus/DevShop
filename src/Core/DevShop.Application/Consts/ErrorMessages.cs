@@ -8,11 +8,13 @@ namespace DevShop.Application.Consts
 {
     public static class ErrorMessages
     {
-        public static string NotNull = "Cannot be null";
-        public static string FirstNameOutOfRange= "Firstname is out of range";
-        public static string LastNameOutOfRange= "Lastname is out of range";
-        public static string UserNameOutOfRange= "Username is out of range";
-        public static string InvalidMail= "Email address is invalid";
+        public static string NotNullException = "Cannot be empty";
+        public static string OutOfRangeException = "Value is out of range";
+        public static string FirstNameOutOfRangeException = "Firstname is out of range";
+        public static string LastNameOutOfRangeException = "Lastname is out of range";
+        public static string UserNameOutOfRangeException = "Username is out of range";
+        public static string InvalidMailException = "Email address is invalid";
+        public static string MinimumValueException = "Minimum value must be greater than 0.";
         
     }
 }

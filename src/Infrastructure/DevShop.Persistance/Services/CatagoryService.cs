@@ -10,13 +10,6 @@ namespace DevShop.Persistance.Services
 {
     public class CatagoryService:ICatagoryService
     {
-        private readonly ICatagoryReadRepository _catagoryReadRepository;
-        private readonly ICatagoryWriteRepository _catagoryWriteRepository;
-        public CatagoryService(ICatagoryReadRepository catagoryReadRepository, ICatagoryWriteRepository catagoryWriteRepository)
-        {
-            _catagoryReadRepository = catagoryReadRepository;
-            _catagoryWriteRepository = catagoryWriteRepository;
-        }
 
     }
 }

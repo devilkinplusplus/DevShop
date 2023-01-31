@@ -13,17 +13,17 @@ namespace DevShop.Application.Validations
     {
         public UserValidator()
         {
-            RuleFor(x => x.FirstName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNull);
-            RuleFor(x=>x.FirstName).MinimumLength(2).MaximumLength(20).WithMessage(ErrorMessages.FirstNameOutOfRange);
+            RuleFor(x => x.FirstName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNullException);
+            RuleFor(x=>x.FirstName).MinimumLength(2).MaximumLength(20).WithMessage(ErrorMessages.FirstNameOutOfRangeException);
 
-            RuleFor(x => x.LastName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNull);
-            RuleFor(x => x.LastName).MinimumLength(2).MaximumLength(26).WithMessage(ErrorMessages.LastNameOutOfRange);
+            RuleFor(x => x.LastName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNullException);
+            RuleFor(x => x.LastName).MinimumLength(2).MaximumLength(26).WithMessage(ErrorMessages.LastNameOutOfRangeException);
 
-            RuleFor(x => x.Email).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNull);
-            RuleFor(x => x.Email).EmailAddress().WithMessage(ErrorMessages.InvalidMail);
+            RuleFor(x => x.Email).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNullException);
+            RuleFor(x => x.Email).EmailAddress().WithMessage(ErrorMessages.InvalidMailException);
 
-            RuleFor(x => x.UserName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNull);
-            RuleFor(x=>x.UserName).MinimumLength(1).MaximumLength(16).WithMessage(ErrorMessages.UserNameOutOfRange);
+            RuleFor(x => x.UserName).NotEmpty().NotNull().WithMessage(ErrorMessages.NotNullException);
+            RuleFor(x=>x.UserName).MinimumLength(1).MaximumLength(16).WithMessage(ErrorMessages.UserNameOutOfRangeException);
 
         }
     }
