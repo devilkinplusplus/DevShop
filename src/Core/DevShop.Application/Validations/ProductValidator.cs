@@ -22,8 +22,7 @@ namespace DevShop.Application.Validations
             RuleFor(x => x.Price).NotNull().NotEmpty().WithMessage(ErrorMessages.NotNullException);
             RuleFor(x => x.Price).GreaterThan(0).WithMessage(ErrorMessages.MinimumValueException);
 
-            RuleFor(x => x.Quantity).NotNull().NotEmpty().WithMessage(ErrorMessages.NotNullException);
-            RuleFor(x => x.Quantity).GreaterThan(0).WithMessage(ErrorMessages.MinimumValueException);
+            RuleFor(x => x.Quantity).GreaterThanOrEqualTo(0).WithMessage(ErrorMessages.MinimumValueException);
 
             RuleFor(x => x.SubCatagoryId).NotNull().NotEmpty().WithMessage(ErrorMessages.NotNullException);
         }

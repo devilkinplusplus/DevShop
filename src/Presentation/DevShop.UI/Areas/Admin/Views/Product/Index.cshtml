@@ -1,3 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<Product>
+@{
+    int count = 1;
+}
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success">Your Products</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table table-dark">
+        <th>#</th>
+        <th>Title</th>
+        <th>Catagory</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Rating</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Title</td>
+                    <td>@item.SubCatagory.Name</td>
+                    <td><span class="badge bg-success">@item.Price $</span></td>
+                    <td>
+                        @if (item.Quantity != 0)
+                        {
+                            <span class="badge bg-danger">@item.Quantity</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Out Of Stock</span>
+                        }
+                    </td>
+                    <td><span class="badge bg-info">@item.Rating</span></td>
+                    <td>
+                        <a href="/admin/product/edit/@item.Id">
+                            <i class="align-middle" data-feather="edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/admin/product/delete/@item.Id"
+                           onclick="return confirm('Are you sure?')">
+                            <i class="align-middle" data-feather="trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                count++;
+            }
+        </tbody>
+    </table>
+    <div class="container"><a href="/admin/product/create" class="btn btn-success">Create New</a></div>
+</div>

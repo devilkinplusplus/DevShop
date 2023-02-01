@@ -1,4 +1,5 @@
-﻿using DevShop.Application.Repositories.Products;
+﻿using DevShop.Application.Cqrs.Commands.Products.Create;
+using DevShop.Application.Repositories.Products;
 using DevShop.Domain.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using System;
