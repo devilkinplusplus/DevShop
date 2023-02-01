@@ -12,6 +12,7 @@ namespace DevShop.Application.Repositories
     {
         Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null, params string[] includeProperties);
         Task<IEnumerable<T>> GetAllAsync(Expression<Func<T,bool>> filter=null);
+        Task<T> GetAsync(Expression<Func<T, bool>> filter, params string[] includeProperties);
         Task<T> GetAsync(Expression<Func<T, bool>> filter);
         Task<T> GetByIdAsync(Guid id);
     }

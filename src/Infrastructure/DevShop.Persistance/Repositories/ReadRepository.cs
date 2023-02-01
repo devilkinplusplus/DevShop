@@ -44,9 +44,21 @@ namespace DevShop.Persistance.Repositories
             return await _appDbContext.Set<T>().Where(filter).FirstOrDefaultAsync();
         }
 
+        public async Task<T> GetAsync(Expression<Func<T, bool>> filter, params string[] includeProperties)
+        {
+            var query = _appDbContext.Set<T>().AsQueryable();
+
+            if (includeProperties != null)
+            {
+                query = includeProperties.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            return await query.Where(filter).FirstOrDefaultAsync();
+        }
+
         public async Task<T> GetByIdAsync(Guid id)
         {
-           return await _appDbContext.Set<T>().FindAsync(id);
+            return await _appDbContext.Set<T>().FindAsync(id);
         }
     }
 }
