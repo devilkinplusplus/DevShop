@@ -20,7 +20,7 @@ namespace DevShop.Application.Cqrs.Queries.User.UserList
         {
             List<IdentityError> errorList = new();
 
-            IEnumerable<AppUser> users = await _userService.GetUsers();
+            IEnumerable<AppUser> users = await _userService.GetUsers(request.Page, request.Size);
             if (users is null)
             {
                 errorList.Add(new() { Code = "404", Description = "No users found" });

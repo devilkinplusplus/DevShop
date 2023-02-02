@@ -20,16 +20,16 @@ namespace DevShop.UI.Areas.Admin.Controllers
             _mediator = mediator;
             _roleManager = roleManager;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var result = await _mediator.Send(new AllRolesQuery());
+            var result = await _mediator.Send(new AllRolesQuery() { Page = page, Size = 10 });
             if (result.Succeeded)
                 return View(result.Roles);
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error.Description);
             }
-            return View(null);
+            return View(result.Roles);
         }
 
         public IActionResult Create()
@@ -60,26 +60,21 @@ namespace DevShop.UI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(string id, string name)
         {
-            UpdateRoleCommandResponse result = await _mediator.Send(new UpdateRoleCommand() { Id = id, Name = name });
+            UpdateRoleCommandResponse result = await _mediator.Send(new UpdateRoleCommand() 
+            { Id = id, Name = name });
             if (result.Succeeded)
                 return RedirectToAction(nameof(Index));
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error.Description);
             }
-            return View(null);
+            return View();
         }
-
-        public async Task<IActionResult> Delete(string id)
+        [HttpPost]
+        public async Task<JsonResult> Delete(string id)
         {
             DeleteRoleCommandResponse result = await _mediator.Send(new DeleteRoleCommand() { Id = id });
-            if (result.Succeeded)
-                return RedirectToAction(nameof(Index));
-            foreach (var item in result.Errors)
-            {
-                ModelState.AddModelError("", item.Description);
-            }
-            return View();
+            return Json(new { success = result.Succeeded });
         }
     }
 }

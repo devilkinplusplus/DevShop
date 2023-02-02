@@ -20,9 +20,9 @@ namespace DevShop.UI.Areas.Admin.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var query = await _mediator.Send(new UserListQuery());
+            var query = await _mediator.Send(new UserListQuery() { Page = page, Size = 10 });
             if (query.Succeeded)
                 return View(query.Users);
             foreach (var error in query.Errors)
@@ -34,9 +34,9 @@ namespace DevShop.UI.Areas.Admin.Controllers
 
         public async Task<IActionResult> AddRole(string id)
         {
-            GetUserRolesQueryResponse response = await _mediator.Send(new GetUserRolesQuery() 
+            GetUserRolesQueryResponse response = await _mediator.Send(new GetUserRolesQuery()
             { Id = id });
-            if(response.Succeeded)
+            if (response.Succeeded)
                 return View(response.UserRoleVM);
             foreach (var error in response.Errors)
             {
@@ -46,11 +46,11 @@ namespace DevShop.UI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddRole(string id , string role)
+        public async Task<IActionResult> AddRole(string id, string role)
         {
-           AssignRoleCommandResponse response= await _mediator.Send(new AssignRoleCommand() 
-           { Id = id, Role = role });
-            if(response.Succeeded)
+            AssignRoleCommandResponse response = await _mediator.Send(new AssignRoleCommand()
+            { Id = id, Role = role });
+            if (response.Succeeded)
                 return RedirectToAction(nameof(Index));
             foreach (var error in response.Errors)
             {

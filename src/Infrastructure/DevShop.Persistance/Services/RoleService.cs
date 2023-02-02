@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DevShop.Persistance.Services
 {
@@ -35,9 +36,9 @@ namespace DevShop.Persistance.Services
             return result.Succeeded;
         }
 
-        public async Task<IEnumerable<IdentityRole>> GetRoles()
+        public async Task<IEnumerable<IdentityRole>> GetRoles(int page=1,int size=10)
         {
-            return await _roleManager.Roles.AsNoTracking().ToListAsync();
+            return await _roleManager.Roles.AsNoTracking().ToPagedListAsync(page,size);
         }
     }
 }

@@ -10,5 +10,7 @@ namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
 {
     public class AllRolesQuery:IRequest<AllRolesQueryResponse>
     {
+        public int Page { get; set; }
+        public int Size { get; set; }
     }
 }

@@ -4,15 +4,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card m-auto">
-                <div class="card-header">
-                    <h3 class="card-title">Manage Catagories</h3>
+                <div class="alert alert-success text-center">
+                    <h2 class="lead text-success fw-bold">All Subcatagories</h2>
                 </div>
-                <div asp-validation-summary="ModelOnly" class="alert alert-warning">
-                </div>
-                <!-- /.card-header -->
                 <div class="card-body">
                     <table class="table table-bordered">
-                        <thead>
+                        <thead class="table table-dark">
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th>SubCategory</th>
@@ -44,14 +41,14 @@
 
                                         </td>
                                         <td>
-                                            <a class="btn btn-warning" href="/Admin/SubCatagory/edit/@item.Id">
-                                                Edit
+                                            <a href="/Admin/SubCatagory/edit/@item.Id">
+                                                <i class="align-middle" data-feather="edit"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a class="btn btn-danger"
-                                               href="/Admin/SubCatagory/Delete/@item.Id"
-                                               onclick="return confirm('Are You Sure?')">Delete</a>
+                                            <a onclick="confirmDelete('@item.Id')">
+                                                <i class="align-middle" data-feather="trash"></i>
+                                           </a>
                                         </td>
                                     </tr>
                                     count++;
@@ -65,11 +62,56 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="/admin/subcatagory/create"
-                   class="btn btn-info mt-3 mb-3">
-                    Create
-                </a>
+                @if (Model != null)
+                {
+                    <div class="btn-toolbar mb-4">
+                        <button class="btn btn-info">
+                            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+                        </button>
+                    </div>
+                }
+
+                <div class="container">
+                    <a class="btn btn-success btn-large" href="/admin/subcatagory/create">Create New</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                console.log(result)
+                if (result.value) {
+                    $.ajax({
+                        url: '/Admin/Subcatagory/Delete/' + id,
+                        type: 'POST',
+                        success: function (data) {
+                            if (data.success) {
+                                location.reload()
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Something went wrong while deleting the data.',
+                                    'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+    </script>
+
+}

@@ -1,44 +1,57 @@
 ﻿@model IEnumerable<AppUser>
 @inject UserManager<AppUser> userManager
 
-<table class="table table-hover">
-    <thead class="table-dark">
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success fw-bold">All Users</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table-dark">
         <th>Name</th>
         <th>Roles</th>
         <th>New Role</th>
-    </thead>
-    <tbody class="table-light">
-        @if (Model.Count() != 0)
-        {
-            @foreach (var item in Model)
+        </thead>
+        <tbody class="table-light">
+            @if (Model.Count() != 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Email</td>
+                        <td>
+                            @{
+                                var userRoles = await userManager.GetRolesAsync(item);
+                                foreach (var role in userRoles)
+                                {
+                                    <span class="badge bg-success">@role</span>
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a href="/admin/userrole/addrole/@item.Id"
+                               class="btn btn-warning btn-sm btn-block">Add Role</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@item.Email</td>
-                    <td>
-                        @{
-                            var userRoles = await userManager.GetRolesAsync(item);
-                            foreach (var role in userRoles)
-                            {
-                                <span class="badge bg-success">@role</span>
-                            }
-                        }
-                    </td>
-                    <td>
-                        <a href="/admin/userrole/addrole/@item.Id"
-                           class="btn btn-warning btn-sm btn-block">Add Role</a>
-                    </td>
+                    <td>404</td>
+                    <td>No item found!</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td>404</td>
-                <td>No item found!</td>
-            </tr>
-        }
-    </tbody>
-</table>
-<div class="container">
-    <a class="btn btn-success btn-large" href="/admin/role/create">Create New</a>
+        </tbody>
+    </table>
+    @if (Model != null)
+    {
+        <div class="btn-toolbar mb-4">
+            <button class="btn btn-info">
+                @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+            </button>
+        </div>
+    }
+    <div class="container">
+        <a class="btn btn-success btn-large" href="/admin/role/create">Create New</a>
+    </div>
 </div>

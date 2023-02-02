@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DevShop.Persistance.Services.User
 {
@@ -67,7 +68,7 @@ namespace DevShop.Persistance.Services.User
 
                 if (!result.Succeeded)
                 {
-                    response.Messages= result.Errors;
+                    response.Messages = result.Errors;
                     response.Succeeded = false;
                 }
 
@@ -76,9 +77,9 @@ namespace DevShop.Persistance.Services.User
             return new() { Succeeded = false, Errors = results.Errors };
         }
 
-        public async Task<IEnumerable<AppUser>> GetUsers()
+        public async Task<IEnumerable<AppUser>> GetUsers(int page = 1, int size = 10)
         {
-            return await _userManager.Users.ToListAsync();
+            return await _userManager.Users.ToPagedListAsync(page, size);
         }
 
         public async Task<bool> AssignRole(string id, string role)

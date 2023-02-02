@@ -24,7 +24,7 @@ namespace DevShop.Application.Cqrs.Queries.Role.AllRoles
         public async Task<AllRolesQueryResponse> Handle(AllRolesQuery request, CancellationToken cancellationToken)
         {
             List<IdentityError> errorList = new();
-            var roles = await _roleService.GetRoles();
+            var roles = await _roleService.GetRoles(request.Page,request.Size);
             if (roles.Count() == 0)
             {
                 _logger.LogInformation("Cannot found role");
