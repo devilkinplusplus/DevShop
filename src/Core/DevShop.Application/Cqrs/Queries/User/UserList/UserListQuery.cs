@@ -9,5 +9,7 @@ namespace DevShop.Application.Cqrs.Queries.User.UserList
 {
     public class UserListQuery : IRequest<UserListQueryResponse>
     {
+        public int Page { get; set; }
+        public int Size { get; set; }
     }
 }

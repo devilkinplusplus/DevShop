@@ -24,7 +24,7 @@ namespace DevShop.Application.Cqrs.Queries.Subcatagories.GetAll
         {
             List<IdentityError> errorList = new();
             IEnumerable<SubCatagory> subCatagories = await _subcatagoryRead
-                                                    .GetAllAsync(x=>x.IsDeleted == false);
+                                              .GetAllAsync(x=>x.IsDeleted == false,request.Page,request.Size);
 
             if (subCatagories.Count() == 0)
             {

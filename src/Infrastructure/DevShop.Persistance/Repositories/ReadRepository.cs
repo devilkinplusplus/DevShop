@@ -8,6 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DevShop.Persistance.Repositories
 {
@@ -20,13 +21,15 @@ namespace DevShop.Persistance.Repositories
             _appDbContext = appDbContext;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null,
+            int page = 1, int size = 10)
         {
-            return filter == null ? await _appDbContext.Set<T>().ToListAsync() :
-                                await _appDbContext.Set<T>().Where(filter).ToListAsync();
+            return filter == null ? await _appDbContext.Set<T>().ToPagedListAsync(page,size) :
+                                await _appDbContext.Set<T>().Where(filter).ToPagedListAsync(page, size);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null, params string[] includeProperties)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null, int page = 1, 
+                    int size = 10, params string[] includeProperties)
         {
             var query = _appDbContext.Set<T>().AsQueryable();
 
@@ -35,8 +38,8 @@ namespace DevShop.Persistance.Repositories
                 query = includeProperties.Aggregate(query, (current, include) => current.Include(include));
             }
 
-            return filter == null ? await query.ToListAsync() :
-                        await query.Where(filter).ToListAsync();
+            return filter == null ? await query.ToPagedListAsync(page,size) :
+                        await query.Where(filter).ToPagedListAsync(page ,size);
         }
 
         public async Task<T> GetAsync(Expression<Func<T, bool>> filter)

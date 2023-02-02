@@ -26,15 +26,15 @@ namespace DevShop.Application.Cqrs.Queries.Products.GetMyProducts
         {
             List<IdentityError> errorList = new();
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            if(userId is null)
+            if (userId is null)
             {
                 errorList.Add(new() { Code = "404", Description = "User is not found" });
                 return new() { Succeeded = false, Errors = errorList };
             }
             IEnumerable<Product> products = await _productRead
-                    .GetAllAsync(x => x.IsDeleted == false && x.UserId==userId, "SubCatagory");
+                    .GetAllAsync(x => x.IsDeleted == false && x.UserId == userId, request.Page, request.Size, "SubCatagory");
 
-            if(products.Count() == 0)
+            if (products.Count() == 0)
             {
                 errorList.Add(new() { Code = "404", Description = "You don't have any products :/" });
                 return new() { Succeeded = false, Errors = errorList };

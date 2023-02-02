@@ -22,7 +22,8 @@ namespace DevShop.Application.Cqrs.Queries.Catagories.CatagoryList
         public async Task<CatagoryListQueryResponse> Handle(CatagoryListQuery request, CancellationToken cancellationToken)
         {
             List<IdentityError> errorList = new();
-            IEnumerable<Catagory> catagories = await _catagoryRead.GetAllAsync(x => x.IsDeleted == false);
+            IEnumerable<Catagory> catagories = await _catagoryRead
+                        .GetAllAsync(x => x.IsDeleted == false,request.Page,request.Size);
             if (catagories.Count() == 0)
             {
                 errorList.Add(new() { Code = "404", Description = "No catagory found" });

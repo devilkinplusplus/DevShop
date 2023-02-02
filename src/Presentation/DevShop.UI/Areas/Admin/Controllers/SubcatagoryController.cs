@@ -24,9 +24,9 @@ namespace DevShop.UI.Areas.Admin.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var response = await _mediator.Send(new AllSubcatagoriesQuery());
+            var response = await _mediator.Send(new AllSubcatagoriesQuery() { Page = page, Size = 10 });
             if (response.Succeeded)
                 return View(response.SubCatagories);
             foreach (var error in response.Errors)
@@ -39,7 +39,8 @@ namespace DevShop.UI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
-            CatagoryListQueryResponse response = await _mediator.Send(new CatagoryListQuery());
+            CatagoryListQueryResponse response = await _mediator.Send(new CatagoryListQuery() 
+            { Page = 1,Size = 10});
             if (response.Succeeded)
                 return View(response.Catagories);
             foreach (var error in response.Errors)
@@ -52,7 +53,8 @@ namespace DevShop.UI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CatagoryDTO model, List<Guid> categoryIds)
         {
-            CatagoryListQueryResponse catagories = await _mediator.Send(new CatagoryListQuery());
+            CatagoryListQueryResponse catagories = await _mediator.Send(new CatagoryListQuery() 
+            { Page = 1,Size= 10});
 
             CreateSubcatagoryCommandResponse response = await _mediator.Send(new CreateSubcatagoryCommand()
             { Subcatagory = model, CatagoryIds = categoryIds });
@@ -62,14 +64,14 @@ namespace DevShop.UI.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", error.Description);
             }
-            if(catagories.Succeeded)
+            if (catagories.Succeeded)
                 return View(catagories.Catagories);
             return View();
         }
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            GetSubcatagoryByIdQueryResponse res = await _mediator.Send(new GetSubcatagoryByIdQuery() 
+            GetSubcatagoryByIdQueryResponse res = await _mediator.Send(new GetSubcatagoryByIdQuery()
             { Id = id });
             if (res.Succeeded)
                 return View(res.SubCatagory);
@@ -77,7 +79,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", error.Description);
             }
-            return View();
+            return View(res.SubCatagory);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(CatagoryDTO model, Guid id)
@@ -85,21 +87,18 @@ namespace DevShop.UI.Areas.Admin.Controllers
             UpdateSubCatagoryCommandResponse res = await _mediator.Send(new UpdateSubCatagoryCommand() { Id = id, Subcatagory = model });
             if (res.Succeeded)
                 return RedirectToAction(nameof(Index));
-            ModelState.AddModelError("", "An error occured");
-            return View();
-        }
-
-        public async Task<IActionResult> Delete(Guid id)
-        {
-           DeleteSubcatagoryCommandResponse res= await _mediator.Send(new DeleteSubcatagoryCommand() 
-           { Id = id });
-            if(res.Succeeded)   
-                return RedirectToAction(nameof(Index));
             foreach (var error in res.Errors)
             {
                 ModelState.AddModelError("", error.Description);
             }
-            return View(Index);
+            return View();
+        }
+        [HttpPost]
+        public async Task<JsonResult> Delete(Guid id)
+        {
+            DeleteSubcatagoryCommandResponse res = await _mediator.Send(new DeleteSubcatagoryCommand()
+            { Id = id });
+            return Json(new { success = res.Succeeded });
         }
 
     }

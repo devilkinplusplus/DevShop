@@ -4,53 +4,107 @@
 }
 <div class="container">
     <div class="alert alert-success text-center">
-        <h2 class="lead text-success">Your Products</h2>
+        <h2 class="lead text-success fw-bold">Your Products</h2>
     </div>
     <table class="table table-hover">
         <thead class="table table-dark">
-        <th>#</th>
-        <th>Title</th>
-        <th>Catagory</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Rating</th>
-        <th>Edit</th>
-        <th>Delete</th>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Catagory</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Rating</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @if (Model != null)
             {
-                <tr>
-                    <td>@count</td>
-                    <td>@item.Title</td>
-                    <td>@item.SubCatagory.Name</td>
-                    <td><span class="badge bg-success">@item.Price $</span></td>
-                    <td>
-                        @if (item.Quantity != 0)
-                        {
-                            <span class="badge bg-danger">@item.Quantity</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-danger">Out Of Stock</span>
-                        }
-                    </td>
-                    <td><span class="badge bg-info">@item.Rating</span></td>
-                    <td>
-                        <a href="/admin/product/edit/@item.Id">
-                            <i class="align-middle" data-feather="edit"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/admin/product/delete/@item.Id"
-                           onclick="return confirm('Are you sure?')">
-                            <i class="align-middle" data-feather="trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                count++;
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Title</td>
+                        <td>@item.SubCatagory.Name</td>
+                        <td><span class="badge bg-success">@item.Price $</span></td>
+                        <td>
+                            @if (item.Quantity != 0)
+                            {
+                                <span class="badge bg-danger">@item.Quantity</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Out Of Stock</span>
+                            }
+                        </td>
+                        <td><span class="badge bg-info">@item.Rating</span></td>
+                        <td>
+                            <a href="/admin/product/edit/@item.Id">
+                                <i class="align-middle" data-feather="edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="confirmDelete('@item.Id')">
+                                <i class="align-middle" data-feather="trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    count++;
+                }
+            }
+            else
+            {
+                <div class="alert alert-warning text-center fw-bold">
+                    <h2 class="lead">You don't have any product :/</h2>
+                </div>
             }
         </tbody>
     </table>
-    <div class="container"><a href="/admin/product/create" class="btn btn-success">Create New</a></div>
+    @if (Model != null)
+    {
+        <ul class="pagination">
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+        </ul>
+    }
+    <div class="container"><a href="/admin/product/create" class="btn btn-success btn-large">Create New</a></div>
 </div>
+
+@section Scripts{
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                console.log(result)
+                if (result.value) {
+                    $.ajax({
+                        url: '/Admin/Product/Delete/' + id,
+                        type: 'POST',
+                        success: function (data) {
+                            if (data.success) {
+                                location.reload()
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Something went wrong while deleting the data.',
+                                    'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+    </script>
+
+}

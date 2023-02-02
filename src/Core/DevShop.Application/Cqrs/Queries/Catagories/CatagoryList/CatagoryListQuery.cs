@@ -9,5 +9,7 @@ namespace DevShop.Application.Cqrs.Queries.Catagories.CatagoryList
 {
     public class CatagoryListQuery : IRequest<CatagoryListQueryResponse>
     {
+        public int Page { get; set; }
+        public int Size { get; set; }
     }
 }

@@ -2,49 +2,97 @@
 @{
     int count = 1;
 }
-<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-<table class="table table-hover">
-    <thead class="table-dark">
-    <th>#</th>
-    <th>Name</th>
-    <th>Edit</th>
-    <th>Delete</th>
-    </thead>
-    <tbody class="table-light">
-        @if (Model.Count() != 0)
-        {
-            @foreach (var item in Model)
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success fw-bold">All Catagories</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table-dark">
+        <th>#</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </thead>
+        <tbody class="table-light">
+            @if (Model.Count() != 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a href="/admin/catagory/edit/@item.Id">
+                                <i class="align-middle" data-feather="edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="confirmDelete('@item.Id')">
+                                <i class="align-middle" data-feather="trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    count++;
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@count</td>
-                    <td>@item.Name</td>
+                    <td>404</td>
                     <td>
-                        <a href="/admin/catagory/edit/@item.Id" class="badge bg-warning">
-                            Edit
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/admin/catagory/delete/@item.Id"
-                           onclick="return confirm('Are you sure?')"
-                           class="badge bg-danger">
-                            Delete
-                        </a>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
                     </td>
                 </tr>
-                count++;
             }
-        }
-        else
-        {
-            <tr>
-                <td>404</td>
-                <td>
-                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<div class="container">
-    <a class="btn btn-success btn-large" href="/admin/catagory/create">Create New</a>
+        </tbody>
+    </table>
+    @if (Model != null)
+    {
+        <div class="btn-toolbar mb-4">
+            <button class="btn btn-info">
+                @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
+            </button>
+        </div>
+    }
+    <div class="container">
+        <a class="btn btn-success btn-large" href="/admin/catagory/create">Create New</a>
+    </div>
 </div>
+
+@section Scripts{
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                console.log(result)
+                if (result.value) {
+                    $.ajax({
+                        url: '/Admin/Catagory/Delete/' + id,
+                        type: 'POST',
+                        success: function (data) {
+                            if (data.success) {
+                                location.reload()
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Something went wrong while deleting the data.',
+                                    'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+    </script>
+
+}

@@ -13,7 +13,7 @@ namespace DevShop.Application.Abstractions.Services
     public interface IUserService
     {
         Task<CreateUserCommandResponse> CreateAsync(CreateUser model);
-        Task<IEnumerable<AppUser>> GetUsers();
+        Task<IEnumerable<AppUser>> GetUsers(int page = 1, int size = 10);
         Task<AddUserRoleVM> GetUserRoles(string id);
         Task<bool> AssignRole(string id, string role);
 

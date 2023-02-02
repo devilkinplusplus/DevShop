@@ -305,3 +305,6 @@ C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.File.dll
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.MSSqlServer.dll
 C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\JetBrains.Annotations.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\X.PagedList.dll
+C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll

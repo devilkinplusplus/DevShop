@@ -23,9 +23,9 @@ namespace DevShop.UI.Areas.Admin.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            CatagoryListQueryResponse response = await _mediator.Send(new CatagoryListQuery());
+            CatagoryListQueryResponse response = await _mediator.Send(new CatagoryListQuery() { Page = page, Size = 10 });
             if (response.Succeeded)
                 return View(response.Catagories);
             foreach (var error in response.Errors)
@@ -46,7 +46,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
             AddCatagoryCommandResponse result = await _mediator.Send(new AddCatagoryCommand() { Catagory = model });
             if (result.Succeeded)
                 return RedirectToAction(nameof(Index));
-            
+
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error.Description);
@@ -56,7 +56,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            GetCatagoryByIdQueryResponse response = await _mediator.Send(new GetCatagoryByIdQuery() 
+            GetCatagoryByIdQueryResponse response = await _mediator.Send(new GetCatagoryByIdQuery()
             { Id = id });
             if (response.Succeeded)
                 return View(response.Catagory);
@@ -64,7 +64,7 @@ namespace DevShop.UI.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", error.Description);
             }
-            return View();
+            return View(response.Catagory);
         }
 
         [HttpPost]
@@ -80,18 +80,13 @@ namespace DevShop.UI.Areas.Admin.Controllers
             }
             return View();
         }
-
-        public async Task<IActionResult> Delete(Guid id)
+        [HttpPost]
+        public async Task<JsonResult> Delete(Guid id)
         {
             DeleteCatagoryCommandResponse response = await _mediator.Send(new DeleteCatagoryCommand()
             { Id = id });
-            if(response.Succeeded)
-                return RedirectToAction(nameof(Index));
-            foreach (var error in response.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-            }
-            return View(Index);
+            return Json(new { success = response.Succeeded });
+
         }
     }
 }
