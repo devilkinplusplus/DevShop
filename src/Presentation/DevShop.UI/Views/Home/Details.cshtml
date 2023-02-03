@@ -44,15 +44,17 @@
                 <h3>@Model.Product.Title</h3>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2">
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star-half-alt"></small>
-                        <small class="far fa-star"></small>
+                        @for (int i = 0; i < (int)Model.Product.Rating; i++)
+                        {
+                            <i class="fas fa-star"></i>
+                        }
                     </div>
-                    <small class="pt-1">(@Model.Product.View) Reviews</small>
+                    <small class="pt-1">(@Model.Product.View) Views</small>
                 </div>
-                <h3 class="font-weight-semi-bold mb-4">$@Model.Product.Price</h3>
+
+                <h3 class="font-weight-semi-bold mb-4">
+                    $@(Model.Product.Price - (Model.Product.Price * Model.Product.Discount / 100))
+                </h3>
                 <p class="mb-4 text-dark">
                     Seller:@Model.Product.User.FirstName @Model.Product.User.LastName
                 </p>
@@ -87,55 +89,126 @@
     <div class="row px-xl-5">
         <div class="col">
             <div class="bg-light p-30">
+                <div class="nav nav-tabs mb-4">
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-1">
+                        Reviews (@(Model.AllReviews != null ? Model.AllReviews.Count() : 0))
+                    </a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Your Review</a>
+                </div>
+
                 <div class="tab-content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="mb-4">1 review for "Product Name"</h4>
-                            <div class="media mb-4">
-                                <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                <div class="media-body">
-                                    <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
-                                    <div class="text-primary mb-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                    <div class="tab-pane fade show active" id="tab-pane-1">
+                        <div class="row">
+                            <h4 class="mb-4">(@(Model.AllReviews != null ? Model.AllReviews.Count() : 0)) reviews for "@Model.Product.Title"</h4>
+                            @if (Model.AllReviews != null)
+                            {
+                                @foreach (var item in Model.AllReviews)
+                                {
+                                    <div class="col-md-12">
+                                        <div class="media mb-4">
+                                            <img src="@item.User.ProfilePhoto" alt="Image"
+                                                 class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <div class="media-body">
+                                                <h6>
+                                                    @item.User.FirstName @item.User.LastName<small>
+                                                        - <i>@item.User.JoinDate.ToString("dd MMM yyyy")</i>
+                                                    </small>
+                                                </h6>
+                                                <div class="text-primary mb-2">
+                                                    @if (item.Rating != 0)
+                                                    {
+                                                        @for (int i = 0; i < (int)item.Rating; i++)
+                                                        {
+                                                            <i class="fas fa-star"></i>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <small class="fas fa-star-half-alt"></small>
+                                                        <small class="far fa-star"></small>
+                                                        <small class="far fa-star"></small>
+                                                        <small class="far fa-star"></small>
+                                                        <small class="far fa-star"></small>
+                                                    }
+                                                </div>
+                                                <p>@item.Comment</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-pane-2">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="mb-4">Your reviews for "@Model.Product.Title"</h4>
+                                @if (Model.YourReviews != null)
+                                {
+                                    @foreach (var item in Model.YourReviews)
+                                    {
+                                        <div class="media mb-4">
+                                            <img src="@item.User.ProfilePhoto" alt="Image"
+                                                 class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <div class="media-body">
+                                                <h6>
+                                                    You <small>
+                                                        - <i>@item.User.JoinDate.ToString("dd MMM yyyy")</i>
+                                                    </small>
+                                                </h6>
+                                                <div class="text-primary mb-2">
+                                                    @for (int i = 0; i < (int)item.Rating; i++)
+                                                    {
+                                                        <i class="fas fa-star"></i>
+                                                    }
+                                                </div>
+                                                <p>@item.Comment</p>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="alert alert-light fw-bold">
+                                        Let us know what's your thoughts about this product
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="mb-4">Leave a review</h4>
+                                <small>Your email address will not be published. Required fields are marked *</small>
+                                <div class="d-flex my-3">
+                                    <div class="text-primary">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
-                                    <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
                                 </div>
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label for="message">Your Review *</label>
+                                        <textarea id="message" name="Comment"
+                                                  cols="30" rows="5" class="form-control"></textarea>
+
+                                        <p class="mb-0 mr-2">Your Rating * :</p>
+                                        <select name="Rating" class="form-control">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <input type="submit"
+                                               onclick="postReview('@Model.Product.Id',event)"
+                                               value="Leave Your Review" class="btn btn-primary px-3">
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="mb-4">Leave a review</h4>
-                            <small>Your email address will not be published. Required fields are marked *</small>
-                            <div class="d-flex my-3">
-                                <p class="mb-0 mr-2">Your Rating * :</p>
-                                <div class="text-primary">
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                            <form>
-                                <div class="form-group">
-                                    <label for="message">Your Review *</label>
-                                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Your Name *</label>
-                                    <input type="text" class="form-control" id="name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Your Email *</label>
-                                    <input type="email" class="form-control" id="email">
-                                </div>
-                                <div class="form-group mb-0">
-                                    <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -145,8 +218,7 @@
     <!--Reviews End-->
 </div>
 <!-- Shop Detail End -->
-<!-- Products Start -->
-
+<!-- Similar Products Start -->
 <div class="container-fluid py-5">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
         <span class="bg-secondary pr-3">
@@ -205,5 +277,35 @@
         </div>
     </div>
 </div>
+<!-- Similar Products End -->
+@section Scripts{
+    <script>
+        function postReview(productId, e) {
+            e.preventDefault();
+            const comment = $("#message").val();
+            const rating = $("[name='Rating']").val();
+            const dataObject = { productId: productId, rating: rating, comment: comment };
+            console.log(dataObject)
+            $.ajax({
+                type: "Post",
+                data: dataObject,
+                url: "/Review/PostReview",
+                dataType: "json",
+                success: function (res) {
+                    if (res) {
+                        Swal.fire('Thanks for sharing your review')
+                        $("#message").val("");
+                        $("#rating").val("");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    }
+                    else{
+                        Swal.fire("Warning","Make sure you fill out each box","error")
+                    }
+                }
+            });
 
-<!-- Products End -->
+        }
+    </script>
+}

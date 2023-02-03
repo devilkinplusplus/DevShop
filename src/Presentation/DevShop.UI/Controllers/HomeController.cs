@@ -1,18 +1,22 @@
-﻿using DevShop.Application.Cqrs.Queries.Products.GetById;
+﻿using DevShop.Application.Cqrs.Commands.Products.IncreaseView;
+using DevShop.Application.Cqrs.Queries.Products.GetById;
+using DevShop.Application.Cqrs.Queries.Products.GetMyProducts;
 using DevShop.Application.Cqrs.Queries.Products.NewProducts;
 using DevShop.Application.Cqrs.Queries.Products.PopularProducts;
 using DevShop.Application.Cqrs.Queries.Products.SimilarProducts;
+using DevShop.Application.Cqrs.Queries.Reviews.GetAllReviews;
+using DevShop.Application.Cqrs.Queries.Reviews.GetMyReviews;
 using DevShop.Application.Cqrs.Queries.Subcatagories.GetAll;
 using DevShop.Application.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace DevShop.UI.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IMediator _mediator;
-
         public HomeController(IMediator mediator)
         {
             _mediator = mediator;
@@ -35,11 +39,23 @@ namespace DevShop.UI.Controllers
 
         public async Task<IActionResult> Details(Guid id)
         {
-            GetProductQueryResponse resp = await _mediator.Send(new GetProductQueryRequest() { Id = id });
-            SimilarProductsQueryResponse res = await _mediator.Send(new SimilarProductsQueryRequest()
+            var resp = await _mediator.Send(new GetProductQueryRequest() { Id = id });
+            var res = await _mediator.Send(new SimilarProductsQueryRequest()
             { ProductId = id, SubCatagoryId = resp.Product.SubCatagoryId });
-            DetailsVM details = new() { Product = resp.Product, SimilarProducts = res.Products };
-            
+            var myReviews = await _mediator.Send(new GetMyReviewsQueryRequest() 
+            { ProductId = resp.Product.Id , UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)});
+            var allReviews = await _mediator.Send(new GetAllReviewsQueryRequest() { ProductId = resp.Product.Id });
+
+            await _mediator.Send(new IncreaseViewCommandRequest() { ProductId = resp.Product.Id });
+
+            DetailsVM details = new()
+            {
+                Product = resp.Product,
+                SimilarProducts = res.Products,
+                YourReviews = myReviews.MyReviews,
+                AllReviews = allReviews.Reviews
+            };
+
             return View(details);
         }
     }

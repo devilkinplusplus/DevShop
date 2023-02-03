@@ -16,6 +16,7 @@ namespace DevShop.Application.Consts
         public static string InvalidMailException = "Email address is invalid";
         public static string MinimumValueException = "Minimum value must be greater than 0.";
         public static string MaximumValueException = "Maximum value must be less than 100.";
+        public static string MaximumReviewException = "Maximum value must be less than 5.";
         
     }
 }
