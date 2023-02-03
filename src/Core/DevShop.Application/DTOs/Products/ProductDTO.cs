@@ -12,6 +12,7 @@ namespace DevShop.Application.DTOs.Products
         public string Title { get; set; }
         public string Description { get; set; }
         public float Price { get; set; }
+        public float Discount { get; set; }
         public int Quantity { get; set; }
         public Guid SubcatagoryId { get; set; }
     }

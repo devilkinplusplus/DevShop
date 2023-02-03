@@ -28,7 +28,7 @@
                         <td>@count</td>
                         <td>@item.Title</td>
                         <td>@item.SubCatagory.Name</td>
-                        <td><span class="badge bg-success">@item.Price $</span></td>
+                        <td><span class="badge bg-success">@(item.Price - (item.Price * item.Discount / 100)) $</span></td>
                         <td>
                             @if (item.Quantity != 0)
                             {

@@ -33,7 +33,7 @@ namespace DevShop.Application.Cqrs.Queries.Products.GetById
             }
 
             Product product = await _productRead.GetAsync(x => x.IsDeleted == false && x.Id == request.Id,
-                                                    "SubCatagory");
+                                                    "SubCatagory","ProductPictures.Picture","User");
             if(product is null)
             {
                 errorList.Add(new() { Code = "404", Description = "Product is not found" });

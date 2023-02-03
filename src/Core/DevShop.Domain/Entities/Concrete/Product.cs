@@ -20,6 +20,8 @@ namespace DevShop.Domain.Entities.Concrete
         public string UserId { get; set; }
         public float Rating { get; set; } = 0;
         public int View { get; set; } = 0;
+        public float Discount { get; set; } = 0;//percentage
+        public DateTime CreatedDate { get; set; }
         public ICollection<ProductPicture> ProductPictures { get; set; }
     }
 }

@@ -31,15 +31,22 @@
 
                         <div class="form-group mt-3">
                             <label for="price" class="fw-bold">Product price</label>
-                            <input class="form-control form-control-lg" value="@Model.Product.Price"
+                            <input class="form-control form-control-lg" value="@Model.Product.Price" min="0"
                                    placeholder="Enter product price" type="number" step=".01" name="Price"
+                                   id="price" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="price" class="fw-bold">Product discount</label>
+                            <input class="form-control form-control-lg" value="@Model.Product.Discount" min="0"
+                                   placeholder="Enter discount" type="number" step=".01" name="Discount" max="99"
                                    id="price" />
                         </div>
 
                         <div class="form-group mt-3">
                             <label for="Quantity" class="fw-bold">Product quantity</label>
                             <input class="form-control form-control-lg" placeholder="Enter product quantity"
-                                   value="@Model.Product.Quantity"
+                                   value="@Model.Product.Quantity" min="0" 
                                    type="number" step=".01" name="Quantity" id="Quantity" />
                         </div>
 

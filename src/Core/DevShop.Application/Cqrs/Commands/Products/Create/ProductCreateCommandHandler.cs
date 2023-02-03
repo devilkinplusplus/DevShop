@@ -35,6 +35,7 @@ namespace DevShop.Application.Cqrs.Commands.Products.Create
             List<IdentityError> errorList = new();
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             request.Product.UserId = userId;
+            request.Product.CreatedDate = DateTime.Now;
 
             ProductValidator validations = new ProductValidator();
             ValidationResult results = validations.Validate(request.Product);
