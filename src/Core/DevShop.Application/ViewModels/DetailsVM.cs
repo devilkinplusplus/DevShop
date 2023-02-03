@@ -11,5 +11,7 @@ namespace DevShop.Application.ViewModels
     {
         public Product Product { get; set; }
         public IEnumerable<Product> SimilarProducts { get; set; }
+        public IEnumerable<Review> YourReviews { get; set; }
+        public IEnumerable<Review> AllReviews { get; set; }
     }
 }

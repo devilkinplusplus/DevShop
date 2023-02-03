@@ -23,5 +23,6 @@ namespace DevShop.Domain.Entities.Concrete
         public float Discount { get; set; } = 0;//percentage
         public DateTime CreatedDate { get; set; }
         public ICollection<ProductPicture> ProductPictures { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }

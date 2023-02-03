@@ -13,5 +13,7 @@ namespace DevShop.Domain.Entities.Identity
         public string LastName { get; set; }
         public string? ProfilePhoto { get; set; }
         public float Budget { get; set; } = 0;
+        public DateTime JoinDate { get; set; }
+        public string? ShortDescription { get; set; }
     }
 }

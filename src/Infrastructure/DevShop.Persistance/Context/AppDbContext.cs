@@ -22,6 +22,7 @@ namespace DevShop.Persistance.Context
         public DbSet<CatagorySub> CatagorySub { get; set; }
         public DbSet<Picture> Picture { get; set; }
         public DbSet<ProductPicture> ProductPicture { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -55,11 +56,16 @@ namespace DevShop.Persistance.Context
              .WithMany(k => k.CatagorySubs)
              .HasForeignKey(k => k.SubCatagoryId);
 
-            //One to many between product and catagory
+            //One to many between subcatagory and product
             builder.Entity<SubCatagory>()
                 .HasMany(k => k.Products)
                 .WithOne(k => k.SubCatagory)
                 .HasForeignKey(k => k.SubCatagoryId);
+            //One to many between product and reviews
+            builder.Entity<Product>()
+                .HasMany(x=>x.Reviews)
+                .WithOne(x=>x.Product)
+                .HasForeignKey(x => x.ProductId);
         }
     }
 }

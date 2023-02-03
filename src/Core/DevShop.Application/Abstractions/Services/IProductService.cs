@@ -15,5 +15,8 @@ namespace DevShop.Application.Abstractions.Services
         Task<IEnumerable<Product>> GetPopularProducts();
         Task<IEnumerable<Product>> GetNewProducts();
         Task<IEnumerable<Product>> SimilarProducts(Guid subCatagoryId, Guid productId);
+        Task<int> GetRatingOfProduct(Guid productId);
+        Task<bool> CalculateRating(Guid productId);
+        Task<bool> IncreaseView(Guid productId);
     }
 }

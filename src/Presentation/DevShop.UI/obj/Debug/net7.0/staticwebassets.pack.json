@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\images\\products\\49a52f3c-dea0-468f-bded-c3b70ceea6f4light_blue_windows_11_logo_microsoft_minimalist_operating_system_4k_hd_windows_11-3840x2160.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\4babcf71-8c75-425b-8814-006e58d2e972light_purple_samsung_s21_swirl_amoled_stock_black_background_4k_hd_samsung-3840x2160.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4babcf71-8c75-425b-8814-006e58d2e972light_purple_samsung_s21_swirl_amoled_stock_black_background_4k_hd_samsung-3840x2160.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\524967eb-2f71-4e64-93e4-addd0e28f35ealone_word_in_black_background_4k_hd_black-3840x2160.jpg",
       "PackagePath": "staticwebassets\\images\\products\\524967eb-2f71-4e64-93e4-addd0e28f35ealone_word_in_black_background_4k_hd_black-3840x2160.jpg"
     },
@@ -375,6 +379,14 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\dedbf79d-c74d-4d2b-a321-b0004955e16fblue_fusion_windows_11_logo_microsoft_minimalist_operating_system_4k_hd_windows_11-1280x720.jpg",
       "PackagePath": "staticwebassets\\images\\products\\dedbf79d-c74d-4d2b-a321-b0004955e16fblue_fusion_windows_11_logo_microsoft_minimalist_operating_system_4k_hd_windows_11-1280x720.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\e0f8b0a0-b8f9-4b17-a5fe-536ca223922elight_purple_artistic_digital_art_windows_11_light_purple_background_4k_hd_windows_11-1280x720.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e0f8b0a0-b8f9-4b17-a5fe-536ca223922elight_purple_artistic_digital_art_windows_11_light_purple_background_4k_hd_windows_11-1280x720.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\e383ba99-e37c-4b2b-9308-2dcd720e25dfmountains_silhouette_blue_sky_sunset_light_nature_background_4k_hd_nature-3840x2160.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\e383ba99-e37c-4b2b-9308-2dcd720e25dfmountains_silhouette_blue_sky_sunset_light_nature_background_4k_hd_nature-3840x2160.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\js\\site.js",

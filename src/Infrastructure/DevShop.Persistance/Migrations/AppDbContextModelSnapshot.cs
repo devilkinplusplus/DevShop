@@ -157,6 +157,38 @@ namespace DevShop.Persistance.Migrations
                     b.ToTable("ProductPicture");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Review", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float?>("Rating")
+                        .HasColumnType("real");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.SubCatagory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -201,6 +233,9 @@ namespace DevShop.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("JoinDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -232,6 +267,9 @@ namespace DevShop.Persistance.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -444,6 +482,25 @@ namespace DevShop.Persistance.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Review", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -508,6 +565,8 @@ namespace DevShop.Persistance.Migrations
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Product", b =>
                 {
                     b.Navigation("ProductPictures");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.SubCatagory", b =>
