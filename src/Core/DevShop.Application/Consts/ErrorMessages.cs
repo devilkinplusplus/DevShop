@@ -15,6 +15,7 @@ namespace DevShop.Application.Consts
         public static string UserNameOutOfRangeException = "Username is out of range";
         public static string InvalidMailException = "Email address is invalid";
         public static string MinimumValueException = "Minimum value must be greater than 0.";
+        public static string MaximumValueException = "Maximum value must be less than 100.";
         
     }
 }

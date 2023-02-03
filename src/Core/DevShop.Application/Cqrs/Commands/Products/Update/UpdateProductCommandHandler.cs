@@ -47,6 +47,7 @@ namespace DevShop.Application.Cqrs.Commands.Products.Update
             currentData.Description = newData.Description;
             currentData.Quantity = newData.Quantity;
             currentData.Price = newData.Price;
+            currentData.Discount = newData.Discount;
             currentData.SubCatagoryId = newData.SubCatagoryId;
 
             await _productWrite.UpdateAsync(currentData);
