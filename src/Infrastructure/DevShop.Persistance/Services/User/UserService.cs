@@ -67,6 +67,7 @@ namespace DevShop.Persistance.Services.User
                     LastName = model.LastName,
                     Email = model.Email,
                     UserName = model.Username,
+                    JoinDate = DateTime.Now
                 }, model.Password);
 
                 AppUser data = await _userManager.FindByEmailAsync(mapper.Email);

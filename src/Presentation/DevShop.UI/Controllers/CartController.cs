@@ -3,10 +3,12 @@ using DevShop.Application.Cqrs.Commands.Carts.Delete;
 using DevShop.Application.Cqrs.Queries.Carts.GetAll;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevShop.UI.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly IMediator _mediator;

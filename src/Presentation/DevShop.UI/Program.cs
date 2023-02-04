@@ -20,6 +20,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceServices();
 builder.Services.AddApplicationServices();
 
+builder.Services.ConfigureApplicationCookie(options =>
+    {
+        options.LoginPath = "/Auth/Login";
+    });
+
 
 //logging with serilog
 Logger log = new LoggerConfiguration()
@@ -39,6 +44,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+
 
 
 app.UseHttpsRedirection();
