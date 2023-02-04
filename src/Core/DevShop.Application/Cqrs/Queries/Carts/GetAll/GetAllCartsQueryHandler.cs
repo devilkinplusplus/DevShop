@@ -26,7 +26,7 @@ namespace DevShop.Application.Cqrs.Queries.Carts.GetAll
         {
             List<IdentityError> errorList = new();
             request.UserId = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            IEnumerable<Cart> carts = await _cartService.GetCarts(request.UserId);
+            IEnumerable<Cart> carts = await _cartService.GetCarts(request.UserId,request.Page,request.Size);
             if (carts.Count() == 0)
             {
                 errorList.Add(new() { Description = "No products in cart" });

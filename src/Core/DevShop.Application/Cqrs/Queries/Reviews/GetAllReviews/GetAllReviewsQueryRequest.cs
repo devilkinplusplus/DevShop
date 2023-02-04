@@ -10,5 +10,7 @@ namespace DevShop.Application.Cqrs.Queries.Reviews.GetAllReviews
     public class GetAllReviewsQueryRequest:IRequest<GetAllReviewsQueryResponse>
     {
         public Guid ProductId { get; set; }
+        public int Page { get; set; }
+        public int Size { get; set; }
     }
 }

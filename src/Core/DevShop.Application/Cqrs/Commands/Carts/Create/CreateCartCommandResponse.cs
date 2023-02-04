@@ -10,6 +10,5 @@ namespace DevShop.Application.Cqrs.Commands.Carts.Create
     public class CreateCartCommandResponse
     {
         public bool Succeeded { get; set; }
-        public List<IdentityError> Errors{ get; set; }
     }
 }

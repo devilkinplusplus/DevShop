@@ -9,6 +9,6 @@ namespace DevShop.Application.Abstractions.Services
 {
     public interface ICartService
     {
-        Task<IEnumerable<Cart>> GetCarts(string userId);
+        Task<IEnumerable<Cart>> GetCarts(string userId, int page = 1, int size = 10);
     }
 }

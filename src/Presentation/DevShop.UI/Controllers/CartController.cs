@@ -15,9 +15,9 @@ namespace DevShop.UI.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var res = await _mediator.Send(new GetAllCartsQueryRequest());
+            var res = await _mediator.Send(new GetAllCartsQueryRequest() { Page = page, Size = 8 });
             if (res.Succeeded)
                 return View(res.Carts);
             foreach (var item in res.Errors)
@@ -30,7 +30,7 @@ namespace DevShop.UI.Controllers
         public async Task<JsonResult> Create(Cart cart)
         {
             var res = await _mediator.Send(new CreateCartCommandRequest() { Cart = cart });
-            return Json(new {success = res.Succeeded});
+            return Json(new { success = res.Succeeded });
         }
 
         [HttpPost]

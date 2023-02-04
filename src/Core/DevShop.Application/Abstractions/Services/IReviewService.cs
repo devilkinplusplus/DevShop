@@ -10,7 +10,7 @@ namespace DevShop.Application.Abstractions.Services
     public interface IReviewService
     {
         Task<IEnumerable<Review>> GetMyReviews(Guid productId, string userId);
-        Task<IEnumerable<Review>> GetAllReviews(Guid productId);
+        Task<IEnumerable<Review>> GetAllReviews(Guid productId, int page = 1, int size = 10);
         Task<int> ReviewCountsOfProduct(Guid productId);
     }
 }

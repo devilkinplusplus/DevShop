@@ -149,7 +149,8 @@
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" onclick="AddToCard('@item.Id')">
                                     <i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" onclick="AddToFavourits('@item.Id')">
+                                    <i class="far fa-heart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href="/home/details/@item.Id">
                                     <i class="fa fa-search"></i>
                                 </a>
@@ -244,7 +245,8 @@
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" onclick="AddToCard('@item.Id')">
                                     <i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart">
+                                <a class="btn btn-outline-dark btn-square" onclick="AddToFavourits('@item.Id')">
+                                    <i class="far fa-heart">
                                 </i></a>
                                 <a class="btn btn-outline-dark btn-square" href="/home/details/@item.Id">
                                     <i class="fa fa-search"></i>
@@ -317,5 +319,26 @@
                 }
             })
         }
+
+        function AddToFavourits(id){
+            const dataObj = { ProductId: id };
+            $.ajax({
+                type: "post",
+                url: "/wishlist/create",
+                data: dataObj,
+                success: function (res) {
+                    console.log(res)
+                    if (res.success) {
+                        Swal.fire("Success", "Added to favourits", "success")
+                    }
+                    else {
+                        Swal.fire("Warning", "Already in the favourits", "warning")
+
+                    }
+                }
+            })
+        }
+
+
     </script>
 }

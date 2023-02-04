@@ -25,7 +25,6 @@ namespace DevShop.Application.Cqrs.Commands.Carts.Create
 
         public async Task<CreateCartCommandResponse> Handle(CreateCartCommandRequest request, CancellationToken cancellationToken)
         {
-            List<IdentityError> errorList = new();
             var userId= _httpContextAccessor.HttpContext.User
                                   .FindFirstValue(ClaimTypes.NameIdentifier);
             var data = await _cartReadRepository
@@ -33,12 +32,10 @@ namespace DevShop.Application.Cqrs.Commands.Carts.Create
 
             if(data is not null)
             {
-                errorList.Add(new() { Description = "Already in the cart" });
-                return new() { Errors = errorList, Succeeded = false };
+                return new() {  Succeeded = false };
             }
 
             request.Cart.UserId = userId;
-            request.Cart.Quantity = 1;
             await _cartWriteRepository.AddAsync(request.Cart);
             return new() { Succeeded = true };
         }

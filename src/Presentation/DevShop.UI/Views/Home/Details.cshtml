@@ -136,6 +136,12 @@
                                         </div>
                                     </div>
                                 }
+                                @if (Model != null)
+                                {
+                                    <ul class="pagination">
+                                        @Html.PagedListPager((IPagedList)Model.AllReviews,page=>Url.Action("Details",new {page,@class="page-item"}))
+                                    </ul>
+                                }
                             }
                         </div>
                     </div>
