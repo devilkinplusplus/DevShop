@@ -24,5 +24,7 @@ namespace DevShop.Domain.Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public ICollection<ProductPicture> ProductPictures { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public ICollection<Cart> Carts { get; set; }
+        public ICollection<Wishlist> Wishlists { get; set; }
     }
 }

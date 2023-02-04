@@ -147,7 +147,8 @@
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="@item.ProductPictures.First().Picture.ImageUrl" alt="">
                             <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" onclick="AddToCard('@item.Id')">
+                                    <i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href="/home/details/@item.Id">
                                     <i class="fa fa-search"></i>
@@ -241,8 +242,10 @@
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="@item.ProductPictures.First().Picture.ImageUrl" alt="">
                             <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" onclick="AddToCard('@item.Id')">
+                                    <i class="fa fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart">
+                                </i></a>
                                 <a class="btn btn-outline-dark btn-square" href="/home/details/@item.Id">
                                     <i class="fa fa-search"></i>
                                 </a>
@@ -293,3 +296,26 @@
     </div>
 </div>
 <!-- Products End -->
+
+@section Scripts{
+    <script>
+        function AddToCard(id){
+            const dataObj = {ProductId:id};
+            $.ajax({
+                type:"post",
+                url:"/cart/create",
+                data:dataObj,
+                success:function(res){
+                    console.log(res)
+                    if(res.success){
+                        Swal.fire("Success","Added to cart","success")
+                    }
+                    else{
+                        Swal.fire("Warning", "Already in the cart", "warning")
+
+                    }
+                }
+            })
+        }
+    </script>
+}

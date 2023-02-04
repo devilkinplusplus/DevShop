@@ -22,6 +22,10 @@ using DevShop.Persistance.Repositories.ProductPictures;
 using DevShop.Application.Repositories.ProductPictures;
 using DevShop.Persistance.Repositories.Reviews;
 using DevShop.Application.Repositories.Reviews;
+using DevShop.Persistance.Repositories.Carts;
+using DevShop.Application.Repositories.Carts;
+using DevShop.Persistance.Repositories.Wishlists;
+using DevShop.Application.Repositories.Wishlists;
 
 namespace DevShop.Persistance.Autofac
 {
@@ -41,6 +45,8 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<CatagorysubService>().As<ICatagorysubService>();
             builder.RegisterType<SubcatagoryService>().As<ISubcatagoryService>();
             builder.RegisterType<ReviewService>().As<IReviewService>();
+            builder.RegisterType<CartService>().As<ICartService>();
+            builder.RegisterType<WishlistService>().As<IWishlistService>();
             //Repositories
             builder.RegisterType<CatagoryReadRepository>().As<ICatagoryReadRepository>();
             builder.RegisterType<CatagoryWriteRepository>().As<ICatagoryWriteRepository>();
@@ -56,6 +62,11 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<ProductPictureWriteRepository>().As<IProductPictureWriteRepository>();
             builder.RegisterType<ReviewReadRepository>().As<IReviewReadRepository>();
             builder.RegisterType<ReviewWriteRepository>().As<IReviewWriteRepository>();
+            builder.RegisterType<CartReadRepository>().As<ICartReadRepository>();
+            builder.RegisterType<CartWriteRepository>().As<ICartWriteRepository>();
+            builder.RegisterType<WishlistReadRepository>().As<IWishlistReadRepository>();
+            builder.RegisterType<WishlistWriteRepository>().As<IWishlistWriteRepository>();
+            
         }
     }
 }
