@@ -37,14 +37,15 @@ namespace DevShop.UI.Controllers
             return View(home);
         }
 
-        public async Task<IActionResult> Details(Guid id)
+        public async Task<IActionResult> Details(Guid id, int page = 1)
         {
             var resp = await _mediator.Send(new GetProductQueryRequest() { Id = id });
             var res = await _mediator.Send(new SimilarProductsQueryRequest()
             { ProductId = id, SubCatagoryId = resp.Product.SubCatagoryId });
-            var myReviews = await _mediator.Send(new GetMyReviewsQueryRequest() 
-            { ProductId = resp.Product.Id , UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)});
-            var allReviews = await _mediator.Send(new GetAllReviewsQueryRequest() { ProductId = resp.Product.Id });
+            var myReviews = await _mediator.Send(new GetMyReviewsQueryRequest()
+            { ProductId = resp.Product.Id, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) });
+            var allReviews = await _mediator.Send(new GetAllReviewsQueryRequest()
+            { ProductId = resp.Product.Id, Page = page, Size = 6 });
 
             await _mediator.Send(new IncreaseViewCommandRequest() { ProductId = resp.Product.Id });
 

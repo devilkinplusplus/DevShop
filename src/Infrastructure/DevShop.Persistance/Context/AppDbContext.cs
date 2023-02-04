@@ -23,6 +23,8 @@ namespace DevShop.Persistance.Context
         public DbSet<Picture> Picture { get; set; }
         public DbSet<ProductPicture> ProductPicture { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Cart> Cart { get; set; }
+        public DbSet<Wishlist> Wishlist { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -64,6 +66,16 @@ namespace DevShop.Persistance.Context
             //One to many between product and reviews
             builder.Entity<Product>()
                 .HasMany(x=>x.Reviews)
+                .WithOne(x=>x.Product)
+                .HasForeignKey(x => x.ProductId);
+            //One to many between product and cart
+            builder.Entity<Product>()
+                .HasMany(x => x.Carts)
+                .WithOne(x => x.Product)
+                .HasForeignKey(x => x.ProductId);
+            //one to many between product and wishlist
+            builder.Entity<Product>()
+                .HasMany(x=>x.Wishlists)
                 .WithOne(x=>x.Product)
                 .HasForeignKey(x => x.ProductId);
         }

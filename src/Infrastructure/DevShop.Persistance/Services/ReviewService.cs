@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DevShop.Persistance.Services
 {
@@ -18,10 +19,11 @@ namespace DevShop.Persistance.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Review>> GetAllReviews(Guid productId)
+        public async Task<IEnumerable<Review>> GetAllReviews(Guid productId,int page = 1,int size =10)
         {
             var result = await _context.Reviews.Include(x => x.User).Include(x => x.Product)
-                    .Where(x => x.IsDeleted == false && x.ProductId == productId).ToListAsync();
+                    .Where(x => x.IsDeleted == false && x.ProductId == productId)
+                    .ToPagedListAsync(page,size);
             return result;
         }
 
