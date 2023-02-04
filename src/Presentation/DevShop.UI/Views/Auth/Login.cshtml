@@ -1,42 +1,47 @@
-﻿@{
-    Layout = "_AuthLayout";
-}
-<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
-    <div class="d-table-cell align-middle">
-
-        <div class="text-center mt-4">
-            <h1 class="h2">Get started</h1>
-            <p class="lead">
-                Start creating the best possible user experience for you customers.
-            </p>
+﻿<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <span class="breadcrumb-item active">Login</span>
+            </nav>
         </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="m-sm-4">
-                    <form method="post">
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input class="form-control form-control-lg" id="email"
-                                   type="email" name="email" placeholder="Your email" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input class="form-control form-control-lg" id="password"
-                                   type="password" name="password"
-                                   placeholder="Enter password" />
-                        </div>
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger">
-                        </div>
-                        <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-lg btn-primary">
-                                Sign in
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
+<!-- Breadcrumb End -->
+<!-- Login Start -->
+<div class="container-fluid">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sign in</span></h2>
+    <div class="row px-xl-5">
+        <div class="col-lg-7 mb-5">
+            <div class="contact-form bg-light p-30">
+                <form method="post">
+                    <div class="control-group mb-2">
+                        <label class="mb-2">Email</label>
+                        <input type="email" class="form-control" name="Email" placeholder="Your Email"
+                            required="required" data-validation-required-message="Please enter your email" />
+                    </div>
+                    <div class="control-group mb-2">
+                        <label class="mb-2">Password</label>
+                        <input type="password" class="form-control" name="Password" placeholder="Password"
+                            required="required" data-validation-required-message="Please enter your password" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Login</button>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center fw-bold"></div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+            <h2 class="lead text-uppercase">Don't have an account?</h2>
+             <div class="contact-form bg-light p-30">
+                <h2 class="lead text-uppercase mb-4">Sign up for free!</h2>
+                <p class="lead mb-5">Follow the link below</p>
+                <a href="/auth/register" class="btn btn-primary btn-block">Sign Up For Free</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login End -->

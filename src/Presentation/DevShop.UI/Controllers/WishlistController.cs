@@ -4,10 +4,12 @@ using DevShop.Application.Cqrs.Queries.Wishlists.GetAll;
 using DevShop.Domain.Entities.Concrete;
 using JetBrains.Annotations;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevShop.UI.Controllers
 {
+    [Authorize]
     public class WishlistController : Controller
     {
         private readonly IMediator _mediator;

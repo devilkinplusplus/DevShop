@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n0DN0aWdH7q067vnQ+JPa84tmWVRa2Abbpp8togOKIs=",
+  "Hash": "x9+hgfTVBBXe9xRMe9MH5SEOjm3r/AlVe6N8DRCN46o=",
   "Source": "DevShop.UI",
   "BasePath": "_content/DevShop.UI",
   "Mode": "Default",
@@ -1681,6 +1681,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\users\\37b3e18e-05ba-4453-a240-eb4afeb7e647meattebulvar2.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\users\\68f83453-9603-4057-9718-4b1ad1e1a758pexels-arthouse-studio-4534200.jpg",
+      "SourceId": "DevShop.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\",
+      "BasePath": "_content/DevShop.UI",
+      "RelativePath": "images/users/68f83453-9603-4057-9718-4b1ad1e1a758pexels-arthouse-studio-4534200.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\users\\68f83453-9603-4057-9718-4b1ad1e1a758pexels-arthouse-studio-4534200.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\users\\834094f5-b854-4ca8-9380-b3a359b1ef77pexels-sam-kolder-2387873.jpg",
+      "SourceId": "DevShop.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\",
+      "BasePath": "_content/DevShop.UI",
+      "RelativePath": "images/users/834094f5-b854-4ca8-9380-b3a359b1ef77pexels-sam-kolder-2387873.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\users\\834094f5-b854-4ca8-9380-b3a359b1ef77pexels-sam-kolder-2387873.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\users\\8a0a84a4-9b80-4144-a99b-68e67e869139Screenshot_20220225-034531_Instagram.jpg",

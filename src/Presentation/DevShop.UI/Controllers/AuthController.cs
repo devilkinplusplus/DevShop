@@ -39,14 +39,12 @@ namespace DevShop.UI.Controllers
                 _logger.LogInformation("New user registered");
                 return RedirectToAction(nameof(Login));
             }
-            else
+           
+            foreach (var error in response.Messages)
             {
-                foreach (var error in response.Messages)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
-                return View(model);
+                ModelState.AddModelError("", error.Description);
             }
+            return View(model);
         }
 
         public IActionResult Login()
@@ -59,12 +57,12 @@ namespace DevShop.UI.Controllers
             LoginUserCommandResponse response = await _mediator.Send(new LoginUserCommand()
             { Email = model.Email, Password = model.Password });
             if (response.Succeeded)
-                return RedirectToAction(nameof(Register));
+                return RedirectToAction("Index","Home");
             foreach (var item in response.Errors)
             {
                 ModelState.AddModelError("", item.Description);
             }
-            return View(model);
+            return View();
         }
     }
 }

@@ -31,7 +31,10 @@ namespace DevShop.Persistance.Services
             AppUser user = await _userManager.FindByEmailAsync(email);
             List<IdentityError> errorList = new();
             if (user is null)
-                throw new Exception("User not found");
+            {
+                errorList.Add(new(){Description = "User is not found"});
+                return new(){Succeeded = false,Errors = errorList};
+            }
 
             SignInResult result = await _signInManager.PasswordSignInAsync(user, password, true, true);
 
