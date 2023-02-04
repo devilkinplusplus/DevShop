@@ -389,6 +389,14 @@
       "PackagePath": "staticwebassets\\images\\products\\e383ba99-e37c-4b2b-9308-2dcd720e25dfmountains_silhouette_blue_sky_sunset_light_nature_background_4k_hd_nature-3840x2160.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\users\\37b3e18e-05ba-4453-a240-eb4afeb7e647meattebulvar2.jpeg",
+      "PackagePath": "staticwebassets\\images\\users\\37b3e18e-05ba-4453-a240-eb4afeb7e647meattebulvar2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\users\\8a0a84a4-9b80-4144-a99b-68e67e869139Screenshot_20220225-034531_Instagram.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\8a0a84a4-9b80-4144-a99b-68e67e869139Screenshot_20220225-034531_Instagram.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

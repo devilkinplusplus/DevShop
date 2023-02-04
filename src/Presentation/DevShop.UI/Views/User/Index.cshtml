@@ -1,0 +1,218 @@
+﻿@model UserVM
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" href="#">User</a>
+                <span class="breadcrumb-item active">Profile</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Checkout Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-lg-8">
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">Your Information</span>
+            </h5>
+            <div class="bg-light p-30 mb-5">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" readonly value="@Model.User.FirstName">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Last Name</label>
+                        <input class="form-control" type="text" readonly value="@Model.User.LastName">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Username</label>
+                        <input class="form-control" type="text" readonly value="@Model.User.UserName">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Email</label>
+                        <input class="form-control" type="email" readonly value="@Model.User.Email">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Total Cost</label>
+                        <p class="lead text-danger">-$210</p>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Total Revenue</label>
+                        <p class="lead text-success">+$300</p>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Your Budget</label>
+                        <p class="lead">$@Model.User.Budget</p>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Increase Budget</label><br />
+                        <input type="submit" class="btn btn-warning btn-large" value="Increase" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Change Password</label>
+                        <input type="button" class="btn btn-warning btn-large"
+                               data-toggle="modal" data-target="#passModal" value="Change" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Products-->
+        <div class="col-lg-4">
+            <div class="mb-5">
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Photo</span>
+                </h5>
+                <div class="bg-light p-30">
+                    <div class="container-fluid">
+                        <img src="@Model.User.ProfilePhoto" class="img-fluid img-thumbnail" />
+                    </div>
+                    <button class="btn btn-block btn-primary font-weight-bold py-3"
+                            data-toggle="modal" data-target="#photoModal">
+                        Change
+                    </button>
+                </div>
+            </div>
+            <h5 class="section-title position-relative text-uppercase mb-3">
+                <span class="bg-secondary pr-3">
+                    Order Total
+                </span>
+            </h5>
+            <div class="bg-light p-30 mb-5">
+                <div class="border-bottom">
+                    <h6 class="mb-3">Products</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>Product Name 1</p>
+                        <p>$150</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>Product Name 2</p>
+                        <p>$150</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>Product Name 3</p>
+                        <p>$150</p>
+                    </div>
+                </div>
+                <div class="border-bottom pt-3 pb-2">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Subtotal</h6>
+                        <h6>$150</h6>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="font-weight-medium">Shipping</h6>
+                        <h6 class="font-weight-medium">$10</h6>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5>Total</h5>
+                        <h5>$160</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Checkout End -->
+<!-- Change Password Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="passModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>New Password</label>
+                <input type="password" class="form-control" id="Password" />
+                <label>Repeat Password</label>
+                <input type="password" class="form-control" id="RePassword" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitPassword()">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Profile Photo Modal-->
+<div class="modal" tabindex="-1" role="dialog" id="photoModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Profile Photo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <form method="post" enctype="multipart/form-data">
+                            <label class="mb-2">Upload</label>
+                            <input class="form-control" type="file" name="ProfilePhoto" id="photo"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitPhoto()">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function submitPassword() {
+            const password = $("#Password").val();
+            const repassword = $("#RePassword").val();
+            const dataObject = { Password: password, RePassword: repassword };
+
+            $.ajax({
+                type: "post",
+                url: "/user/changepassword/",
+                data: dataObject,
+                success: function (res) {
+                    if (res.success) {
+                        Swal.fire("Success", "Password changed successfully", "success");
+                        $('#passModal').modal('hide');
+                    }
+                    else {
+                        Swal.fire("Error", "Some informations are not valid", "error")
+                    }
+                }
+            })
+        }
+
+        function submitPhoto(){
+             let picture = $("#photo")[0].files;
+             let picsData = new FormData();
+             picsData.append("Picture", picture[0]);
+             $.ajax({
+                url: "/User/UploadPhoto",
+                type: "POST",
+                data: picsData,
+                processData: false,
+                contentType: false,
+                success:function(res){
+                    if(res.success){
+                        Swal.fire("Success", "Profile photo changed successfully", "success");
+                        $('#photoModal').modal('hide');
+                    }
+                }
+            })
+        }
+
+    </script>
+}
