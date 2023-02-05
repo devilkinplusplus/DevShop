@@ -43,14 +43,14 @@
             }
         </tbody>
     </table>
-    @if (Model != null)
-    {
         <div class="btn-toolbar mb-4">
-            <button class="btn btn-info">
-                @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
-            </button>
+            @if (Model != null)
+            {
+                <ul class="pagination">
+                    @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+                </ul>
+            }
         </div>
-    }
     <div class="container">
         <a class="btn btn-success btn-large" href="/admin/role/create">Create New</a>
     </div>

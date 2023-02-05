@@ -26,6 +26,8 @@ using DevShop.Persistance.Repositories.Carts;
 using DevShop.Application.Repositories.Carts;
 using DevShop.Persistance.Repositories.Wishlists;
 using DevShop.Application.Repositories.Wishlists;
+using DevShop.Persistance.Repositories.Sales;
+using DevShop.Application.Repositories.Sales;
 
 namespace DevShop.Persistance.Autofac
 {
@@ -47,6 +49,7 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<ReviewService>().As<IReviewService>();
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<WishlistService>().As<IWishlistService>();
+            builder.RegisterType<SaleService>().As<ISaleService>();
             //Repositories
             builder.RegisterType<CatagoryReadRepository>().As<ICatagoryReadRepository>();
             builder.RegisterType<CatagoryWriteRepository>().As<ICatagoryWriteRepository>();
@@ -66,7 +69,9 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<CartWriteRepository>().As<ICartWriteRepository>();
             builder.RegisterType<WishlistReadRepository>().As<IWishlistReadRepository>();
             builder.RegisterType<WishlistWriteRepository>().As<IWishlistWriteRepository>();
-            
+            builder.RegisterType<SaleReadRepository>().As<ISaleReadRepository>();
+            builder.RegisterType<SaleWriteRepository>().As<ISaleWriteRepository>();
+
         }
     }
 }

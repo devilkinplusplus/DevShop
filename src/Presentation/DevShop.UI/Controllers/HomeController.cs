@@ -1,4 +1,5 @@
 ﻿using DevShop.Application.Cqrs.Commands.Products.IncreaseView;
+using DevShop.Application.Cqrs.Queries.Products.GetAllProducts;
 using DevShop.Application.Cqrs.Queries.Products.GetById;
 using DevShop.Application.Cqrs.Queries.Products.GetMyProducts;
 using DevShop.Application.Cqrs.Queries.Products.NewProducts;
@@ -8,6 +9,7 @@ using DevShop.Application.Cqrs.Queries.Reviews.GetAllReviews;
 using DevShop.Application.Cqrs.Queries.Reviews.GetMyReviews;
 using DevShop.Application.Cqrs.Queries.Subcatagories.GetAll;
 using DevShop.Application.ViewModels;
+using DevShop.Domain.Entities.Concrete;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -59,5 +61,18 @@ namespace DevShop.UI.Controllers
 
             return View(details);
         }
+
+        public async Task<IActionResult> ProductsList(int page = 1){
+            GetAllProductsQueryResponse productResponse = await _mediator.Send(new GetAllProductsQueryRequest()
+                                        {Page = page, Size = 12});
+            if(productResponse.Succeeded)
+                return View(productResponse.Products);
+            foreach (var item in productResponse.Errors)
+            {
+                ModelState.AddModelError("",item.Description);
+            }
+            return View();
+        }
+
     }
 }

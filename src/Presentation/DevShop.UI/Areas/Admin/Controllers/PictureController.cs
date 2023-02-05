@@ -8,7 +8,7 @@ using NuGet.Protocol;
 namespace DevShop.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class PictureController : Controller
     {
         private readonly IWebHostEnvironment _env;

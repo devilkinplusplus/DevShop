@@ -1,0 +1,57 @@
+@model IEnumerable<Sale>
+
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success fw-bold">Your Sales</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table table-dark">
+            <tr>
+                <th>Product</th>
+                <th>Buyer</th>
+                <th>Quantity</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Product.Title</td>
+                        <td>@item.Buyer.UserName</td>
+                        <td>
+                            @if (item.Product.Quantity != 0)
+                            {
+                                <span class="badge badge-danger">@item.Product.Quantity</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Out Of Stock</span>
+                            }
+                        </td>
+
+                        <td>
+                            <span class="text-success">
+                               + $@(item.Product.Price - (item.Product.Price * item.Product.Discount / 100))
+                            </span>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <div class="alert alert-warning text-center fw-bold">
+                    <h2 class="lead">You don't have any sales :/</h2>
+                </div>
+            }
+        </tbody>
+    </table>
+    @if (Model != null)
+    {
+        <ul class="pagination">
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+        </ul>
+    }
+</div>
