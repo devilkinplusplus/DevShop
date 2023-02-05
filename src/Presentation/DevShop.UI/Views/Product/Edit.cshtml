@@ -1,0 +1,72 @@
+@model EditProductVM
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 m-auto">
+            <form id="ProductForm" method="post">
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <h2 class="lead">Create New Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mt-3">
+                            <label for="productName" class="fw-bold">Product Title</label>
+                            <input class="form-control form-control-lg" value="@(Model?.Product?.Title ?? string.Empty)"
+                                   placeholder="Enter product name" type="text" name="Title" id="productName" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label class="fw-bold">Catagory</label>
+                            <select name="SubCatagoryId" class="form-control form-control-lg">
+                                <option value="@Model.Product.SubCatagoryId" selected>
+                                    @Model.Product.SubCatagory.Name
+                                </option>
+                                @foreach (var subCategory in Model.SubCatagories
+                                .Where(x => x.Id != Model.Product.SubCatagoryId) ?? Enumerable.Empty<SubCatagory>())
+                                {
+                                    <option value="@subCategory.Id">@subCategory.Name</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="price" class="fw-bold">Product price</label>
+                            <input class="form-control form-control-lg" value="@Model.Product.Price" min="0"
+                                   placeholder="Enter product price" type="number" step=".01" name="Price"
+                                   id="price" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="price" class="fw-bold">Product discount</label>
+                            <input class="form-control form-control-lg" value="@Model.Product.Discount" min="0"
+                                   placeholder="Enter discount" type="number" step=".01" name="Discount" max="99"
+                                   id="price" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="Quantity" class="fw-bold">Product quantity</label>
+                            <input class="form-control form-control-lg" placeholder="Enter product quantity"
+                                   value="@Model.Product.Quantity" min="0" 
+                                   type="number" step=".01" name="Quantity" id="Quantity" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="Description" class="fw-bold">Product description</label>
+                            <textarea class="form-control form-control-lg" placeholder="Enter product description"
+                                      type="text" name="Description" id="Description" rows="10">@Model.Product.Description
+                            </textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <input id="btnSubmit" type="submit" class="btn btn-primary" value="Save" />
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center mt-2">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

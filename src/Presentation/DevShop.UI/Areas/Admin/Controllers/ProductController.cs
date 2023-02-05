@@ -19,8 +19,8 @@ using System.Security.Claims;
 
 namespace DevShop.UI.Areas.Admin.Controllers
 {
-    [Area("Admin")]
     [Authorize(Roles = "Admin")]
+    [Area("Admin")]
     public class ProductController : Controller
     {
         private readonly IMediator _mediator;
@@ -43,7 +43,6 @@ namespace DevShop.UI.Areas.Admin.Controllers
             }
             return View();
         }
-
         public async Task<IActionResult> Create()
         {
             var subcatagories = await _mediator.Send(new AllSubcatagoriesQuery() { Page = 1, Size = 10 });

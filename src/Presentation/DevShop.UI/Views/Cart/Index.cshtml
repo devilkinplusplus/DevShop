@@ -31,11 +31,14 @@
                     @if (Model != null)
                     {
                         int count = 1;
+                        List<Guid> cartIds = new();
                         @foreach (var item in Model)
                         {
                             //product price with discount
                             var productPrice = item.Product.Price - (item.Product.Price * item.Product.Discount / 100);
-                            
+                            //add cartid with each loop for delete
+                            cartIds.Add(item.Id);
+
                             <tr>
                                 <td class="align-middle">
                                     <img src="@item.Product.ProductPictures.First().Picture.ImageUrl"
@@ -56,12 +59,12 @@
                                             </button>
                                         </div>
                                         <input type="text" id="quantity_@count"
-                                               class="form-control form-control-sm bg-secondary border-0
-                                               text-center" onchange="updateTotalPrice(@productPrice,@count)"
+                                               class="form-control form-control-sm bg-secondary border-0 text-center" 
+                                               onchange="updateTotalPrice(@productPrice,@count)"
                                                value="1">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-primary btn-plus"
-                                                    onclick="increaseTotalPrice(@productPrice,@count)">
+                                                    onclick="increaseTotalPrice(@productPrice,@count')">
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
@@ -78,6 +81,7 @@
                             </tr>
                             count++;
                         }
+                        <input type="hidden" id="cartIds" value="@(string.Join(',', cartIds))" />
                     }
                     else
                     {
@@ -95,20 +99,12 @@
             }
         </div>
         <div class="col-lg-4">
-            <form class="mb-30" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary">Apply Coupon</button>
-                    </div>
-                </div>
-            </form>
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom pb-2">
                     <div class="d-flex justify-content-between mb-3">
                         <h6>Subtotal</h6>
-                        <h6>$150</h6>
+
                     </div>
                     <div class="d-flex justify-content-between">
                         <h6 class="font-weight-medium">Shipping</h6>
@@ -118,9 +114,27 @@
                 <div class="pt-2">
                     <div class="d-flex justify-content-between mt-2">
                         <h5>Total</h5>
-                        <h5>$160</h5>
+                        @{
+                            var totalProductPrice = 0f;
+                            List<Guid> productIds = new();
+                        }
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                var productPrice = item.Product.Price - (item.Product.Price * item.Product.Discount / 100);
+                                totalProductPrice += productPrice;
+                                productIds.Add(item.Product.Id);
+                            }
+                            <input type="hidden" id="productIds" value="@(string.Join(',', productIds))" />
+                        }
+
+                        <h5 id="totalAmount">$@totalProductPrice</h5>
                     </div>
-                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button>
+                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3"
+                            onclick="calculateTotal()">
+                        Proceed To Checkout
+                    </button>
                 </div>
             </div>
         </div>
@@ -129,41 +143,77 @@
 <!-- Cart End -->
 @section Scripts{
     <script>
-        function updateTotalPrice(price,id) {
+        function calculateTotal() {
+            let totalAmount = $("#totalAmount").text();
+            let value = parseFloat(totalAmount.replace('$', ''));
+            let productIds = $("#productIds").val().split(",");
+            let cartIds = $("#cartIds").val().split(",");
+            const dataObject = { ProductsId: productIds, TotalAmount: value };
+
+            $.ajax({
+                type: "post",
+                url: "/seller/BuyProduct",
+                data: dataObject,
+                success: function (res) {
+                    if (res.success) {
+                        for (let i = 0; i < cartIds.length; i++) {
+                            deleteFromCart(`${cartIds[i]}`);
+                        }
+                        Swal.fire("Success", "Operation successfully finished", "success");
+                    }
+                    else {
+                        Swal.fire("Warning", "Insufficient Balance!", "warning")
+                    }
+                }
+            })
+        }
+
+
+        function updateTotalPrice(price, id) {
             let productQuantity = $(`#quantity_${id}`).val();
             let productPrice = price;
             let totalPrice = productQuantity * productPrice;
-            document.getElementById(`totalPrice_${id}`).innerText = "$"+totalPrice;
+            document.getElementById(`totalPrice_${id}`).innerText = "$" + totalPrice;
         }
 
-        function increaseTotalPrice(price,id){
+        function increaseTotalPrice(price, id) {
             let productQuantity = $(`#quantity_${id}`).val();
             productQuantity++;
             let productPrice = price;
             let totalPrice = productQuantity * productPrice;
-            document.getElementById(`totalPrice_${id}`).innerText = "$"+totalPrice;
+
+          
+
+            let stringValue = $("#totalAmount").text();
+            let totalAmount = parseFloat(stringValue.replace('$', ''));
+            totalAmount += price;
+            document.getElementById(`totalPrice_${id}`).innerText = "$" + totalPrice;
+            document.getElementById("totalAmount").innerText = "$" + (totalAmount);
+
         }
 
-        function decreaseTotalPrice(price,id) {
+        function decreaseTotalPrice(price, id) {
             let productQuantity = $(`#quantity_${id}`).val();
             productQuantity--;
             let productPrice = price;
             let totalPrice = productQuantity * productPrice;
-            document.getElementById(`totalPrice_${id}`).innerText = "$"+totalPrice;
+
+            let stringValue = $("#totalAmount").text();
+            let totalAmount = parseFloat(stringValue.replace('$', ''));
+            totalAmount -= price;
+            document.getElementById(`totalPrice_${id}`).innerText = "$" + totalPrice;
+            document.getElementById("totalAmount").innerText = "$" + (totalAmount);
         }
 
-        function deleteFromCart(id){
+        function deleteFromCart(id) {
             $.ajax({
-                type:"post",
-                url:"/cart/delete",
-                data:{id},
-                success:function(res){
-                    if(res.success){
-                        Swal.fire("Deleted from cart");
+                type: "post",
+                url: "/cart/delete",
+                data: { id },
+                success: function (res) {
+                    if (res.success) {
+                        console.log("Success")
                     }
-                    setTimeout(function(){
-                        location.reload();
-                    },2000)
                 }
             })
         }

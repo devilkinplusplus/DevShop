@@ -26,5 +26,6 @@ namespace DevShop.Domain.Entities.Concrete
         public ICollection<Review> Reviews { get; set; }
         public ICollection<Cart> Carts { get; set; }
         public ICollection<Wishlist> Wishlists { get; set; }
+        public ICollection<Sale> Sales { get; set; }
     }
 }

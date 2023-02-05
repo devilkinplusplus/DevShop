@@ -56,13 +56,13 @@
                     $@(Model.Product.Price - (Model.Product.Price * Model.Product.Discount / 100))
                 </h3>
                 <p class="mb-4 text-dark">
-                    Seller:@Model.Product.User.FirstName @Model.Product.User.LastName
+                    Product is sold by <h2 class="lead">@Model.Product.User.UserName</h2> 
                 </p>
                 <p class="mb-4">
                     @Model.Product.Description
                 </p>
                 <div class="d-flex mb-4">
-                    <strong class="text-dark mr-3">Catagory:@Model.Product.SubCatagory.Name</strong>
+                    <strong class="text-dark mr-3">Catagory @Model.Product.SubCatagory.Name</strong>
                 </div>
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <div class="input-group quantity mr-3" style="width: 130px;">

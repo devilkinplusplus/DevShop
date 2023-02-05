@@ -214,6 +214,40 @@ namespace DevShop.Persistance.Migrations
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Sale", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BuyerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("SaleDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SellerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuyerId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SellerId");
+
+                    b.ToTable("Sales");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.SubCatagory", b =>
                 {
                     b.Property<Guid>("Id")
@@ -570,6 +604,31 @@ namespace DevShop.Persistance.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Sale", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "Buyer")
+                        .WithMany()
+                        .HasForeignKey("BuyerId")
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Product", "Product")
+                        .WithMany("Sales")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "Seller")
+                        .WithMany()
+                        .HasForeignKey("SellerId")
+                        .IsRequired();
+
+                    b.Navigation("Buyer");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Seller");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Wishlist", b =>
                 {
                     b.HasOne("DevShop.Domain.Entities.Concrete.Product", "Product")
@@ -657,6 +716,8 @@ namespace DevShop.Persistance.Migrations
                     b.Navigation("ProductPictures");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("Sales");
 
                     b.Navigation("Wishlists");
                 });

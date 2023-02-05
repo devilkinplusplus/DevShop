@@ -24,7 +24,7 @@ namespace DevShop.Persistance.Services
         {
             IEnumerable<Cart> result = await _context.Cart.Include(x=>x.Product)
                 .Include(x=>x.Product).ThenInclude(x=>x.ProductPictures).ThenInclude(x=>x.Picture)
-                .Where(x=> x.UserId == userId && x.IsDeleted ==false).ToPagedListAsync(page,size);
+                .Where(x=> x.UserId == userId && x.IsDeleted == false).ToPagedListAsync(page,size);
             return result;
         }
     }

@@ -1,10 +1,13 @@
 ﻿using DevShop.Application.Abstractions.Services;
+using DevShop.Application.DTOs.Products;
 using DevShop.Application.Helpers.Utilities.FileHelper;
 using DevShop.Application.Repositories.Pictures;
 using DevShop.Application.Repositories.Products;
 using DevShop.Domain.Entities.Concrete;
+using DevShop.Domain.Entities.Identity;
 using DevShop.Persistance.Context;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -78,6 +81,27 @@ namespace DevShop.Persistance.Services
             product.View++;
             await _productWriteRepository.UpdateAsync(product);
             return true;
+        }
+
+        public async Task<PaymentResponse> GetPaymentFromSales(List<Guid> productIds)
+        {
+            List<string> sellers = new();
+            List<Guid> prods = new();
+            for (int i = 0; i < productIds.Count; i++)
+            {
+                Product? prod = await _context.Product.Where(x => x.Id == productIds[i]).FirstOrDefaultAsync();
+                AppUser? data = await _context.Product.Where(x => x.Id == productIds[i]).Select(x => x.User)
+                                                                                        .FirstOrDefaultAsync();
+                data.Budget += (prod.Price - (prod.Price * prod.Discount / 100));
+                prod.Quantity--;
+                _context.Users.Update(data);
+                _context.Product.Update(prod);
+                await _context.SaveChangesAsync();
+                sellers.Add(data.Id);
+                prods.Add(prod.Id);
+            }
+            return new() { ProductIds = prods, SellerIds = sellers };
+
         }
     }
 }

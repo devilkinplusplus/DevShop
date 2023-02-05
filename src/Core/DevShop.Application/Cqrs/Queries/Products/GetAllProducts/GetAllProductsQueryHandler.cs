@@ -24,7 +24,8 @@ namespace DevShop.Application.Cqrs.Queries.Products.GetAllProducts
         {
             List<IdentityError> errorList = new();
             IEnumerable<Product> products = await _productRead
-                    .GetAllAsync(x => x.IsDeleted == false , request.Page, request.Size, "SubCatagory","User");
+                    .GetAllAsync(x => x.IsDeleted == false , request.Page, request.Size, "SubCatagory","User",
+                                                            "ProductPictures.Picture");
 
             if (products.Count() == 0)
             {
