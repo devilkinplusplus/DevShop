@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace DevShop.Persistance.Services
 {
@@ -103,5 +104,6 @@ namespace DevShop.Persistance.Services
             return new() { ProductIds = prods, SellerIds = sellers };
 
         }
+
     }
 }

@@ -13,5 +13,6 @@ namespace DevShop.Application.Abstractions.Services
         Task CreateSales(Guid productId, string buyerId,string sellerId);
         Task<IEnumerable<Sale>> GetSales(string userId, int page = 1, int size = 10);
         Task<IEnumerable<Sale>> GetBuys(string userId, int page = 1, int size = 10);
+        Task<IEnumerable<Sale>> GetLastActivities(string userId);
     }
 }

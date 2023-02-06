@@ -8,6 +8,7 @@ using DevShop.Persistance;
 using DevShop.Persistance.Autofac;
 using Serilog;
 using Serilog.Core;
+using DevShop.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceServices();
 builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices();
 
 builder.Services.ConfigureApplicationCookie(options =>
     {

@@ -17,7 +17,7 @@ namespace DevShop.Application.Validations
             RuleFor(x => x.Title).MaximumLength(50).WithMessage(ErrorMessages.OutOfRangeException);
 
             RuleFor(x => x.Description).NotNull().NotEmpty().WithMessage(ErrorMessages.NotNullException);
-            RuleFor(x => x.Description).MaximumLength(150).WithMessage(ErrorMessages.OutOfRangeException);
+            RuleFor(x => x.Description).MaximumLength(1000).WithMessage(ErrorMessages.OutOfRangeException);
 
             RuleFor(x => x.Price).NotNull().NotEmpty().WithMessage(ErrorMessages.NotNullException);
             RuleFor(x => x.Price).GreaterThan(0).WithMessage(ErrorMessages.MinimumValueException);

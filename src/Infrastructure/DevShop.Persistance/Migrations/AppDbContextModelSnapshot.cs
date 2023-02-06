@@ -89,6 +89,34 @@ namespace DevShop.Persistance.Migrations
                     b.ToTable("CatagorySub");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Picture", b =>
                 {
                     b.Property<Guid>("Id")
@@ -180,6 +208,38 @@ namespace DevShop.Persistance.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductPicture");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Reply", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reply");
                 });
 
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Review", b =>
@@ -585,6 +645,25 @@ namespace DevShop.Persistance.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Reply", b =>
+                {
+                    b.HasOne("DevShop.Domain.Entities.Concrete.Contact", "Contact")
+                        .WithMany("Replies")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevShop.Domain.Entities.Identity.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Review", b =>
                 {
                     b.HasOne("DevShop.Domain.Entities.Concrete.Product", "Product")
@@ -702,6 +781,11 @@ namespace DevShop.Persistance.Migrations
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Catagory", b =>
                 {
                     b.Navigation("CatagorySubs");
+                });
+
+            modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Contact", b =>
+                {
+                    b.Navigation("Replies");
                 });
 
             modelBuilder.Entity("DevShop.Domain.Entities.Concrete.Picture", b =>

@@ -317,6 +317,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\default\\user.png",
+      "PackagePath": "staticwebassets\\images\\default\\user.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\images\\products\\01eb81dd-4377-4cd5-9ba1-ffae9fc7be99blue_fusion_windows_11_logo_microsoft_minimalist_operating_system_4k_hd_windows_11-1280x720.jpg",
       "PackagePath": "staticwebassets\\images\\products\\01eb81dd-4377-4cd5-9ba1-ffae9fc7be99blue_fusion_windows_11_logo_microsoft_minimalist_operating_system_4k_hd_windows_11-1280x720.jpg"
     },
