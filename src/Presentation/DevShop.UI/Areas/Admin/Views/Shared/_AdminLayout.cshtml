@@ -81,17 +81,13 @@
                         </div>
                     </li>
 
-
-
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="">
+                        <a class="sidebar-link" href="/user/">
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">
                                 Profile
                             </span>
                         </a>
                     </li>
-
-
                 </ul>
 
             </div>
@@ -247,27 +243,23 @@
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                                data-bs-toggle="dropdown">
-                                <img src="~/adminKit/dist/img/avatars/avatar.jpg"
-                                     class="avatar img-fluid rounded me-1" alt="Charles Hall" />
-                                <span class="text-dark">Charles Hall</span>
+                                <span class="text-dark">
+                                    @User.Identity.Name
+                                </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html">
+                                <a class="dropdown-item" href="/admin/profile/">
                                     <i class="align-middle me-1" data-feather="user"></i> Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/admin/dashboard/">
                                     <i class="align-middle me-1" data-feather="pie-chart"></i> Analytics
-                                </a>
-                                <a class="dropdown-item" href="index.html">
-                                    <i class="align-middle me-1" data-feather="settings"></i>
-                                    Settings & Privacy
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="align-middle me-1" data-feather="help-circle"></i>
                                     Help Center
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Log out</a>
+                                <a class="dropdown-item" href="#" onclick="logout()">Log out</a>
                             </div>
                         </li>
                     </ul>
@@ -316,13 +308,25 @@
     </div>
 
     <script src="~/adminKit/dist/js/app.js"></script>
+    @RenderSection("Scripts",false)
     <script>
         $(document).ready(function () {
             $('.dropdown-toggle').dropdown()
         });
-    </script>
-    @RenderSection("Scripts",false)
 
+        function logout(){
+            $.ajax({
+                type:"post",
+                url:"/auth/logout",
+                success:function(res){
+                    if(res.success){
+                        location.reload();
+                    }
+                }
+            })
+        }
+    </script>
+        
 </body>
 
 </html>

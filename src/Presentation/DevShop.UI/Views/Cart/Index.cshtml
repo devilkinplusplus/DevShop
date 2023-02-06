@@ -64,7 +64,7 @@
                                                value="1">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-primary btn-plus"
-                                                    onclick="increaseTotalPrice(@productPrice,@count')">
+                                                    onclick="increaseTotalPrice(@productPrice,@count)">
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
@@ -182,14 +182,11 @@
             let productPrice = price;
             let totalPrice = productQuantity * productPrice;
 
-          
-
             let stringValue = $("#totalAmount").text();
             let totalAmount = parseFloat(stringValue.replace('$', ''));
             totalAmount += price;
             document.getElementById(`totalPrice_${id}`).innerText = "$" + totalPrice;
             document.getElementById("totalAmount").innerText = "$" + (totalAmount);
-
         }
 
         function decreaseTotalPrice(price, id) {
@@ -212,8 +209,11 @@
                 data: { id },
                 success: function (res) {
                     if (res.success) {
-                        console.log("Success")
+                        Swal.fire("Deleted from cart")
                     }
+                    setTimeout(function(){
+                        location.reload();
+                    },2000);
                 }
             })
         }

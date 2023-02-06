@@ -1,4 +1,5 @@
 ﻿@model UserVM
+@inject SignInManager<AppUser> signInManager
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
@@ -38,14 +39,6 @@
                         <input class="form-control" type="email" readonly value="@Model.User.Email">
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>Total Cost</label>
-                        <p class="lead text-danger">-$210</p>
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Total Revenue</label>
-                        <p class="lead text-success">+$300</p>
-                    </div>
-                    <div class="col-md-6 form-group">
                         <label>Your Budget</label>
                         <p class="lead">$@Model.User.Budget</p>
                     </div>
@@ -60,8 +53,45 @@
                     </div>
                 </div>
             </div>
+            <!--All activities-->
+              <div class="row mt-2">
+                <div class="col-lg-12 col-md-8 col-sm-6">
+                    <h2>Last activities</h2>
+                        <table class="table table-hover">
+                            <thead class="table table-dark">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>Seller</th>
+                                    <th>Buyer</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    @foreach (var item in Model.Sales)
+                                    {
+                                        <tr>
+                                            <td>@item.Product.Title</td>
+                                            <td><span class="badge badge-success">$@(item.Product.Price - (item.Product.Price * item.Product.Discount / 100))</span></td>
+                                            <td><span class="badge badge-info">@item.Seller.UserName</span></td>
+                                            <td><span class="badge badge-info">@item.Buyer.UserName</span></td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="alert alert-warning text-center fw-bold">
+                                        <h2 class="lead">You don't have activities yet :/</h2>
+                                    </div>
+                                }
+                            </tbody>
+                        </table>
+                </div>
+            </div>
         </div>
-        <!-- Products-->
+        <!-- Photo-->
         <div class="col-lg-4">
             <div class="mb-5">
                 <h5 class="section-title position-relative text-uppercase mb-3">
@@ -77,41 +107,54 @@
                     </button>
                 </div>
             </div>
+            
             <h5 class="section-title position-relative text-uppercase mb-3">
                 <span class="bg-secondary pr-3">
-                    Order Total
+                    Last Activities
                 </span>
             </h5>
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom">
                     <h6 class="mb-3">Products</h6>
-                    <div class="d-flex justify-content-between">
-                        <p>Product Name 1</p>
-                        <p>$150</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p>Product Name 2</p>
-                        <p>$150</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p>Product Name 3</p>
-                        <p>$150</p>
-                    </div>
+                    @{
+                        float total = 0f;
+                        float revenue = 0f;
+                        float cost = 0f;
+                    }
+                    @foreach (var item in Model.Sales.Take(3))
+                    {
+                        <div class="d-flex justify-content-between">
+                            <p>@item.Product.Title</p>
+                            @if(signInManager.UserManager.GetUserId(User) == item.BuyerId){
+                                <p class="text-danger">-$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
+                                total -=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                cost+=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                            }
+                            else{
+                                <p class="text-success">+$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
+                                total +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                revenue +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                            }
+                        </div>
+                    }
+                    
                 </div>
-                <div class="border-bottom pt-3 pb-2">
-                    <div class="d-flex justify-content-between mb-3">
-                        <h6>Subtotal</h6>
-                        <h6>$150</h6>
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom pb-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Revenue</h6>
+                            <h6 class="text-success">+$@revenue</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Cost</h6>
+                            <h6 class="font-weight-medium text-danger">-$@cost</h6>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-medium">Shipping</h6>
-                        <h6 class="font-weight-medium">$10</h6>
-                    </div>
-                </div>
-                <div class="pt-2">
-                    <div class="d-flex justify-content-between mt-2">
-                        <h5>Total</h5>
-                        <h5>$160</h5>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Total</h5>
+                            <h5>$@(total)</h5>
+                        </div>
                     </div>
                 </div>
             </div>

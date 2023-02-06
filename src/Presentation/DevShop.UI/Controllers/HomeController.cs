@@ -61,8 +61,8 @@ namespace DevShop.UI.Controllers
 
             return View(details);
         }
-
-        public async Task<IActionResult> ProductsList(int page = 1){
+        public async Task<IActionResult> ProductsList(int page = 1)
+        {
             GetAllProductsQueryResponse productResponse = await _mediator.Send(new GetAllProductsQueryRequest()
                                         {Page = page, Size = 12});
             if(productResponse.Succeeded)

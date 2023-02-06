@@ -40,6 +40,12 @@ namespace DevShop.Persistance.Services
                                 .Where(x => x.BuyerId == userId && x.IsDeleted == false).ToPagedListAsync(page, size);
         }
 
+        public async Task<IEnumerable<Sale>> GetLastActivities(string userId)
+        {
+            return await _context.Sales.Include(x=>x.Product).Include(x=>x.Buyer).Include(x=>x.Seller).OrderByDescending(x=>x.SaleDate)
+                            .Where(x=>x.BuyerId == userId || x.SellerId == userId).ToListAsync();
+        }
+
         public async Task<IEnumerable<Sale>> GetSales(string userId,int page = 1, int size = 10)
         {
             return await _context.Sales.Include(x=>x.Product).Include(x=>x.Seller).Include(x=>x.Buyer)

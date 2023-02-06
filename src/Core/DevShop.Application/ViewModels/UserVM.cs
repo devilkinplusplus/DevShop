@@ -11,6 +11,6 @@ namespace DevShop.Application.ViewModels
     public class UserVM
     {
         public AppUser User{ get; set; }
-        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<Sale> Sales { get; set; }
     }
 }

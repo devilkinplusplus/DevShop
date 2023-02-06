@@ -1,5 +1,7 @@
-﻿using DevShop.Application.Cqrs.Commands.User.ChangePassword;
+﻿using System.Security.Claims;
+using DevShop.Application.Cqrs.Commands.User.ChangePassword;
 using DevShop.Application.Cqrs.Commands.User.UploadPhoto;
+using DevShop.Application.Cqrs.Queries.Sales.LastActions;
 using DevShop.Application.Cqrs.Queries.User.GetCurrent;
 using DevShop.Application.DTOs.User;
 using DevShop.Application.ViewModels;
@@ -14,17 +16,23 @@ namespace DevShop.UI.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IWebHostEnvironment _environment;
-        public UserController(IMediator mediator, IWebHostEnvironment environment)
+        private readonly IHttpContextAccessor _contextAccessor;
+        public UserController(IMediator mediator, IWebHostEnvironment environment, IHttpContextAccessor contextAccessor)
         {
             _mediator = mediator;
             _environment = environment;
+            _contextAccessor = contextAccessor;
         }
 
         public async Task<IActionResult> Index()
         {
+            string userId = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userRes = await _mediator.Send(new GetCurrentUserQueryRequest());
+            var salesRes = await _mediator.Send(new LastActionsQueryRequest(){UserId = userId});
             UserVM userVM = new() { User = userRes.AppUser };
-
+            if(salesRes.Succeeded){
+                userVM.Sales = salesRes.Sales;
+            }
             return View(userVM);
         }
 

@@ -28,6 +28,10 @@ using DevShop.Persistance.Repositories.Wishlists;
 using DevShop.Application.Repositories.Wishlists;
 using DevShop.Persistance.Repositories.Sales;
 using DevShop.Application.Repositories.Sales;
+using DevShop.Persistance.Repositories.Contacts;
+using DevShop.Application.Repositories.Contacts;
+using DevShop.Persistance.Repositories.Replies;
+using DevShop.Application.Repositories.Replies;
 
 namespace DevShop.Persistance.Autofac
 {
@@ -50,6 +54,8 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<WishlistService>().As<IWishlistService>();
             builder.RegisterType<SaleService>().As<ISaleService>();
+            builder.RegisterType<ContactService>().As<IContactService>();
+            builder.RegisterType<ReplyService>().As<IReplyService>();
             //Repositories
             builder.RegisterType<CatagoryReadRepository>().As<ICatagoryReadRepository>();
             builder.RegisterType<CatagoryWriteRepository>().As<ICatagoryWriteRepository>();
@@ -71,7 +77,10 @@ namespace DevShop.Persistance.Autofac
             builder.RegisterType<WishlistWriteRepository>().As<IWishlistWriteRepository>();
             builder.RegisterType<SaleReadRepository>().As<ISaleReadRepository>();
             builder.RegisterType<SaleWriteRepository>().As<ISaleWriteRepository>();
-
+            builder.RegisterType<ContactWriteRepository>().As<IContactWriteRepository>();
+            builder.RegisterType<ContactReadRepository>().As<IContactReadRepository>();
+            builder.RegisterType<ReplyWriteRepository>().As<IReplyWriteRepository>();
+            builder.RegisterType<ReplyReadRepository>().As<IReplyReadRepository>();
         }
     }
 }

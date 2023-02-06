@@ -9,153 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DevShop.UI
 build_property.RootNamespace = DevShop.UI
-build_property.ProjectDir = C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\
+build_property.ProjectDir = c:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
+build_property.MSBuildProjectDirectory = c:\Users\user\source\repos\DevShop\src\Presentation\DevShop.UI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Create.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0YWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Edit.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0YWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Catagory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0YWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Dashboard/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Create.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Edit.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Create.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Edit.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Create.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViY2F0YWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Edit.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViY2F0YWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/Subcatagory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViY2F0YWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/UserRole/AddRole.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/UserRole/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclJvbGVcQWRkUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/UserRole/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/UserRole/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclJvbGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/_ViewImports.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/_ViewStart.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Auth/Login.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Auth/Register.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Cart/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/Details.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/ProductsList.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Home/ProductsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0c0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Create.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Edit.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Seller/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Seller/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Seller/MyBuys.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Seller/MyBuys.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGVyXE15QnV5cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/Components/CatagoryListVC/Default.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/Components/CatagoryListVC/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0YWdvcnlMaXN0VkNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/Components/SubcatagoryListVC/Default.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/Components/SubcatagoryListVC/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3ViY2F0YWdvcnlMaXN0VkNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/_MainLayout.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Shared/_MainLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/User/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Wishlist/Index.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/Wishlist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/_ViewImports.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/_ViewStart.cshtml]
+[c:/Users/user/source/repos/DevShop/src/Presentation/DevShop.UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

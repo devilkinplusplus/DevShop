@@ -95,6 +95,11 @@ namespace DevShop.Persistance.Context
                    .WithMany()
                    .HasForeignKey(x => x.BuyerId)
                    .OnDelete(DeleteBehavior.ClientSetNull); 
+            //one to many between Contact and Reply
+            builder.Entity<Contact>()
+                    .HasMany(x=>x.Replies)
+                    .WithOne(x=>x.Contact)
+                    .HasForeignKey(x=>x.ContactId);
         }
     }
 }
