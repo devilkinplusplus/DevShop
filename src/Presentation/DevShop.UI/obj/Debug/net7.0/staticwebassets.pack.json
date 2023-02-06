@@ -665,18 +665,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\cart.html",
-      "PackagePath": "staticwebassets\\multishop\\cart.html"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\checkout.html",
-      "PackagePath": "staticwebassets\\multishop\\checkout.html"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\contact.html",
-      "PackagePath": "staticwebassets\\multishop\\contact.html"
-    },
-    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\multishop\\css\\bootstrap-grid.css"
     },
@@ -707,10 +695,6 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\css\\style.min.css",
       "PackagePath": "staticwebassets\\multishop\\css\\style.min.css"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\detail.html",
-      "PackagePath": "staticwebassets\\multishop\\detail.html"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\carousel-1.jpg",
@@ -823,10 +807,6 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\vendor-8.jpg",
       "PackagePath": "staticwebassets\\multishop\\img\\vendor-8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\index.html",
-      "PackagePath": "staticwebassets\\multishop\\index.html"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\js\\main.js",
@@ -1263,10 +1243,6 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\scss\\style.scss",
       "PackagePath": "staticwebassets\\multishop\\scss\\style.scss"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\shop.html",
-      "PackagePath": "staticwebassets\\multishop\\shop.html"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DevShop.UI.Microsoft.AspNetCore.StaticWebAssets.props",

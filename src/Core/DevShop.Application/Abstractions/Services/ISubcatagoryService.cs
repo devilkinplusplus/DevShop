@@ -1,4 +1,5 @@
 ﻿using DevShop.Application.ViewModels;
+using DevShop.Domain.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace DevShop.Application.Abstractions.Services
 {
     public interface ISubcatagoryService
     {
+        //no asynchronous for calling in viewcomponent
+        IEnumerable<SubCatagory> GetSubcatagoriesByCatagoryId(Guid catagoryId);
     }
 }
