@@ -1,0 +1,7 @@
+@model IEnumerable<SubCatagory>
+<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+    @foreach (var item in Model)
+    {
+       <a href="" class="dropdown-item">@item.Name</a>
+    }
+</div>

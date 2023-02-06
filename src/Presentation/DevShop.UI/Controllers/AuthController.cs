@@ -1,6 +1,7 @@
 ﻿using DevShop.Application.Cqrs.Commands.User.AssignRole;
 using DevShop.Application.Cqrs.Commands.User.CreateUser;
 using DevShop.Application.Cqrs.Commands.User.LoginUser;
+using DevShop.Application.Cqrs.Commands.User.Logout;
 using DevShop.Application.DTOs.User;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -64,5 +65,12 @@ namespace DevShop.UI.Controllers
             }
             return View();
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> Logout(){
+            var res = await _mediator.Send(new LogoutCommandRequest());
+            return Json(new {success = res.Succeeded});
+        }
+
     }
 }
