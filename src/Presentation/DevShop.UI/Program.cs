@@ -23,9 +23,10 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 
 builder.Services.ConfigureApplicationCookie(options =>
-    {
-        options.LoginPath = "/Auth/Login";
-    });
+{
+    options.LoginPath = "/Auth/Login";
+    options.AccessDeniedPath ="/";
+});
 
 
 //logging with serilog
@@ -43,12 +44,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Error/");
     app.UseHsts();
 }
 
 
 
+app.UseStatusCodePagesWithReExecute("/Error/NotFound/{0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSerilogRequestLogging();

@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{709ECAC5-6BDB-4A7D-B83C-BB0D2B048075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevShop.Domain", "src\Core\DevShop.Domain\DevShop.Domain.csproj", "{DB6270F8-3064-4FE5-956E-9F350DCD813B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevShop.Domain", "src\Core\DevShop.Domain\DevShop.Domain.csproj", "{DB6270F8-3064-4FE5-956E-9F350DCD813B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevShop.Application", "src\Core\DevShop.Application\DevShop.Application.csproj", "{9C9EDAE4-B092-4474-A392-68375186205D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevShop.Application", "src\Core\DevShop.Application\DevShop.Application.csproj", "{9C9EDAE4-B092-4474-A392-68375186205D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevShop.Infrastructure", "src\Infrastructure\DevShop.Infrastructure\DevShop.Infrastructure.csproj", "{94061864-3E47-4F9F-9646-E041B5D36584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevShop.Infrastructure", "src\Infrastructure\DevShop.Infrastructure\DevShop.Infrastructure.csproj", "{94061864-3E47-4F9F-9646-E041B5D36584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevShop.Persistance", "src\Infrastructure\DevShop.Persistance\DevShop.Persistance.csproj", "{68D7D468-B0B9-4BE1-8A81-C670962373A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevShop.Persistance", "src\Infrastructure\DevShop.Persistance\DevShop.Persistance.csproj", "{68D7D468-B0B9-4BE1-8A81-C670962373A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevShop.UI", "src\Presentation\DevShop.UI\DevShop.UI.csproj", "{D70FBE35-825C-404A-94C4-1112DFE5188A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevShop.UI", "src\Presentation\DevShop.UI\DevShop.UI.csproj", "{D70FBE35-825C-404A-94C4-1112DFE5188A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

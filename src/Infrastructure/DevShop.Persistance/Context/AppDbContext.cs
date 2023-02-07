@@ -26,6 +26,8 @@ namespace DevShop.Persistance.Context
         public DbSet<Cart> Cart { get; set; }
         public DbSet<Wishlist> Wishlist { get; set; }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+        public DbSet<Reply> Reply { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

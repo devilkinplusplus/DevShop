@@ -52,7 +52,7 @@ namespace DevShop.UI.Controllers
             return View();
         }
 
-         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Create(Product product, List<string> pictureIds)
         {
             var subcatagories = await _mediator.Send(new AllSubcatagoriesQuery() { Page = 1, Size = 10 });

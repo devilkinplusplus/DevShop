@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ugzkYQjBKBMDuZGXpOGFiKAbe/eWegXjwaHGc0OGXYU=",
+  "Hash": "B9HYgckB1+qmtZrwbogquG1KkhsLhMj9l+DqzLCrJJ0=",
   "Source": "DevShop.UI",
   "BasePath": "_content/DevShop.UI",
   "Mode": "Default",
@@ -1326,12 +1326,12 @@
       "OriginalItemSpec": "wwwroot\\adminKit\\webpack.config.js"
     },
     {
-      "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\css\\errorPage.css",
       "SourceId": "DevShop.UI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\",
       "BasePath": "_content/DevShop.UI",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/errorPage.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1340,7 +1340,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot\\css\\errorPage.css"
     },
     {
       "Identity": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\favicon.ico",
