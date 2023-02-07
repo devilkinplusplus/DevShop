@@ -64,11 +64,9 @@
                 </div>
                 @if (Model != null)
                 {
-                    <div class="btn-toolbar mb-4">
-                        <button class="btn btn-info">
+                    <ul class="pagination">
                             @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
-                        </button>
-                    </div>
+                    </ul>
                 }
 
                 <div class="container">
