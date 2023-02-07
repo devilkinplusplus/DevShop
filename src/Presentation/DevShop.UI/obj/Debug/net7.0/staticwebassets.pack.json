@@ -701,18 +701,6 @@
       "PackagePath": "staticwebassets\\multishop\\css\\style.min.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\carousel-1.jpg",
-      "PackagePath": "staticwebassets\\multishop\\img\\carousel-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\carousel-2.jpg",
-      "PackagePath": "staticwebassets\\multishop\\img\\carousel-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\carousel-3.jpg",
-      "PackagePath": "staticwebassets\\multishop\\img\\carousel-3.jpg"
-    },
-    {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\cat-1.jpg",
       "PackagePath": "staticwebassets\\multishop\\img\\cat-1.jpg"
     },
@@ -727,6 +715,18 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\cat-4.jpg",
       "PackagePath": "staticwebassets\\multishop\\img\\cat-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\ecommerce1.jpg",
+      "PackagePath": "staticwebassets\\multishop\\img\\ecommerce1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\ecommerce2.jpg",
+      "PackagePath": "staticwebassets\\multishop\\img\\ecommerce2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\ecommerce3.jpg",
+      "PackagePath": "staticwebassets\\multishop\\img\\ecommerce3.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\offer-1.jpg",
@@ -775,6 +775,14 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\product-9.jpg",
       "PackagePath": "staticwebassets\\multishop\\img\\product-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\sale1.jpg",
+      "PackagePath": "staticwebassets\\multishop\\img\\sale1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\sale2.jpg",
+      "PackagePath": "staticwebassets\\multishop\\img\\sale2.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\multishop\\img\\user.jpg",

@@ -42,7 +42,6 @@ namespace DevShop.Application.Cqrs.Commands.Sales.Create
                 errorList.Add(new() { Description = "Insufficient Balance" });
                 return new() { Errors = errorList, Succeeded = false };
             }
-
             var datas = await _productService.GetPaymentFromSales(request.ProductId);
             user.Budget -= totalPriceOfProducts;
             await _userManager.UpdateAsync(user);
