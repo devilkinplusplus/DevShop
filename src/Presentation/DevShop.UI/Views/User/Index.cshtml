@@ -68,7 +68,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (Model != null)
+                                @if (Model.Sales != null)
                                 {
                                     @foreach (var item in Model.Sales)
                                     {
@@ -121,23 +121,29 @@
                         float revenue = 0f;
                         float cost = 0f;
                     }
-                    @foreach (var item in Model.Sales.Take(3))
-                    {
+                    @if(Model.Sales != null){
+                        @foreach (var item in Model.Sales.Take(3))
+                        {
+                            <div class="d-flex justify-content-between">
+                                <p>@item.Product.Title</p>
+                                @if(signInManager.UserManager.GetUserId(User) == item.BuyerId){
+                                    <p class="text-danger">-$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
+                                    total -=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                    cost+=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                }
+                                else{
+                                    <p class="text-success">+$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
+                                    total +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                    revenue +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
+                                }
+                            </div>
+                        }
+                    }else{
                         <div class="d-flex justify-content-between">
-                            <p>@item.Product.Title</p>
-                            @if(signInManager.UserManager.GetUserId(User) == item.BuyerId){
-                                <p class="text-danger">-$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
-                                total -=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
-                                cost+=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
-                            }
-                            else{
-                                <p class="text-success">+$@(item.Product.Price - (item.Product.Price*item.Product.Discount/100))</p>
-                                total +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
-                                revenue +=(item.Product.Price - (item.Product.Price*item.Product.Discount/100));
-                            }
+                            <p class="text-danger">-$0</p>
+                            <p class="text-success">+$0</p>
                         </div>
                     }
-                    
                 </div>
                 <div class="bg-light p-30 mb-5">
                     <div class="border-bottom pb-2">
