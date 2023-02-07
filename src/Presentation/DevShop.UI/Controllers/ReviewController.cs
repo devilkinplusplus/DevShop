@@ -1,10 +1,12 @@
 ﻿using DevShop.Application.Cqrs.Commands.Reviews.Create;
 using DevShop.Domain.Entities.Concrete;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevShop.UI.Controllers
 {
+    [Authorize]
     public class ReviewController : Controller
     {
         private readonly IMediator _mediator;

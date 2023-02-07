@@ -309,8 +309,8 @@
       "PackagePath": "staticwebassets\\adminKit\\webpack.config.js"
     },
     {
-      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\css\\errorPage.css",
+      "PackagePath": "staticwebassets\\css\\errorPage.css"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\DevShop\\src\\Presentation\\DevShop.UI\\wwwroot\\favicon.ico",
