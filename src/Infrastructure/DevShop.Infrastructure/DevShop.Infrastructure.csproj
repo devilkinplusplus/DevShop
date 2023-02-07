@@ -10,4 +10,12 @@
     <ProjectReference Include="..\..\Core\DevShop.Application\DevShop.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\MailOperation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.5.0" />
+  </ItemGroup>
+
 </Project>

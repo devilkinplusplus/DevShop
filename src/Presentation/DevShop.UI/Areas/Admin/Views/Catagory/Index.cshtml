@@ -48,11 +48,9 @@
     </table>
     @if (Model != null)
     {
-        <div class="btn-toolbar mb-4">
-            <button class="btn btn-info">
-                @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
-            </button>
-        </div>
+        <ul class="pagination">
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+        </ul>
     }
     <div class="container">
         <a class="btn btn-success btn-large" href="/admin/catagory/create">Create New</a>
