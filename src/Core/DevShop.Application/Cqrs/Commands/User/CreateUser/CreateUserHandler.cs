@@ -3,6 +3,7 @@ using DevShop.Application.Abstractions.Services;
 using DevShop.Application.Cqrs.Commands.User.LoginUser;
 using DevShop.Domain.Entities.Identity;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace DevShop.Application.Cqrs.Commands.User.CreateUser
 
         public async Task<CreateUserCommandResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
+            bool checkEmail = await _userService.IsEmailExist(request.Email);
+            if(checkEmail){
+                List<IdentityError> errorList = new();
+                errorList.Add(new(){Description = "Email is already exist"});
+                return new(){Succeeded = false,Messages = errorList};
+            }
             var response = await _userService.CreateAsync(new()
             {
                 FirstName = request.FirstName,

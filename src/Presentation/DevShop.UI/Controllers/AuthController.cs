@@ -3,6 +3,7 @@ using DevShop.Application.Cqrs.Commands.User.CreateUser;
 using DevShop.Application.Cqrs.Commands.User.LoginUser;
 using DevShop.Application.Cqrs.Commands.User.Logout;
 using DevShop.Application.DTOs.User;
+using DevShop.Persistance.Context;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -23,5 +23,6 @@ namespace DevShop.Application.Abstractions.Services
         Task<AddUserRoleVM> GetUserRoles(string id);
         Task<bool> AssignRole(string id, string role);
         Task<PasswordResponse> ChangePassword(string userId,string password);
+        Task<bool> IsEmailExist(string email);
     }
 }
