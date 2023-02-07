@@ -8,6 +8,7 @@ using DevShop.Application.Repositories;
 using DevShop.Application.Validations;
 using DevShop.Application.ViewModels;
 using DevShop.Domain.Entities.Identity;
+using DevShop.Persistance.Context;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -26,14 +27,16 @@ namespace DevShop.Persistance.Services.User
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly AppDbContext _context;
         private readonly IPasswordValidator<AppUser> _passwordValidator;
         private readonly IMapper _mapper;
-        public UserService(UserManager<AppUser> userManager, IMapper mapper, RoleManager<IdentityRole> roleManager, IPasswordValidator<AppUser> passwordValidator)
+        public UserService(UserManager<AppUser> userManager, IMapper mapper, RoleManager<IdentityRole> roleManager, IPasswordValidator<AppUser> passwordValidator, AppDbContext context)
         {
             _userManager = userManager;
             _mapper = mapper;
             _roleManager = roleManager;
             _passwordValidator = passwordValidator;
+            _context = context;
         }
 
         public async Task<AddUserRoleVM> GetUserRoles(string id)
@@ -53,7 +56,7 @@ namespace DevShop.Persistance.Services.User
         }
 
         public async Task<CreateUserCommandResponse> CreateAsync(CreateUser model)
-        {
+        {      
             var mapper = _mapper.Map<AppUser>(model);
 
             UserValidator validationRules = new UserValidator();
@@ -71,7 +74,9 @@ namespace DevShop.Persistance.Services.User
                     ProfilePhoto = "/images/default/user.png"
                 }, model.Password);
 
+
                 AppUser data = await _userManager.FindByEmailAsync(mapper.Email);
+
                 CreateUserCommandResponse response = new() { Succeeded = result.Succeeded, User = data };
 
                 if (!result.Succeeded)
@@ -134,6 +139,11 @@ namespace DevShop.Persistance.Services.User
             user.ProfilePhoto = photoUrl;
             await _userManager.UpdateAsync(user);
             return true;
+        }
+
+        public async Task<bool> IsEmailExist(string email)
+        {
+            return await _context.Users.AnyAsync(x=>x.Email == email);
         }
     }
 }
