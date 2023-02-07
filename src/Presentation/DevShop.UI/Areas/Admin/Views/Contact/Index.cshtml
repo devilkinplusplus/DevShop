@@ -1,0 +1,87 @@
+@model IEnumerable<Contact>
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success fw-bold">All Messages From Users</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table table-dark">
+            <th>From</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Reply</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            @if(Model != null){
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <span class="badge bg-info">@item.Email</span>
+                        </td>
+                        <td>
+                            <span class="badge bg-primary">
+                                @(item.Subject.Length > 60 ? item.Subject.Substring(0, item.Subject.Substring(0,60).LastIndexOf(" "))+"..." : item.Subject)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="badge bg-dark">@item.Date.ToString("dd MMM yyyy")</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-small" href="/admin/contact/reply/@item.Id">
+                                  <i class="align-middle" data-feather="corner-up-left"></i>
+                            </a>
+                        </td>
+                        <td>
+                             <a class="btn btn-small" onclick="deleteContact('@item.Id')">
+                                  <i class="align-middle" data-feather="trash-2"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }else{
+                <div asp-validation-summary="ModelOnly" class="badge bg-danger text-center fw-bold"></div>
+            }
+        </tbody>
+    </table>
+     @if (Model != null)
+    {
+        <ul class="pagination">
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+        </ul>
+    }
+</div>
+@section Scripts{
+    <script>
+        function deleteContact(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                console.log(result)
+                if (result.value) {
+                    $.ajax({
+                        url: '/Admin/Contact/Delete/' + id,
+                        type: 'POST',
+                        success: function (data) {
+                            if (data.success) {
+                                location.reload()
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Something went wrong while deleting the data.',
+                                    'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}

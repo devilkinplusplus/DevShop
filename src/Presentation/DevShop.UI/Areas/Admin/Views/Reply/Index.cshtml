@@ -1,0 +1,81 @@
+@model IEnumerable<Reply>
+<div class="container">
+    <div class="alert alert-success text-center">
+        <h2 class="lead text-success fw-bold">All Messages To Users</h2>
+    </div>
+    <table class="table table-hover">
+        <thead class="table table-dark">
+            <th>To</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Archive</th>
+        </thead>
+        <tbody>
+            @if(Model != null){
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <span class="badge bg-info">@item.Contact.Email</span>
+                        </td>
+                        <td>
+                            <span class="badge bg-primary">
+                                @(item.Message.Length > 60 ? item.Message.Substring(0, item.Message.Substring(0,60).LastIndexOf(" "))+"..." : item.Message)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="badge bg-dark">@item.Date.ToString("dd MMM yyyy")</span>
+                        </td>
+                        <th>
+                            <a class="btn btn-small" onclick="Archive('@item.Id')">
+                                  <i class="align-middle" data-feather="download"></i>
+                            </a>
+                        </th>
+                    </tr>
+                }
+            }else{
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger text-center fw-bold"></div>
+            }
+        </tbody>
+    </table>
+     @if (Model != null)
+    {
+        <ul class="pagination">
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page,@class="page-item"}))
+        </ul>
+    }
+</div>
+@section Scripts{
+    <script>
+        function Archive(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                console.log(result)
+                if (result.value) {
+                    $.ajax({
+                        url: '/Admin/Reply/Archive/' + id,
+                        type: 'POST',
+                        success: function (res) {
+                            if (res.success) {
+                                location.reload()
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Something went wrong while deleting the data.',
+                                    'error'
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}

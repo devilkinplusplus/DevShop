@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DevShop.Application.Abstractions.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace DevShop.Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services)
         {
-           
+            services.AddScoped<IMailService,MailService>();
         }
     }
 }
