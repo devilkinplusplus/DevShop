@@ -15,7 +15,6 @@ using Microsoft.Extensions.Logging;
 
 namespace DevShop.UI.Controllers
 {
-    [Authorize(Roles = "Seller")]
     public class SellerController : Controller
     {
         private readonly IMediator _mediator;
@@ -25,6 +24,7 @@ namespace DevShop.UI.Controllers
             _mediator = mediator;
             _contextAccessor = contextAccessor;
         }
+        [Authorize(Roles = "Seller")]
         //My sales
         public async Task<IActionResult> Index(int page = 1)
         {
@@ -39,6 +39,7 @@ namespace DevShop.UI.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Seller")]
         //My Buys
         public async Task<IActionResult> MyBuys(int page = 1)
         {
@@ -54,14 +55,13 @@ namespace DevShop.UI.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         public async Task<JsonResult> BecomeSeller()
         {
             var res = await _mediator.Send(new SellerRoleCommandRequest());
             return Json(new { success = res.Succeeded });
         }
-
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<JsonResult> BuyProduct(List<Guid> productsId, float totalAmount)
         {

@@ -146,10 +146,10 @@
                 data: dataObject,
                 success: function (res) {
                     if (res.success) {
+                        Swal.fire("Success", "Operation successfully finished", "success");
                         for (let i = 0; i < cartIds.length; i++) {
                             deleteFromCart(`${cartIds[i]}`);
                         }
-                        Swal.fire("Success", "Operation successfully finished", "success");
                     }
                     else {
                         Swal.fire("Warning", "Insufficient Balance!", "warning")

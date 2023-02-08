@@ -71,7 +71,8 @@ namespace DevShop.Persistance.Services.User
                     Email = model.Email,
                     UserName = model.Username,
                     JoinDate = DateTime.Now,
-                    ProfilePhoto = "/images/default/user.png"
+                    ProfilePhoto = "/images/default/user.png",
+                    Budget = 1000
                 }, model.Password);
 
 
