@@ -10,7 +10,7 @@
 - [x] Automapper
 - [x] Autofac
 - [x] Logging with Serilog
-- [x] Multiple images
+- [x] Fluent Validation
 
 
 
